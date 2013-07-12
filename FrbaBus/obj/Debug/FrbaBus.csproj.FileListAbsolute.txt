@@ -199,3 +199,4 @@ C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug
 C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.MenuPrincipal.MenuPrincipal.resources
 C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.MicroMenu.resources
 C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.MicroMenu.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.DateSystem.ConfiguracionFecha.resources

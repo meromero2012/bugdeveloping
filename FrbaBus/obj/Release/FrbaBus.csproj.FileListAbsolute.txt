@@ -120,3 +120,4 @@ C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Gene
 C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Release\FrbaBus.MenuPrincipal.MenuPrincipal.resources
 C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Micro.MicroMenu.resources
 C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Recorrido.RecorridoMenu.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Release\FrbaBus.DateSystem.ConfiguracionFecha.resources
