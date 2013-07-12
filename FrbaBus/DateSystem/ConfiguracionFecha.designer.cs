@@ -54,6 +54,7 @@
             this.anioTextBox.Name = "anioTextBox";
             this.anioTextBox.Size = new System.Drawing.Size(100, 20);
             this.anioTextBox.TabIndex = 1;
+            this.anioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // mesLabel
             // 
@@ -70,6 +71,7 @@
             this.mesTextBox.Name = "mesTextBox";
             this.mesTextBox.Size = new System.Drawing.Size(100, 20);
             this.mesTextBox.TabIndex = 3;
+            this.mesTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // diaLabel
             // 
@@ -86,6 +88,7 @@
             this.diaTextBox.Name = "diaTextBox";
             this.diaTextBox.Size = new System.Drawing.Size(100, 20);
             this.diaTextBox.TabIndex = 5;
+            this.diaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // tituloLabel
             // 

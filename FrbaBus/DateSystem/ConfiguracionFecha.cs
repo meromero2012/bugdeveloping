@@ -38,5 +38,16 @@ namespace FrbaBus.DateSystem
         {
             this.Close();
         }
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solamente valores numericos
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
+
+            // Evita que se puedan ingresar puntos para valores decimales
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') < 0)
+                e.Handled = true;
+        }
     }
 }
