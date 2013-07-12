@@ -1,0 +1,201 @@
+C:\Documents and Settings\Luciano\Escritorio\FRBABUS\Aplicacion Desktop\FrbaBus\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Luciano\Escritorio\FRBABUS\Aplicacion Desktop\FrbaBus\obj\Debug\FrbaBus.Properties.Resources.resources
+C:\Documents and Settings\Luciano\Escritorio\FRBABUS\Aplicacion Desktop\FrbaBus\obj\Debug\FrbaBus.csproj.GenerateResource.Cache
+C:\Documents and Settings\Luciano\Escritorio\FRBABUS\Aplicacion Desktop\FrbaBus\bin\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\FRBABUS\Aplicacion Desktop\FrbaBus\bin\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\FRBABUS\Aplicacion Desktop\FrbaBus\obj\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\FRBABUS\Aplicacion Desktop\FrbaBus\obj\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\FRBABUS\Aplicacion Desktop\FrbaBus\obj\Debug\FrbaBus.Login.Login.resources
+C:\Documents and Settings\Luciano\Escritorio\bugDeveloping\FrbaBus\obj\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\bugDeveloping\FrbaBus\obj\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\bugDeveloping\FrbaBus\bin\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\bugDeveloping\FrbaBus\bin\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\bugDeveloping\FrbaBus\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Luciano\Escritorio\bugDeveloping\FrbaBus\obj\Debug\FrbaBus.Login.Login.resources
+C:\Documents and Settings\Luciano\Escritorio\bugDeveloping\FrbaBus\obj\Debug\FrbaBus.Properties.Resources.resources
+C:\Documents and Settings\Luciano\Escritorio\bugDeveloping\FrbaBus\obj\Debug\FrbaBus.csproj.GenerateResource.Cache
+<<<<<<< HEAD
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.AltaRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FormFiltrarRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FormModifRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.GenerarViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Registrar_LLegada_Micro.RegistrarLlegada.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.ListadoRecorridos.resources
+=======
+C:\Documents and Settings\Luciano\Escritorio\hola\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\hola\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.pdb
+>>>>>>> d9acd50d66bdca1b19057d53fea9a4914d2a4c6a
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.CancelarViaje.CancelarViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosCompra.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosPasajero.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Consulta_Puntos_Adquiridos.FormFiltrarRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.Form1.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.GenerarViaje2.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\bin\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\bin\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.AltaRol.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FormFiltrarRol.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FormModifRol.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.GenerarViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.ListadoRecorridos.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.CancelarViaje.CancelarViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosCompra.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosPasajero.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Consulta_Puntos_Adquiridos.FormFiltrarRol.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Login.Login.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Properties.Resources.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Registrar_LLegada_Micro.RegistrarLlegada2.resources
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.csproj.GenerateResource.Cache
+C:\Documents and Settings\Luciano\Escritorio\Nueva carpeta\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Registrar_LLegada_Micro.RegistrarLlegada.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\bin\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\bin\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.AltaRol.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FormFiltrarRol.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FormModifRol.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosPasaje.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.GenerarViaje.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.ListadoRecorridos.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.CancelarViaje.CancelarViaje.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosCompra.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosViaje.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Consulta_Puntos_Adquiridos.FormFiltrarRol.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Login.Login.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Properties.Resources.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Registrar_LLegada_Micro.RegistrarLlegada.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.csproj.GenerateResource.Cache
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\bin\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\bin\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.AltaRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FormFiltrarRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FormModifRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosPasaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.GenerarViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.ListadoRecorridos.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.CancelarViaje.CancelarViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosCompra.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Consulta_Puntos_Adquiridos.FormFiltrarRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Login.Login.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Properties.Resources.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Registrar_LLegada_Micro.RegistrarLlegada.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.csproj.GenerateResource.Cache
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosEncomienda.resources
+C:\Documents and Settings\Luciano\Escritorio\V3\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\V3\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\bin\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\bin\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.microAlta.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.MicroBaja.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.Micro_Modificacion.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.AltaRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FormFiltrarRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FormModifRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.AltaRecorrido.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.BajaRecorrido.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.ListadoRecorridos.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.ModificacionRecorrido.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.RecorridoMenu.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosEncomienda.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosPasaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.GenerarViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.ListadoRecorridos.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.CancelarViaje.CancelarViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosCompra.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Consulta_Puntos_Adquiridos.FormFiltrarRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Login.Login.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Properties.Resources.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Registrar_LLegada_Micro.RegistrarLlegada.resources
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.csproj.GenerateResource.Cache
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\bugbug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\bin\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\bin\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.microAlta.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.MicroBaja.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.Micro_Modificacion.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.AltaRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FiltrarRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FormModifRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.AltaRecorrido.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.BajaRecorrido.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.ListadoRecorridos.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.ModificacionRecorrido.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.RecorridoMenu.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosEncomienda.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosPasaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.GenerarViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.ListadoRecorridos.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.CancelarViaje.CancelarViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosCompra.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosViaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Consulta_Puntos_Adquiridos.ConsultaPuntos.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Login.Login.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Properties.Resources.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Registrar_LLegada_Micro.RegistrarLlegada.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Selector_Principal.SelectorPrincipal.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Top_5.ListadoEstadistico.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.csproj.GenerateResource.Cache
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.exe
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping14\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.pdb
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.microAlta.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.MicroBaja.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.Micro_Modificacion.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FiltrarRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.AltaRecorrido.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.BajaRecorrido.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.ListadoRecorridos.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.ModificacionRecorrido.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.RecorridoMenu.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosEncomienda.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosPasaje.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Consulta_Puntos_Adquiridos.ConsultaPuntos.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Selector_Principal.SelectorPrincipal.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Top_5.ListadoEstadistico.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.microAlta.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.MicroBaja.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.Micro_Modificacion.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FiltrarRol.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.AltaRecorrido.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.BajaRecorrido.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.ListadoRecorridos.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.ModificacionRecorrido.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.RecorridoMenu.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Consulta_Puntos_Adquiridos.ConsultaPuntos.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Selector_Principal.SelectorPrincipal.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Top_5.ListadoEstadistico.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Canje_de_Ptos.CanjePuntos.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Canje_de_Ptos.CanjePuntos.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.ListadoMicro.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.ListadoMicro.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.microAlta.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.MicroBaja.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.Micro_Modificacion.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.FiltrarRol.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.AltaRecorrido.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.BajaRecorrido.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.ListadoRecorridos.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.ModificacionRecorrido.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.RecorridoMenu.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Canje_de_Ptos.CanjePuntos.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Compra_de_Pasajes.IngresoDatosEncomienda.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.GenerarViaje.ListadoMicro.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Consulta_Puntos_Adquiridos.ConsultaPuntos.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Selector_Principal.SelectorPrincipal.resources
+C:\Documents and Settings\Luciano\Escritorio\bug\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Top_5.ListadoEstadistico.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.MenuPrincipal.MenuPrincipal.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.MicroMenu.resources
+C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.MicroMenu.resources
