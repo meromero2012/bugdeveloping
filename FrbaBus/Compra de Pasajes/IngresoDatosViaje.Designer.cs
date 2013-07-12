@@ -215,7 +215,7 @@
             this.menuPrincipalButton.Name = "menuPrincipalButton";
             this.menuPrincipalButton.Size = new System.Drawing.Size(184, 22);
             this.menuPrincipalButton.TabIndex = 12;
-            this.menuPrincipalButton.Text = "Menú Principal";
+            this.menuPrincipalButton.Text = "Volver";
             this.menuPrincipalButton.UseVisualStyleBackColor = true;
             this.menuPrincipalButton.Click += new System.EventHandler(this.menuPrincipalButton_Click);
             // 

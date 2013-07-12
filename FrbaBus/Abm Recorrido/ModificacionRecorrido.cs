@@ -12,9 +12,10 @@ using FrbaBus.ConnectorSQL;
 
 namespace FrbaBus.Abm_Recorrido
 {   
-    public partial class ModificacionRecorrido : Form
+    public partial class ModificacionRecorrido : BaseForm
     {
-        public ModificacionRecorrido()
+        public ModificacionRecorrido():
+               base()
         {
             InitializeComponent();
         }

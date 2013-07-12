@@ -453,7 +453,7 @@
             this.finalizarButton.Name = "finalizarButton";
             this.finalizarButton.Size = new System.Drawing.Size(60, 22);
             this.finalizarButton.TabIndex = 59;
-            this.finalizarButton.Text = "Finalizar";
+            this.finalizarButton.Text = "Volver";
             this.finalizarButton.UseVisualStyleBackColor = true;
             this.finalizarButton.Click += new System.EventHandler(this.finalizarButton_Click);
             // 

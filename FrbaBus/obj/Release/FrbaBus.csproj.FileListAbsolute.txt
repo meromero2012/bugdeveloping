@@ -119,5 +119,4 @@ C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Canj
 C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Release\FrbaBus.GenerarViaje.ListadoMicro.resources
 C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Release\FrbaBus.MenuPrincipal.MenuPrincipal.resources
 C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Micro.MicroMenu.resources
-C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Recorrido.MicroMenu.resources
 C:\Documents and Settings\Luciano\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Recorrido.RecorridoMenu.resources

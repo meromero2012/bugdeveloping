@@ -10,9 +10,10 @@ using FrbaBus.ConnectorSQL;
 
 namespace FrbaBus.Abm_Recorrido
 {
-    public partial class AltaRecorrido : Form
+    public partial class AltaRecorrido : BaseForm
     {
-        public AltaRecorrido()
+        public AltaRecorrido():
+               base()
         {
             InitializeComponent();
         }
