@@ -15,6 +15,7 @@ using FrbaBus.Consulta_Puntos_Adquiridos;
 using FrbaBus.Registrar_LLegada_Micro;
 using FrbaBus.Abm_Recorrido;
 using FrbaBus.Abm_Micro;
+using FrbaBus.Abm_Permisos;
 
 namespace FrbaBus.MenuPrincipal
 {
@@ -100,6 +101,11 @@ namespace FrbaBus.MenuPrincipal
         private void permission2_Click(object sender, EventArgs e)
         {
             OpenWindow<RecorridoMenu>();
+        }
+
+        private void permission10_Click(object sender, EventArgs e)
+        {
+            OpenWindow<RolMenu>();
         }
     }
 }

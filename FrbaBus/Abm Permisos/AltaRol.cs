@@ -11,9 +11,10 @@ using FrbaBus.ConnectorSQL;
 
 namespace FrbaBus.Abm_Permisos
 {
-    public partial class AltaRol : Form
+    public partial class AltaRol : BaseForm
     {
-        public AltaRol()
+        public AltaRol():
+               base()
         {
             InitializeComponent();
         }
@@ -71,6 +72,11 @@ namespace FrbaBus.Abm_Permisos
             textBoxNombreRol.Text = "";
             textBoxNombreRol.Focus();
 
+        }
+
+        private void volverButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

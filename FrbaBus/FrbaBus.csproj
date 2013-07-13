@@ -106,6 +106,12 @@
       <DependentUpon>FormModifRol.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Permisos\FuncionesRol.cs" />
+    <Compile Include="Abm Permisos\RolMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Permisos\RolMenu.Designer.cs">
+      <DependentUpon>RolMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abm Recorrido\AltaRecorrido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Abm Permisos\FormModifRol.resx">
       <DependentUpon>FormModifRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm Permisos\RolMenu.resx">
+      <DependentUpon>RolMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm Recorrido\AltaRecorrido.resx">
       <DependentUpon>AltaRecorrido.cs</DependentUpon>

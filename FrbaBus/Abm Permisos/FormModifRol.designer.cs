@@ -36,6 +36,7 @@
             this.bModificar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtbNombre = new System.Windows.Forms.TextBox();
+            this.volverButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -114,11 +115,22 @@
             this.txtbNombre.Size = new System.Drawing.Size(164, 20);
             this.txtbNombre.TabIndex = 36;
             // 
+            // volverButton
+            // 
+            this.volverButton.Location = new System.Drawing.Point(92, 323);
+            this.volverButton.Name = "volverButton";
+            this.volverButton.Size = new System.Drawing.Size(117, 26);
+            this.volverButton.TabIndex = 44;
+            this.volverButton.Text = "Volver";
+            this.volverButton.UseVisualStyleBackColor = true;
+            this.volverButton.Click += new System.EventHandler(this.volverButton_Click);
+            // 
             // FormModifRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 325);
+            this.ClientSize = new System.Drawing.Size(300, 360);
+            this.Controls.Add(this.volverButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.clbFuncionalidades);
             this.Controls.Add(this.cbActivo);
@@ -145,5 +157,6 @@
         private System.Windows.Forms.Button bModificar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtbNombre;
+        private System.Windows.Forms.Button volverButton;
     }
 }

@@ -137,3 +137,4 @@ C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\F
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Consulta_Puntos_Adquiridos.ConsultaPuntos.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.MenuPrincipal.MenuPrincipal.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Top_5.ListadoEstadistico.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Permisos.RolMenu.resources

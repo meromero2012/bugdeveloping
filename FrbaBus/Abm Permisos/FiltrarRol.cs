@@ -12,9 +12,10 @@ using FrbaBus.ConnectorSQL;
 
 namespace FrbaBus.Abm_Permisos
 {
-    public partial class FiltrarRol : Form
+    public partial class FiltrarRol : BaseForm
     {
-        public FiltrarRol()
+        public FiltrarRol():
+               base()
         {
             InitializeComponent();
         }
@@ -64,6 +65,11 @@ namespace FrbaBus.Abm_Permisos
                                 
             
             }
+        }
+
+        private void volverButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -14,9 +14,10 @@ using FrbaBus.ConnectorSQL;
 
 namespace FrbaBus.Abm_Permisos
 {
-    public partial class FormModifRol : Form
+    public partial class FormModifRol : BaseForm
     {
-        public FormModifRol()
+        public FormModifRol():
+               base()
         {
             InitializeComponent();
         }
@@ -149,6 +150,11 @@ namespace FrbaBus.Abm_Permisos
                 }
             }
 
+        }
+
+        private void volverButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

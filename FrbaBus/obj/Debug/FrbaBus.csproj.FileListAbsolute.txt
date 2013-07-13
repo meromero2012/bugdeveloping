@@ -205,3 +205,4 @@ C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\Frb
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.BaseForm.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.DateSystem.ConfiguracionFecha.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.MenuPrincipal.MenuPrincipal.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.RolMenu.resources

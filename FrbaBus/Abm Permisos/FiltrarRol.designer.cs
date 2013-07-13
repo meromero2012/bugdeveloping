@@ -35,6 +35,7 @@
             this.bLimpiar = new System.Windows.Forms.Button();
             this.dgvRoles = new System.Windows.Forms.DataGridView();
             this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.volverButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).BeginInit();
             this.SuspendLayout();
@@ -116,11 +117,22 @@
             this.Seleccionar.ReadOnly = true;
             this.Seleccionar.Width = 69;
             // 
+            // volverButton
+            // 
+            this.volverButton.Location = new System.Drawing.Point(175, 310);
+            this.volverButton.Name = "volverButton";
+            this.volverButton.Size = new System.Drawing.Size(117, 26);
+            this.volverButton.TabIndex = 35;
+            this.volverButton.Text = "Volver";
+            this.volverButton.UseVisualStyleBackColor = true;
+            this.volverButton.Click += new System.EventHandler(this.volverButton_Click);
+            // 
             // FiltrarRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 358);
+            this.Controls.Add(this.volverButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bLimpiar);
             this.Controls.Add(this.dgvRoles);
@@ -143,5 +155,6 @@
         private System.Windows.Forms.Button bLimpiar;
         private System.Windows.Forms.DataGridView dgvRoles;
         private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
+        private System.Windows.Forms.Button volverButton;
     }
 }

@@ -34,6 +34,7 @@
             this.checkedListBoxFuncionalidades = new System.Windows.Forms.CheckedListBox();
             this.botonAgregarRol = new System.Windows.Forms.Button();
             this.botonLimpiarSeleccion = new System.Windows.Forms.Button();
+            this.volverButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -89,11 +90,22 @@
             this.botonLimpiarSeleccion.UseVisualStyleBackColor = true;
             this.botonLimpiarSeleccion.Click += new System.EventHandler(this.buttonLimpiarSeleccion);
             // 
+            // volverButton
+            // 
+            this.volverButton.Location = new System.Drawing.Point(86, 260);
+            this.volverButton.Name = "volverButton";
+            this.volverButton.Size = new System.Drawing.Size(109, 32);
+            this.volverButton.TabIndex = 6;
+            this.volverButton.Text = "Volver";
+            this.volverButton.UseVisualStyleBackColor = true;
+            this.volverButton.Click += new System.EventHandler(this.volverButton_Click);
+            // 
             // AltaRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 273);
+            this.ClientSize = new System.Drawing.Size(292, 302);
+            this.Controls.Add(this.volverButton);
             this.Controls.Add(this.botonLimpiarSeleccion);
             this.Controls.Add(this.botonAgregarRol);
             this.Controls.Add(this.checkedListBoxFuncionalidades);
@@ -116,5 +128,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBoxFuncionalidades;
         private System.Windows.Forms.Button botonAgregarRol;
         private System.Windows.Forms.Button botonLimpiarSeleccion;
+        private System.Windows.Forms.Button volverButton;
     }
 }
