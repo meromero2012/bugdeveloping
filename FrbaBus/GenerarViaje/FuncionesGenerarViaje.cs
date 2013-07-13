@@ -13,7 +13,7 @@ namespace FrbaBus.GenerarViaje
         public static bool validarMicroTipoS(string tipoServicio, string micro)
         {
             /*valida que el micro sea del mismo tipo de servicio que el recorrido a realizar*/
-            String query = "SELECT * FROM BUGDEVELOPING.MICRO WHERE '" + micro + "'= MICRO_PATENTE AND '" + tipoServicio + "' = MICRO_TIPO_SERVICIO";
+            String query = "SELECT MICRO.MICRO_PATENTE FROM BUGDEVELOPING.MICRO JOIN BUGDEVELOPING.TIPO_SERVICIO ON MICRO.MICRO_TIPO_SERVICIO = TIPO_SERVICIO.TIPO_SERVICIO_CODIGO  WHERE '" + micro + "'= MICRO.MICRO_PATENTE AND '" + tipoServicio + "' = TIPO_SERVICIO.TIPO_SERVICIO_NOMBRE";
             ConnectorClass conexion = ConnectorClass.Instance;
             DataTable dt = conexion.executeQuery(query);
             if (dt.Rows.Count.Equals(0) == true)
@@ -35,9 +35,10 @@ namespace FrbaBus.GenerarViaje
         public static bool validarMicroDisponible(DateTime fechaSalida, string micro)
         {
             /*valida que el micro este disponible, esto significa que no este realizando otro viaje en esa fecha y que no este dado de baja o fuera de servicio*/
-            string fechaSalida24antes = fechaSalida.AddDays(-1).ToString();
-            string fechaSalida24despues = fechaSalida.AddDays(1).ToString();
-            String query = "SELECT * FROM BUGDEVELOPING.VIAJE WHERE '" + micro + "'= VIAJE_MICRO_PATENTE AND VIAJE_FECHA_SALIDA BETWEEN '" + fechaSalida24antes + "' AND '" + fechaSalida24despues + "' AND '" + micro + "' NOT IN (SELECT MICRO_FUERA_DE_SERVICIO_PATENTE FROM BUGDEVELOPING.MICRO_FUERA_SERVICIO WHERE ('" + fechaSalida + "' BETWEEN MICRO_FUERA_SERVICIO_FECHA_INICIO AND MICRO_FUERA_SERVICIO_FECHA_FIN) OR (MICRO_FUERA_SERVICIO_FECHA_INICIO >= '" + fechaSalida + "' AND MICRO_FUERA_SERVICIO_FECHA_FIN IS NULL)";
+            string fechaSalida24antes = ConnectorClass.ParseDateTime(fechaSalida.AddDays(-1));
+            string fechaSalida24despues = ConnectorClass.ParseDateTime(fechaSalida.AddDays(1));
+            string fechaSalida2 = ConnectorClass.ParseDateTime(fechaSalida);
+            String query = "SELECT * FROM BUGDEVELOPING.VIAJE WHERE '" + micro + "' = VIAJE_MICRO_PATENTE AND VIAJE_FECHA_SALIDA BETWEEN '" + fechaSalida24antes + "' AND '" + fechaSalida24despues + "' AND '" + micro + "' NOT IN (SELECT MICRO_FUERA_SERVICIO_PATENTE FROM BUGDEVELOPING.MICRO_FUERA_SERVICIO WHERE ('" + fechaSalida2 + "' BETWEEN MICRO_FUERA_SERVICIO_FECHA_INICIO AND MICRO_FUERA_SERVICIO_FECHA_REINCORPORACION) OR (MICRO_FUERA_SERVICIO_FECHA_INICIO >= '" + fechaSalida2 + "' AND MICRO_FUERA_SERVICIO_FECHA_REINCORPORACION IS NULL))";
             ConnectorClass conexion = ConnectorClass.Instance;
             DataTable dt = conexion.executeQuery(query);
             if (dt.Rows.Count.Equals(0) == true)
