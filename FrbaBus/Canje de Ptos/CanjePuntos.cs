@@ -19,6 +19,8 @@ namespace FrbaBus.Canje_de_Ptos
             InitializeComponent();
         }
 
+        /* Una vez consultada la base de datos se carga en el combobox de productos, aquellos productos
+         * que puedan ser canjeados con los puntos del cliente */
         private void setProductosComboBox(DataTable dt)
         {
             productosComboBox.DataSource = dt;
@@ -35,6 +37,8 @@ namespace FrbaBus.Canje_de_Ptos
             buscarDniButton.Enabled = true;
         }
 
+        /* Verifica que el dni ingresado este registrado en la base de datos, de ser asi se cargan los puntos
+         * disponibles y los productos que se pueden canjear */
         private void buscarDniButton_Click(object sender, EventArgs e)
         {
             errorLabel.Text = "";
@@ -75,6 +79,7 @@ namespace FrbaBus.Canje_de_Ptos
             }
         }
 
+        /* Se realiza el canje y se actualiza el stock del producto, junto con el canje realizado */
         private void canjearButton_Click(object sender, EventArgs e)
         {
             String productoSeleccionado = productosComboBox.SelectedValue.ToString();

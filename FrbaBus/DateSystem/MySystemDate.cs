@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Runtime.InteropServices;
 
+/* Esta clase provee la interfaz necesaria para almacenar la fecha y setearla en windows */
 namespace FrbaBus.DateSystem
 {
     [StructLayout(LayoutKind.Sequential)]
@@ -29,14 +30,14 @@ namespace FrbaBus.DateSystem
 
         public static void setSystemDate(short anio, short mes, short dia)
         {
-            st.wYear = anio; // must be short
+            st.wYear = anio;
             st.wMonth = mes;
             st.wDay = dia;
             st.wHour = 0;
             st.wMinute = 0;
             st.wSecond = 0;
 
-            SetSystemTime(ref st); // invoke this method.
+            SetSystemTime(ref st);
         }
     }
 }

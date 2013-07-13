@@ -26,6 +26,7 @@ namespace FrbaBus.MenuPrincipal
             InitializeComponent();
         }
 
+        /* Se habilitan los diferentes menues segun el rol del usuario logueado */
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             foreach (Control button in this.tableLayoutPanel1.Controls)
@@ -81,6 +82,8 @@ namespace FrbaBus.MenuPrincipal
             OpenWindow<RegistrarLlegada>();
         }
 
+        /* Esta funcion evita realizar repeticiones de codigo, centralizando el codigo de apertura
+         * de ventanas nuevas en un solo metodo*/
         private void OpenWindow<T>()
             where T : BaseForm, new()
         {

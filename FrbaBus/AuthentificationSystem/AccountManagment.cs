@@ -9,18 +9,23 @@ namespace FrbaBus.AuthentificationSystem
 {
     public static class AccountManagment
     {
+        /* Variable en la que se almacenara los datos del usuario logueado */
         public static UserInformation ActualUser { get; internal set; }
 
         public static String LogUser(String userName, String password)
         {
             String userId = FrbaBus.Login.FuncionesLogin.getUsuario(userName);
 
+            /* Error si el usuario no es encontrado */
             if (userId == null)
             {
                 return "usuario invalido.";
             }
             else
             {
+                /* Se chequea la validez de la contraseña, si la contraseña es incorrecta lanza error y decrementa la cantidad de ingresos.
+                 * De realizarse con exito el logueo se guarda la informacion del usuario.
+                 */
                 Boolean passwordCorrecto = FrbaBus.Login.FuncionesLogin.checkPassword(userId, password);
                 if (!passwordCorrecto)
                 {

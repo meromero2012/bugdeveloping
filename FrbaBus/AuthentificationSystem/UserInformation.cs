@@ -5,6 +5,7 @@ using System.Text;
 
 namespace FrbaBus.AuthentificationSystem
 {
+    /* Esta clase permite almacenar toda la informacion correspondiente a un usuario logueado */
     public class UserInformation
     {
         public String Username { get; set; }

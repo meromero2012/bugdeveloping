@@ -269,6 +269,9 @@
     <EmbeddedResource Include="Abm Recorrido\RecorridoMenu.resx">
       <DependentUpon>RecorridoMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Canje de Ptos\CanjePuntos.resx">
       <DependentUpon>CanjePuntos.cs</DependentUpon>
     </EmbeddedResource>

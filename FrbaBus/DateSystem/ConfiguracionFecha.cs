@@ -23,6 +23,7 @@ namespace FrbaBus.DateSystem
 
         }
 
+        /* En este metodo se setea en windows la fecha ingresada en el formulario*/
         private void siguienteButton_Click(object sender, EventArgs e)
         {
             MySystemDate.setSystemDate((short)Convert.ToInt32((anioTextBox.Text)), (short)Convert.ToInt32((mesTextBox.Text)), (short)Convert.ToInt32((diaTextBox.Text)));

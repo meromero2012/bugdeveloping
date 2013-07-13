@@ -20,6 +20,7 @@ namespace FrbaBus.Login
             InitializeComponent();
         }
 
+        /* Se ingresa al sistema, y si es valido el usuario se guarda la informacion correspondiente al mismo, abriendose el menu principal */
         private void buttonINGRESAR_Click(object sender, EventArgs e)
         {
             String errorMessage= AccountManagment.LogUser(textBoxUSER.Text, textBoxPASSWORD.Text);
@@ -41,6 +42,7 @@ namespace FrbaBus.Login
         {
         }
 
+        /*Si se presiona enter luego de ingresar los datos se ingresa al sistema*/
         private void textBoxPASSWORD_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
