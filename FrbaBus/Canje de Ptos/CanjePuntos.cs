@@ -85,6 +85,7 @@ namespace FrbaBus.Canje_de_Ptos
             String productoSeleccionado = productosComboBox.SelectedValue.ToString();
             FrbaBus.Canje_de_Ptos.FuncionesCanjePuntos.updateProducto(productoSeleccionado);
             FrbaBus.Canje_de_Ptos.FuncionesCanjePuntos.insertCanje(dniTextBox.Text, productosComboBox.SelectedValue.ToString());
+            MessageBox.Show("Canje realizado exitosamente");
         }
 
         private void CanjePuntos_Load(object sender, EventArgs e)
