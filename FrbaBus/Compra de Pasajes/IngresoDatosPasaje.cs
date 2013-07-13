@@ -15,7 +15,7 @@ namespace FrbaBus.Compra_de_Pasajes
         public static Boolean dniEncontradoBBDD;
         public static Boolean comproDiscapacitado;
         public static int pasajesSinCosto;
-        public static DataTable pasajeEncomiendaNro;
+        public Compra compra;
 
         public static String codigoViaje;
         public static String codigoRecorrido;
@@ -48,7 +48,7 @@ namespace FrbaBus.Compra_de_Pasajes
             pasajesSinCosto = 2;
         }
 
-        public IngresoDatosPasaje(String viaje, String recorrido, String patente, String servicio, int pasajes, int kgs, DataTable dt)
+        public IngresoDatosPasaje(String viaje, String recorrido, String patente, String servicio, int pasajes, int kgs, Compra cmp)
             :this()
         {
             codigoViaje = viaje;
@@ -57,7 +57,7 @@ namespace FrbaBus.Compra_de_Pasajes
             tipoServicio = servicio;
             pasajesCompra = pasajes;
             kgsCompra = kgs;
-            pasajeEncomiendaNro = dt;
+            compra = cmp;
         }
 
         public void setDatosPersonales(DataTable dt)
@@ -206,13 +206,21 @@ namespace FrbaBus.Compra_de_Pasajes
             siguienteButton.Enabled = false;
         }
 
-        /*Agrega en una tabla de datos el codigo de pasaje comprado para despues poder registrar la compra*/
-        private void cargarPasajeEncomiendaDt(String nro)
+        /*Agrega en un elemento de lista el codigo de pasaje comprado para despues poder registrar la compra*/
+        private void cargarCompra(String pasje_encomienda, String codigo, String dni, String monto, String viaje, String patente, String nroButaca, String pisoButaca, String kgs)
         {
-            DataRow pasajeEncomiendaRow = pasajeEncomiendaNro.NewRow();
-            pasajeEncomiendaRow["Pasaje_Encomienda_Nro"] = nro;
-
-            pasajeEncomiendaNro.Rows.Add(pasajeEncomiendaRow);
+            compra.Compras.Add(new Pasaje_Encomienda()
+            {
+                tipo = pasje_encomienda,
+                codigo_pasaje_encomienda = codigo,
+                dni_viajero = dni,
+                precio = monto,
+                codigo_viaje = viaje,
+                micro_patente = patente,
+                nro_butaca = nroButaca,
+                piso_butaca = pisoButaca,
+                kgs_utilizados = kgs
+            });
         }
 
         /*Si todo lo anterior se realizo con exito, se escriben las tablas de cliente, pasaje_encomienda y pasaje, permitiendo seguir con facturacion u otro pasaje si fuese necesario*/
@@ -241,11 +249,7 @@ namespace FrbaBus.Compra_de_Pasajes
             else
                 FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertCliente(dni, fechaNacimiento, nombre, apellido, sexo, discapacidad, domicilio, telefono, mail);
 
-            FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertPasajeEncomienda(pasajeNro, dni, precio, codigoViaje);
-
-            FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertPasaje(pasajeNro, microPatente, butacaNro, butacaPiso);
-
-            cargarPasajeEncomiendaDt(pasajeNro);
+            cargarCompra("Pasaje", pasajeNro, dni, precio, codigoViaje, microPatente, butacaNro, butacaPiso, "-1");
 
             if (pasajesCompra > 1)
             {
@@ -255,7 +259,7 @@ namespace FrbaBus.Compra_de_Pasajes
             }
             else
             {
-                IngresoDatosCompra frmCompra = new IngresoDatosCompra(pasajeEncomiendaNro);
+                IngresoDatosCompra frmCompra = new IngresoDatosCompra(compra);
                 frmCompra.Show();
                 this.Close();
             }

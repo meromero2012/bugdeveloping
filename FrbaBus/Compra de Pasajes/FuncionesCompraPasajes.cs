@@ -19,7 +19,7 @@ namespace FrbaBus.Compra_de_Pasajes
 
         public static DataTable getViajeLibre(String fecha,String origen, String destino)
         {
-            String query = "select top 1 VIAJE_CODIGO, RECORRIDO_CODIGO, VIAJE_MICRO_PATENTE, (select count(*) from BUGDEVELOPING.BUTACA where BUTACA_MICRO_PATENTE = VIAJE_MICRO_PATENTE and BUTACA_PISO <> 0 and BUTACA_NUMERO not in (select p.PASAJE_NUMERO_BUTACA from BUGDEVELOPING.PASAJE_ENCOMIENDA pe join BUGDEVELOPING.PASAJE p on (pe.PASAJE_ENCOMIENDA_CODIGO = p.PASAJE_CODIGO) where pe.PASAJE_ENCOMIENDA_CODIGO_VIAJE = VIAJE_CODIGO)) as 'BUTACAS_DISPONIBLES', MICRO_CANTIDAD_KGS - (select SUM(ENCOMIENDA_KG_UTILIZADOS) from BUGDEVELOPING.ENCOMIENDA where ENCOMIENDA_CODIGO in (select PASAJE_ENCOMIENDA_CODIGO from BUGDEVELOPING.PASAJE_ENCOMIENDA where PASAJE_ENCOMIENDA_CODIGO_VIAJE = VIAJE_CODIGO)) as 'KGS_DISPONIBLES' from BUGDEVELOPING.VIAJE join BUGDEVELOPING.RECORRIDO on (VIAJE_CODIGO_RECORRIDO = RECORRIDO_CODIGO) join BUGDEVELOPING.MICRO on (VIAJE_MICRO_PATENTE = MICRO_PATENTE) where cast(VIAJE_FECHA_SALIDA as date) = '" + fecha + "' and RECORRIDO_ID_CIUDAD_ORIGEN = '" + origen + "' and RECORRIDO_ID_CIUDAD_DESTINO = '" + destino + "' and VIAJE_FECHA_LLEGADA is null and RECORRIDO_ACTIVO = 1 and MICRO_PATENTE not in (select MICRO_FUERA_SERVICIO_PATENTE from BUGDEVELOPING.MICRO_FUERA_SERVICIO where VIAJE_FECHA_SALIDA not between MICRO_FUERA_SERVICIO_FECHA_INICIO and MICRO_FUERA_SERVICIO_FECHA_REINCORPORACION) order by BUTACAS_DISPONIBLES desc, KGS_DISPONIBLES desc";
+            String query = "select top 1 VIAJE_CODIGO, RECORRIDO_CODIGO, VIAJE_MICRO_PATENTE, (select isnull(count(*), 0) from BUGDEVELOPING.BUTACA where BUTACA_MICRO_PATENTE = VIAJE_MICRO_PATENTE and BUTACA_PISO <> 0 and BUTACA_NUMERO not in (select p.PASAJE_NUMERO_BUTACA from BUGDEVELOPING.PASAJE_ENCOMIENDA pe join BUGDEVELOPING.PASAJE p on (pe.PASAJE_ENCOMIENDA_CODIGO = p.PASAJE_CODIGO) where pe.PASAJE_ENCOMIENDA_CODIGO_VIAJE = VIAJE_CODIGO)) as 'BUTACAS_DISPONIBLES', isnull(MICRO_CANTIDAD_KGS,0) - (select isnull(SUM(ENCOMIENDA_KG_UTILIZADOS),0) from BUGDEVELOPING.ENCOMIENDA where ENCOMIENDA_CODIGO in (select PASAJE_ENCOMIENDA_CODIGO from BUGDEVELOPING.PASAJE_ENCOMIENDA where PASAJE_ENCOMIENDA_CODIGO_VIAJE = VIAJE_CODIGO)) as 'KGS_DISPONIBLES' from BUGDEVELOPING.VIAJE join BUGDEVELOPING.RECORRIDO on (VIAJE_CODIGO_RECORRIDO = RECORRIDO_CODIGO) join BUGDEVELOPING.MICRO on (VIAJE_MICRO_PATENTE = MICRO_PATENTE) where cast(VIAJE_FECHA_SALIDA as date) = '" + fecha + "' and RECORRIDO_ID_CIUDAD_ORIGEN = '" + origen + "' and RECORRIDO_ID_CIUDAD_DESTINO = '" + destino + "' and VIAJE_FECHA_LLEGADA is null and RECORRIDO_ACTIVO = 1 and MICRO_PATENTE not in (select MICRO_FUERA_SERVICIO_PATENTE from BUGDEVELOPING.MICRO_FUERA_SERVICIO where VIAJE_FECHA_SALIDA not between MICRO_FUERA_SERVICIO_FECHA_INICIO and MICRO_FUERA_SERVICIO_FECHA_REINCORPORACION) order by BUTACAS_DISPONIBLES desc, KGS_DISPONIBLES desc";
             ConnectorClass conexion = ConnectorClass.Instance;
             DataTable dt = conexion.executeQuery(query);
             return dt;
@@ -93,21 +93,22 @@ namespace FrbaBus.Compra_de_Pasajes
 
         public static void updateCliente(String dni, String fecha, String nombre, String apellido, String sexo, String discapacidad, String direccion, String telefono, String mail)
         {
-            String query = "update BUGDEVELOPING.CLIENTE set CLIENTE_FECHA_NACIMIENTO = CAST('" + fecha + "' as datetime ), CLIENTE_NOMBRE = '" + nombre + "', CLIENTE_APELLIDO = '" + apellido + "', CLIENTE_SEXO = '" + sexo + "', CLIENTE_DISCAPACIDAD = '" + sexo + "', CLIENTE_DIRECCION = '" + direccion + "', CLIENTE_TELEFONO = '" + telefono + "', CLIENTE_MAIL = '" + mail + "' where CLIENTE_DNI = '" + dni + "'";
+            String query = "update BUGDEVELOPING.CLIENTE set CLIENTE_FECHA_NACIMIENTO = CAST('" + fecha + "' as datetime ), CLIENTE_NOMBRE = '" + nombre + "', CLIENTE_APELLIDO = '" + apellido + "', CLIENTE_SEXO = '" + sexo + "', CLIENTE_DISCAPACIDAD = '" + discapacidad + "', CLIENTE_DIRECCION = '" + direccion + "', CLIENTE_TELEFONO = '" + telefono + "', CLIENTE_MAIL = '" + mail + "' where CLIENTE_DNI = '" + dni + "'";
             ConnectorClass conexion = ConnectorClass.Instance;
             conexion.executeQuery(query);
         }
 
         public static void insertCliente(String dni, String fecha, String nombre, String apellido, String sexo, String discapacidad, String direccion, String telefono, String mail)
         {
-            String query = "insert into BUGDEVELOPING.CLIENTE (CLIENTE_DNI, CLIENTE_FECHA_NACIMIENTO, CLIENTE_NOMBRE, CLIENTE_APELLIDO, CLIENTE_SEXO, CLIENTE_DISCAPACIDAD, CLIENTE_DIRECCION, CLIENTE_TELEFONO, CLIENTE_MAIL) values  ('" + dni + "', cast('" + fecha + "' as datetime), '" + nombre + "', '" + apellido + "', '" + sexo + "', '" + sexo + "', '" + direccion + "', '" + telefono + "', '" + mail + "'";
+            String query = "insert into BUGDEVELOPING.CLIENTE (CLIENTE_DNI, CLIENTE_FECHA_NACIMIENTO, CLIENTE_NOMBRE, CLIENTE_APELLIDO, CLIENTE_SEXO, CLIENTE_DISCAPACIDAD, CLIENTE_DIRECCION, CLIENTE_TELEFONO, CLIENTE_MAIL) values  ('" + dni + "', cast('" + fecha + "' as datetime), '" + nombre + "', '" + apellido + "', '" + sexo + "', '" + discapacidad + "', '" + direccion + "', '" + telefono + "', '" + mail + "'";
             ConnectorClass conexion = ConnectorClass.Instance;
             conexion.executeQuery(query);
         }
 
         public static void insertPasajeEncomienda(String nro, String dni, String precio, String viaje)
         {
-            String query = "insert into BUGDEVELOPING.PASAJE_ENCOMIENDA (PASAJE_ENCOMIENDA_CODIGO, PASAJE_ENCOMIENDA_VIAJERO, PASAJE_ENCOMIENDA_PRECIO, PASAJE_ENCOMIENDA_CODIGO_VIAJE) values  ('" + nro + "', '" + dni + "', '" + precio + "', '" + viaje + "')";
+            decimal precio2 = Convert.ToDecimal(precio);
+            String query = "insert into BUGDEVELOPING.PASAJE_ENCOMIENDA (PASAJE_ENCOMIENDA_CODIGO, PASAJE_ENCOMIENDA_VIAJERO, PASAJE_ENCOMIENDA_PRECIO, PASAJE_ENCOMIENDA_CODIGO_VIAJE) values ('" + nro + "', '" + dni + "', '" + precio2.ToString().Replace(',', '.') + "', '" + viaje + "')";
             ConnectorClass conexion = ConnectorClass.Instance;
             conexion.executeQuery(query);
         }

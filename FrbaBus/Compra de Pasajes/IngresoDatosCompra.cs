@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using FrbaBus.AuthentificationSystem;
+using FrbaBus.ConnectorSQL;
 
 namespace FrbaBus.Compra_de_Pasajes
 {
     public partial class IngresoDatosCompra : BaseForm
     {
         public static Boolean dniEncontradoBBDD;
-        public static DataTable pasajeEncomiendaNro;
+        public Compra compra;
 
         private void cargarSexoCb()
         {
@@ -30,10 +31,10 @@ namespace FrbaBus.Compra_de_Pasajes
             dniEncontradoBBDD = false;
         }
 
-        public IngresoDatosCompra(DataTable dt):
+        public IngresoDatosCompra(Compra cmp):
                this()
         {
-            pasajeEncomiendaNro = dt;
+            compra = cmp;
         }
 
         public void setDatosPersonales(DataRow row)
@@ -111,18 +112,22 @@ namespace FrbaBus.Compra_de_Pasajes
         /* Escribe la tabla compras con la informacion del listado cargado durante el ingreso de encomienda y pasajes, dependiendo si el pago se realiza en efectivo o tarjeta */
         private void insertCompra(String tipo)
         {
-            int cantidadElementos = pasajeEncomiendaNro.Rows.Count;
-
-            string fechaCompra = (DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day).ToString();
+            string fechaCompra = ConnectorClass.ParseDateTime(DateTime.Now);
 
             string nroCompra = FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.getNroCompra();
 
-            for (int i = 1; i <= cantidadElementos; i++)
-            {
-                if ( tipo.Equals("Efectivo") )
-                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertCompraEfectivo(pasajeEncomiendaNro.Rows[i].ItemArray[0].ToString(), fechaCompra, dniTextBox.Text,nroCompra);
+            foreach(Pasaje_Encomienda pe in compra.Compras){
+                if (tipo.Equals("Efectivo"))
+                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertCompraEfectivo(pe.codigo_pasaje_encomienda, fechaCompra, dniTextBox.Text, nroCompra);
                 else
-                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertCompraTarjeta(pasajeEncomiendaNro.Rows[i].ItemArray[0].ToString(), fechaCompra, dniTextBox.Text, nroTarjetaTextBox.Text, cuotasTextBox.Text, nroCompra);
+                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertCompraTarjeta(pe.codigo_pasaje_encomienda, fechaCompra, dniTextBox.Text, nroCompra,nroTarjetaTextBox.Text, cuotasTextBox.Text);
+
+                FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertPasajeEncomienda(pe.codigo_pasaje_encomienda, pe.dni_viajero, pe.precio, pe.codigo_viaje);
+                
+                if (pe.tipo.Equals("Pasaje"))
+                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertPasaje(pe.codigo_pasaje_encomienda, pe.micro_patente, pe.nro_butaca, pe.piso_butaca);
+                else
+                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertEncomienda(pe.codigo_pasaje_encomienda, pe.kgs_utilizados);
             }
         }
 

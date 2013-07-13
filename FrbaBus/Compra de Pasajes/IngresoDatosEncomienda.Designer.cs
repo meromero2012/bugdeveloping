@@ -165,7 +165,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.208333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(325, 441);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(338, 441);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // DatosLabel
@@ -175,7 +175,7 @@
             this.DatosLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DatosLabel.Location = new System.Drawing.Point(3, 0);
             this.DatosLabel.Name = "DatosLabel";
-            this.DatosLabel.Size = new System.Drawing.Size(319, 22);
+            this.DatosLabel.Size = new System.Drawing.Size(332, 22);
             this.DatosLabel.TabIndex = 0;
             this.DatosLabel.Text = "Ingrese los datos del pasajero.";
             this.DatosLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,7 +186,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 22);
+            this.label1.Size = new System.Drawing.Size(129, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "DNI*:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -195,9 +195,9 @@
             // 
             this.fechaNacimientoLabel.AutoSize = true;
             this.fechaNacimientoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fechaNacimientoLabel.Location = new System.Drawing.Point(198, 22);
+            this.fechaNacimientoLabel.Location = new System.Drawing.Point(205, 22);
             this.fechaNacimientoLabel.Name = "fechaNacimientoLabel";
-            this.fechaNacimientoLabel.Size = new System.Drawing.Size(124, 22);
+            this.fechaNacimientoLabel.Size = new System.Drawing.Size(130, 22);
             this.fechaNacimientoLabel.TabIndex = 2;
             this.fechaNacimientoLabel.Text = "Fecha de nacimiento*:";
             this.fechaNacimientoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -207,7 +207,7 @@
             this.dniTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dniTextBox.Location = new System.Drawing.Point(3, 47);
             this.dniTextBox.Name = "dniTextBox";
-            this.dniTextBox.Size = new System.Drawing.Size(124, 20);
+            this.dniTextBox.Size = new System.Drawing.Size(129, 20);
             this.dniTextBox.TabIndex = 3;
             this.dniTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -216,9 +216,9 @@
             this.nacimientoDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nacimientoDateTimePicker.Enabled = false;
             this.nacimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nacimientoDateTimePicker.Location = new System.Drawing.Point(198, 47);
+            this.nacimientoDateTimePicker.Location = new System.Drawing.Point(205, 47);
             this.nacimientoDateTimePicker.Name = "nacimientoDateTimePicker";
-            this.nacimientoDateTimePicker.Size = new System.Drawing.Size(124, 20);
+            this.nacimientoDateTimePicker.Size = new System.Drawing.Size(130, 20);
             this.nacimientoDateTimePicker.TabIndex = 4;
             // 
             // nombreLabel
@@ -227,7 +227,7 @@
             this.nombreLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nombreLabel.Location = new System.Drawing.Point(3, 71);
             this.nombreLabel.Name = "nombreLabel";
-            this.nombreLabel.Size = new System.Drawing.Size(124, 22);
+            this.nombreLabel.Size = new System.Drawing.Size(129, 22);
             this.nombreLabel.TabIndex = 6;
             this.nombreLabel.Text = "Nombre*:";
             this.nombreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -236,9 +236,9 @@
             // 
             this.apellidoLabel.AutoSize = true;
             this.apellidoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.apellidoLabel.Location = new System.Drawing.Point(198, 71);
+            this.apellidoLabel.Location = new System.Drawing.Point(205, 71);
             this.apellidoLabel.Name = "apellidoLabel";
-            this.apellidoLabel.Size = new System.Drawing.Size(124, 22);
+            this.apellidoLabel.Size = new System.Drawing.Size(130, 22);
             this.apellidoLabel.TabIndex = 5;
             this.apellidoLabel.Text = "Apellido*:";
             this.apellidoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -249,7 +249,7 @@
             this.nombreTextBox.Enabled = false;
             this.nombreTextBox.Location = new System.Drawing.Point(3, 96);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(124, 20);
+            this.nombreTextBox.Size = new System.Drawing.Size(129, 20);
             this.nombreTextBox.TabIndex = 7;
             this.nombreTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -257,9 +257,9 @@
             // 
             this.apellidoTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.apellidoTextBox.Enabled = false;
-            this.apellidoTextBox.Location = new System.Drawing.Point(198, 96);
+            this.apellidoTextBox.Location = new System.Drawing.Point(205, 96);
             this.apellidoTextBox.Name = "apellidoTextBox";
-            this.apellidoTextBox.Size = new System.Drawing.Size(124, 20);
+            this.apellidoTextBox.Size = new System.Drawing.Size(130, 20);
             this.apellidoTextBox.TabIndex = 8;
             this.apellidoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -269,7 +269,7 @@
             this.sexoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sexoLabel.Location = new System.Drawing.Point(3, 120);
             this.sexoLabel.Name = "sexoLabel";
-            this.sexoLabel.Size = new System.Drawing.Size(124, 22);
+            this.sexoLabel.Size = new System.Drawing.Size(129, 22);
             this.sexoLabel.TabIndex = 9;
             this.sexoLabel.Text = "Sexo:";
             this.sexoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -278,9 +278,9 @@
             // 
             this.discapacidadLabel.AutoSize = true;
             this.discapacidadLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.discapacidadLabel.Location = new System.Drawing.Point(198, 120);
+            this.discapacidadLabel.Location = new System.Drawing.Point(205, 120);
             this.discapacidadLabel.Name = "discapacidadLabel";
-            this.discapacidadLabel.Size = new System.Drawing.Size(124, 22);
+            this.discapacidadLabel.Size = new System.Drawing.Size(130, 22);
             this.discapacidadLabel.TabIndex = 10;
             this.discapacidadLabel.Text = "Discapacidad:";
             this.discapacidadLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -292,7 +292,7 @@
             this.sexoComboBox.FormattingEnabled = true;
             this.sexoComboBox.Location = new System.Drawing.Point(3, 145);
             this.sexoComboBox.Name = "sexoComboBox";
-            this.sexoComboBox.Size = new System.Drawing.Size(124, 21);
+            this.sexoComboBox.Size = new System.Drawing.Size(129, 21);
             this.sexoComboBox.TabIndex = 11;
             // 
             // domicilioLabel
@@ -301,7 +301,7 @@
             this.domicilioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.domicilioLabel.Location = new System.Drawing.Point(3, 169);
             this.domicilioLabel.Name = "domicilioLabel";
-            this.domicilioLabel.Size = new System.Drawing.Size(124, 22);
+            this.domicilioLabel.Size = new System.Drawing.Size(129, 22);
             this.domicilioLabel.TabIndex = 13;
             this.domicilioLabel.Text = "Domicilio*:";
             this.domicilioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -310,9 +310,9 @@
             // 
             this.telefonoLabel.AutoSize = true;
             this.telefonoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.telefonoLabel.Location = new System.Drawing.Point(198, 169);
+            this.telefonoLabel.Location = new System.Drawing.Point(205, 169);
             this.telefonoLabel.Name = "telefonoLabel";
-            this.telefonoLabel.Size = new System.Drawing.Size(124, 22);
+            this.telefonoLabel.Size = new System.Drawing.Size(130, 22);
             this.telefonoLabel.TabIndex = 14;
             this.telefonoLabel.Text = "Teléfono*:";
             this.telefonoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -323,7 +323,7 @@
             this.domicilioTextBox.Enabled = false;
             this.domicilioTextBox.Location = new System.Drawing.Point(3, 194);
             this.domicilioTextBox.Name = "domicilioTextBox";
-            this.domicilioTextBox.Size = new System.Drawing.Size(124, 20);
+            this.domicilioTextBox.Size = new System.Drawing.Size(129, 20);
             this.domicilioTextBox.TabIndex = 15;
             this.domicilioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -331,9 +331,9 @@
             // 
             this.telefonoTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.telefonoTextBox.Enabled = false;
-            this.telefonoTextBox.Location = new System.Drawing.Point(198, 194);
+            this.telefonoTextBox.Location = new System.Drawing.Point(205, 194);
             this.telefonoTextBox.Name = "telefonoTextBox";
-            this.telefonoTextBox.Size = new System.Drawing.Size(124, 20);
+            this.telefonoTextBox.Size = new System.Drawing.Size(130, 20);
             this.telefonoTextBox.TabIndex = 16;
             this.telefonoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -344,7 +344,7 @@
             this.mailLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mailLabel.Location = new System.Drawing.Point(3, 218);
             this.mailLabel.Name = "mailLabel";
-            this.mailLabel.Size = new System.Drawing.Size(319, 22);
+            this.mailLabel.Size = new System.Drawing.Size(332, 22);
             this.mailLabel.TabIndex = 17;
             this.mailLabel.Text = "Mail:";
             this.mailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -356,7 +356,7 @@
             this.mailTextBox.Enabled = false;
             this.mailTextBox.Location = new System.Drawing.Point(3, 243);
             this.mailTextBox.Name = "mailTextBox";
-            this.mailTextBox.Size = new System.Drawing.Size(319, 20);
+            this.mailTextBox.Size = new System.Drawing.Size(332, 20);
             this.mailTextBox.TabIndex = 18;
             this.mailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -367,7 +367,7 @@
             this.kgsEncomiendaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kgsEncomiendaLabel.Location = new System.Drawing.Point(3, 294);
             this.kgsEncomiendaLabel.Name = "kgsEncomiendaLabel";
-            this.kgsEncomiendaLabel.Size = new System.Drawing.Size(319, 22);
+            this.kgsEncomiendaLabel.Size = new System.Drawing.Size(332, 22);
             this.kgsEncomiendaLabel.TabIndex = 19;
             this.kgsEncomiendaLabel.Text = "Kgs. a enviar por encomienda*:";
             this.kgsEncomiendaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -379,7 +379,7 @@
             this.precioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.precioLabel.Location = new System.Drawing.Point(3, 343);
             this.precioLabel.Name = "precioLabel";
-            this.precioLabel.Size = new System.Drawing.Size(319, 22);
+            this.precioLabel.Size = new System.Drawing.Size(332, 22);
             this.precioLabel.TabIndex = 23;
             this.precioLabel.Text = "Precio del pasaje";
             this.precioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -391,7 +391,7 @@
             this.precioTextBox.Enabled = false;
             this.precioTextBox.Location = new System.Drawing.Point(3, 368);
             this.precioTextBox.Name = "precioTextBox";
-            this.precioTextBox.Size = new System.Drawing.Size(319, 20);
+            this.precioTextBox.Size = new System.Drawing.Size(332, 20);
             this.precioTextBox.TabIndex = 24;
             this.precioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -399,9 +399,9 @@
             // 
             this.siguienteButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.siguienteButton.Enabled = false;
-            this.siguienteButton.Location = new System.Drawing.Point(133, 395);
+            this.siguienteButton.Location = new System.Drawing.Point(138, 395);
             this.siguienteButton.Name = "siguienteButton";
-            this.siguienteButton.Size = new System.Drawing.Size(59, 43);
+            this.siguienteButton.Size = new System.Drawing.Size(61, 43);
             this.siguienteButton.TabIndex = 26;
             this.siguienteButton.Text = "Siguiente";
             this.siguienteButton.UseVisualStyleBackColor = true;
@@ -410,9 +410,9 @@
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(133, 47);
+            this.button1.Location = new System.Drawing.Point(138, 47);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 21);
+            this.button1.Size = new System.Drawing.Size(61, 21);
             this.button1.TabIndex = 27;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
@@ -424,9 +424,9 @@
             this.discapacidadCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.discapacidadCheckBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.discapacidadCheckBox.Enabled = false;
-            this.discapacidadCheckBox.Location = new System.Drawing.Point(198, 145);
+            this.discapacidadCheckBox.Location = new System.Drawing.Point(205, 145);
             this.discapacidadCheckBox.Name = "discapacidadCheckBox";
-            this.discapacidadCheckBox.Size = new System.Drawing.Size(124, 21);
+            this.discapacidadCheckBox.Size = new System.Drawing.Size(130, 21);
             this.discapacidadCheckBox.TabIndex = 28;
             this.discapacidadCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -434,9 +434,9 @@
             // 
             this.kgsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kgsTextBox.Enabled = false;
-            this.kgsTextBox.Location = new System.Drawing.Point(133, 319);
+            this.kgsTextBox.Location = new System.Drawing.Point(138, 319);
             this.kgsTextBox.Name = "kgsTextBox";
-            this.kgsTextBox.Size = new System.Drawing.Size(59, 20);
+            this.kgsTextBox.Size = new System.Drawing.Size(61, 20);
             this.kgsTextBox.TabIndex = 29;
             this.kgsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -444,9 +444,9 @@
             // 
             this.continuarButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.continuarButton.Enabled = false;
-            this.continuarButton.Location = new System.Drawing.Point(133, 270);
+            this.continuarButton.Location = new System.Drawing.Point(138, 270);
             this.continuarButton.Name = "continuarButton";
-            this.continuarButton.Size = new System.Drawing.Size(59, 21);
+            this.continuarButton.Size = new System.Drawing.Size(61, 21);
             this.continuarButton.TabIndex = 30;
             this.continuarButton.Text = "Continuar";
             this.continuarButton.UseVisualStyleBackColor = true;
@@ -456,7 +456,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 441);
+            this.ClientSize = new System.Drawing.Size(338, 441);
             this.Controls.Add(this.tableLayoutPanel2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

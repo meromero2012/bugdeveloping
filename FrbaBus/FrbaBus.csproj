@@ -154,6 +154,7 @@
       <DependentUpon>CanjePuntos.cs</DependentUpon>
     </Compile>
     <Compile Include="Canje de Ptos\FuncionesCanjePuntos.cs" />
+    <Compile Include="Compra de Pasajes\Pasaje_Encomienda.cs" />
     <Compile Include="Compra de Pasajes\FuncionesCompraPasajes.cs" />
     <Compile Include="Compra de Pasajes\IngresoDatosCompra.cs">
       <SubType>Form</SubType>
@@ -179,6 +180,7 @@
     <Compile Include="Compra de Pasajes\IngresoDatosViaje.Designer.cs">
       <DependentUpon>IngresoDatosViaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compra de Pasajes\Compra.cs" />
     <Compile Include="ConnectorClass.cs" />
     <Compile Include="Consulta Puntos Adquiridos\ConsultaDePuntos.cs">
       <SubType>Form</SubType>

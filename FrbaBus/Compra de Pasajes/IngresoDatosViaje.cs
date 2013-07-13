@@ -22,15 +22,13 @@ namespace FrbaBus.Compra_de_Pasajes
         public int pasajesCompra;
         public int kgsCompra;
 
-        public DataTable pasajeEncomiendaNro;
+        public Compra compra = new Compra();
 
         public IngresoDatosViaje():
                base()
         {
             InitializeComponent();
             cargarCiudades();
-            pasajeEncomiendaNro = new DataTable("Pasaje_Encomienda_Nro");
-            pasajeEncomiendaNro.Columns.Add("Pasaje_Encomienda_Nro");
         }
 
         /*Se cargan las ciudades origen y destino posibles desde la base de datos*/
@@ -113,14 +111,14 @@ namespace FrbaBus.Compra_de_Pasajes
                 {
                     if (kgsCompra == 0)
                     {
-                        IngresoDatosPasaje frmPasaje = new IngresoDatosPasaje(codigoViaje, codigoRecorrido, microPatente, tipoServicio, pasajesCompra, kgsCompra, pasajeEncomiendaNro);
+                        IngresoDatosPasaje frmPasaje = new IngresoDatosPasaje(codigoViaje, codigoRecorrido, microPatente, tipoServicio, pasajesCompra, kgsCompra, compra);
                         frmPasaje.Show();
                     }
                     else
                     {
                         if (pasajesCompra >= 0)
                         {
-                            IngresoDatosEncomienda frmEncomienda = new IngresoDatosEncomienda(codigoViaje, codigoRecorrido, microPatente, tipoServicio, pasajesCompra, kgsCompra, pasajeEncomiendaNro);
+                            IngresoDatosEncomienda frmEncomienda = new IngresoDatosEncomienda(codigoViaje, codigoRecorrido, microPatente, tipoServicio, pasajesCompra, kgsCompra, compra);
                             frmEncomienda.Show();
                         }
                     }

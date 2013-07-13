@@ -12,7 +12,7 @@ namespace FrbaBus.Compra_de_Pasajes
     public partial class IngresoDatosEncomienda : BaseForm
     {
         public static Boolean dniEncontradoBBDD;
-        public static DataTable pasajeEncomiendaNro;
+        public Compra compra;
         
         public String codigoViaje;
         public String codigoRecorrido;
@@ -20,13 +20,22 @@ namespace FrbaBus.Compra_de_Pasajes
         public String tipoServicio;
         public int pasajesCompra;
         public int kgsCompra;
+        
         public IngresoDatosEncomienda():
                base()
         {
             InitializeComponent();
+            cargarSexoCb();
         }
 
-        public IngresoDatosEncomienda(String viaje, String recorrido, String patente, String servicio, int pasajes, int kgs, DataTable dt)
+        private void cargarSexoCb()
+        {
+            sexoComboBox.Items.Add("Masculino");
+            sexoComboBox.Items.Add("Femenino");
+            sexoComboBox.SelectedIndex = 0;
+        }
+
+        public IngresoDatosEncomienda(String viaje, String recorrido, String patente, String servicio, int pasajes, int kgs, Compra cmp)
             :this()
         {
             codigoViaje = viaje;
@@ -35,7 +44,7 @@ namespace FrbaBus.Compra_de_Pasajes
             tipoServicio = servicio;
             pasajesCompra = pasajes;
             kgsCompra = kgs;
-            pasajeEncomiendaNro = dt;
+            compra = cmp;
         }
 
         public void setDatosPersonales(DataTable dt)
@@ -120,13 +129,21 @@ namespace FrbaBus.Compra_de_Pasajes
             siguienteButton.Enabled = true;
         }
 
-        /*Agrega en una tabla de datos el codigo de pasaje comprado para despues poder registrar la compra*/
-        private void cargarPasajeEncomiendaDt(String nro)
+        /*Agrega en un elemento de lista el codigo de pasaje comprado para despues poder registrar la compra*/
+        private void cargarCompra(String pasje_encomienda, String codigo, String dni, String monto, String viaje, String patente, String nroButaca, String pisoButaca, String kgs)
         {
-            DataRow pasajeEncomiendaRow = pasajeEncomiendaNro.NewRow();
-            pasajeEncomiendaRow["Pasaje_Encomienda_Nro"] = nro;
-
-            pasajeEncomiendaNro.Rows.Add(pasajeEncomiendaRow);
+            compra.Compras.Add(new Pasaje_Encomienda()
+                {
+                    tipo = pasje_encomienda,
+                    codigo_pasaje_encomienda = codigo,
+                    dni_viajero = dni,
+                    precio = monto,
+                    codigo_viaje = viaje,
+                    micro_patente = patente,
+                    nro_butaca = nroButaca,
+                    piso_butaca = pisoButaca,
+                    kgs_utilizados = kgs
+                });
         }
 
         /*Si todo lo anterior se realizo con exito, se escriben las tablas de cliente, pasaje_encomienda y pasaje, permitiendo seguir con facturacion u otro pasaje si fuese necesario*/
@@ -153,20 +170,16 @@ namespace FrbaBus.Compra_de_Pasajes
             else
                 FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertCliente(dni, fechaNacimiento, nombre, apellido, sexo, discapacidad, domicilio, telefono, mail);
 
-            FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertPasajeEncomienda(encomiendaNro, dni, precio, codigoViaje);
-
-            FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertEncomienda(encomiendaNro, kgsCompra.ToString());
-
-            cargarPasajeEncomiendaDt(encomiendaNro);
+            cargarCompra("Encomienda",encomiendaNro,dni, precio, codigoViaje, "-1", "-1", "-1", kgsCompra.ToString());
 
             if (pasajesCompra > 0)
             {
-                IngresoDatosPasaje frmPasaje = new IngresoDatosPasaje(codigoViaje, codigoRecorrido, microPatente, tipoServicio, pasajesCompra, kgsCompra, pasajeEncomiendaNro);
+                IngresoDatosPasaje frmPasaje = new IngresoDatosPasaje(codigoViaje, codigoRecorrido, microPatente, tipoServicio, pasajesCompra, kgsCompra, compra);
                 frmPasaje.Show();
             }
             else
             {
-                IngresoDatosCompra frmCompra = new IngresoDatosCompra(pasajeEncomiendaNro);
+                IngresoDatosCompra frmCompra = new IngresoDatosCompra(compra);
                 frmCompra.Show();
             }
 

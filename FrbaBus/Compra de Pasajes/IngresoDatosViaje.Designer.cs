@@ -94,7 +94,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(379, 250);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(440, 250);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // viajeFechaLabel
@@ -104,7 +104,7 @@
             this.viajeFechaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viajeFechaLabel.Location = new System.Drawing.Point(3, 0);
             this.viajeFechaLabel.Name = "viajeFechaLabel";
-            this.viajeFechaLabel.Size = new System.Drawing.Size(373, 12);
+            this.viajeFechaLabel.Size = new System.Drawing.Size(434, 12);
             this.viajeFechaLabel.TabIndex = 0;
             this.viajeFechaLabel.Text = "Seleccione la fecha de viaje deseada.";
             this.viajeFechaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,7 +116,7 @@
             this.viajeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.viajeDateTimePicker.Location = new System.Drawing.Point(3, 15);
             this.viajeDateTimePicker.Name = "viajeDateTimePicker";
-            this.viajeDateTimePicker.Size = new System.Drawing.Size(373, 20);
+            this.viajeDateTimePicker.Size = new System.Drawing.Size(434, 20);
             this.viajeDateTimePicker.TabIndex = 1;
             // 
             // ciudadOrigencomboBox
@@ -125,7 +125,7 @@
             this.ciudadOrigencomboBox.FormattingEnabled = true;
             this.ciudadOrigencomboBox.Location = new System.Drawing.Point(3, 52);
             this.ciudadOrigencomboBox.Name = "ciudadOrigencomboBox";
-            this.ciudadOrigencomboBox.Size = new System.Drawing.Size(183, 21);
+            this.ciudadOrigencomboBox.Size = new System.Drawing.Size(214, 21);
             this.ciudadOrigencomboBox.TabIndex = 2;
             // 
             // ciudadOrigenLabel
@@ -134,14 +134,14 @@
             this.ciudadOrigenLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ciudadOrigenLabel.Location = new System.Drawing.Point(3, 37);
             this.ciudadOrigenLabel.Name = "ciudadOrigenLabel";
-            this.ciudadOrigenLabel.Size = new System.Drawing.Size(183, 12);
+            this.ciudadOrigenLabel.Size = new System.Drawing.Size(214, 12);
             this.ciudadOrigenLabel.TabIndex = 3;
             this.ciudadOrigenLabel.Text = "Seleccione la ciudad de origen.";
             // 
             // ciudadDestinoLabel
             // 
             this.ciudadDestinoLabel.AutoSize = true;
-            this.ciudadDestinoLabel.Location = new System.Drawing.Point(192, 37);
+            this.ciudadDestinoLabel.Location = new System.Drawing.Point(223, 37);
             this.ciudadDestinoLabel.Name = "ciudadDestinoLabel";
             this.ciudadDestinoLabel.Size = new System.Drawing.Size(161, 12);
             this.ciudadDestinoLabel.TabIndex = 4;
@@ -151,9 +151,9 @@
             // 
             this.ciudadDestinoComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ciudadDestinoComboBox.FormattingEnabled = true;
-            this.ciudadDestinoComboBox.Location = new System.Drawing.Point(192, 52);
+            this.ciudadDestinoComboBox.Location = new System.Drawing.Point(223, 52);
             this.ciudadDestinoComboBox.Name = "ciudadDestinoComboBox";
-            this.ciudadDestinoComboBox.Size = new System.Drawing.Size(184, 21);
+            this.ciudadDestinoComboBox.Size = new System.Drawing.Size(214, 21);
             this.ciudadDestinoComboBox.TabIndex = 5;
             // 
             // pasajesDisponiblesLabel
@@ -162,7 +162,7 @@
             this.pasajesDisponiblesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pasajesDisponiblesLabel.Location = new System.Drawing.Point(3, 111);
             this.pasajesDisponiblesLabel.Name = "pasajesDisponiblesLabel";
-            this.pasajesDisponiblesLabel.Size = new System.Drawing.Size(183, 12);
+            this.pasajesDisponiblesLabel.Size = new System.Drawing.Size(214, 12);
             this.pasajesDisponiblesLabel.TabIndex = 6;
             this.pasajesDisponiblesLabel.Text = "Cantidad de pasajes disponibles.";
             // 
@@ -170,9 +170,9 @@
             // 
             this.kgsDisponiblesLabel.AutoSize = true;
             this.kgsDisponiblesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kgsDisponiblesLabel.Location = new System.Drawing.Point(192, 111);
+            this.kgsDisponiblesLabel.Location = new System.Drawing.Point(223, 111);
             this.kgsDisponiblesLabel.Name = "kgsDisponiblesLabel";
-            this.kgsDisponiblesLabel.Size = new System.Drawing.Size(184, 12);
+            this.kgsDisponiblesLabel.Size = new System.Drawing.Size(214, 12);
             this.kgsDisponiblesLabel.TabIndex = 7;
             this.kgsDisponiblesLabel.Text = "Kgs. disponibles para encomiendas.";
             // 
@@ -182,7 +182,7 @@
             this.pasajesDisponiblesTextBox.Enabled = false;
             this.pasajesDisponiblesTextBox.Location = new System.Drawing.Point(3, 126);
             this.pasajesDisponiblesTextBox.Name = "pasajesDisponiblesTextBox";
-            this.pasajesDisponiblesTextBox.Size = new System.Drawing.Size(183, 20);
+            this.pasajesDisponiblesTextBox.Size = new System.Drawing.Size(214, 20);
             this.pasajesDisponiblesTextBox.TabIndex = 8;
             this.pasajesDisponiblesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -190,9 +190,9 @@
             // 
             this.kgsDisponiblesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kgsDisponiblesTextBox.Enabled = false;
-            this.kgsDisponiblesTextBox.Location = new System.Drawing.Point(192, 126);
+            this.kgsDisponiblesTextBox.Location = new System.Drawing.Point(223, 126);
             this.kgsDisponiblesTextBox.Name = "kgsDisponiblesTextBox";
-            this.kgsDisponiblesTextBox.Size = new System.Drawing.Size(184, 20);
+            this.kgsDisponiblesTextBox.Size = new System.Drawing.Size(214, 20);
             this.kgsDisponiblesTextBox.TabIndex = 9;
             this.kgsDisponiblesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -203,7 +203,7 @@
             this.tipoServicioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tipoServicioLabel.Location = new System.Drawing.Point(3, 148);
             this.tipoServicioLabel.Name = "tipoServicioLabel";
-            this.tipoServicioLabel.Size = new System.Drawing.Size(373, 12);
+            this.tipoServicioLabel.Size = new System.Drawing.Size(434, 12);
             this.tipoServicioLabel.TabIndex = 10;
             this.tipoServicioLabel.Text = "Seleccione el servicio disponible del micro";
             this.tipoServicioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -211,9 +211,9 @@
             // menuPrincipalButton
             // 
             this.menuPrincipalButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuPrincipalButton.Location = new System.Drawing.Point(192, 225);
+            this.menuPrincipalButton.Location = new System.Drawing.Point(223, 225);
             this.menuPrincipalButton.Name = "menuPrincipalButton";
-            this.menuPrincipalButton.Size = new System.Drawing.Size(184, 22);
+            this.menuPrincipalButton.Size = new System.Drawing.Size(214, 22);
             this.menuPrincipalButton.TabIndex = 12;
             this.menuPrincipalButton.Text = "Volver";
             this.menuPrincipalButton.UseVisualStyleBackColor = true;
@@ -225,7 +225,7 @@
             this.siguienteButton.Enabled = false;
             this.siguienteButton.Location = new System.Drawing.Point(3, 225);
             this.siguienteButton.Name = "siguienteButton";
-            this.siguienteButton.Size = new System.Drawing.Size(183, 22);
+            this.siguienteButton.Size = new System.Drawing.Size(214, 22);
             this.siguienteButton.TabIndex = 13;
             this.siguienteButton.Text = "Siguiente";
             this.siguienteButton.UseVisualStyleBackColor = true;
@@ -237,7 +237,7 @@
             this.cantidadPasajesTextBox.Enabled = false;
             this.cantidadPasajesTextBox.Location = new System.Drawing.Point(3, 200);
             this.cantidadPasajesTextBox.Name = "cantidadPasajesTextBox";
-            this.cantidadPasajesTextBox.Size = new System.Drawing.Size(183, 20);
+            this.cantidadPasajesTextBox.Size = new System.Drawing.Size(214, 20);
             this.cantidadPasajesTextBox.TabIndex = 14;
             this.cantidadPasajesTextBox.Text = "0";
             this.cantidadPasajesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -246,9 +246,9 @@
             // 
             this.KgsEncomiendaTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.KgsEncomiendaTextBox.Enabled = false;
-            this.KgsEncomiendaTextBox.Location = new System.Drawing.Point(192, 200);
+            this.KgsEncomiendaTextBox.Location = new System.Drawing.Point(223, 200);
             this.KgsEncomiendaTextBox.Name = "KgsEncomiendaTextBox";
-            this.KgsEncomiendaTextBox.Size = new System.Drawing.Size(184, 20);
+            this.KgsEncomiendaTextBox.Size = new System.Drawing.Size(214, 20);
             this.KgsEncomiendaTextBox.TabIndex = 15;
             this.KgsEncomiendaTextBox.Text = "0";
             this.KgsEncomiendaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -259,7 +259,7 @@
             this.cantidadPasajesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cantidadPasajesLabel.Location = new System.Drawing.Point(3, 185);
             this.cantidadPasajesLabel.Name = "cantidadPasajesLabel";
-            this.cantidadPasajesLabel.Size = new System.Drawing.Size(183, 12);
+            this.cantidadPasajesLabel.Size = new System.Drawing.Size(214, 12);
             this.cantidadPasajesLabel.TabIndex = 16;
             this.cantidadPasajesLabel.Text = "Ingrese la cantidad de pasajes a comprar.";
             // 
@@ -267,9 +267,9 @@
             // 
             this.kgsEncomiendaLabel.AutoSize = true;
             this.kgsEncomiendaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kgsEncomiendaLabel.Location = new System.Drawing.Point(192, 185);
+            this.kgsEncomiendaLabel.Location = new System.Drawing.Point(223, 185);
             this.kgsEncomiendaLabel.Name = "kgsEncomiendaLabel";
-            this.kgsEncomiendaLabel.Size = new System.Drawing.Size(184, 12);
+            this.kgsEncomiendaLabel.Size = new System.Drawing.Size(214, 12);
             this.kgsEncomiendaLabel.TabIndex = 17;
             this.kgsEncomiendaLabel.Text = "Kgs. necesarios para encomienda.";
             // 
@@ -279,7 +279,7 @@
             this.buscarViajeButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buscarViajeButton.Location = new System.Drawing.Point(3, 77);
             this.buscarViajeButton.Name = "buscarViajeButton";
-            this.buscarViajeButton.Size = new System.Drawing.Size(373, 19);
+            this.buscarViajeButton.Size = new System.Drawing.Size(434, 19);
             this.buscarViajeButton.TabIndex = 18;
             this.buscarViajeButton.Text = "Buscar viajes disponibles.";
             this.buscarViajeButton.UseVisualStyleBackColor = true;
@@ -293,7 +293,7 @@
             this.errorViajeLabel.ForeColor = System.Drawing.Color.Red;
             this.errorViajeLabel.Location = new System.Drawing.Point(3, 99);
             this.errorViajeLabel.Name = "errorViajeLabel";
-            this.errorViajeLabel.Size = new System.Drawing.Size(373, 12);
+            this.errorViajeLabel.Size = new System.Drawing.Size(434, 12);
             this.errorViajeLabel.TabIndex = 19;
             this.errorViajeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -304,7 +304,7 @@
             this.servicioTextBox.Enabled = false;
             this.servicioTextBox.Location = new System.Drawing.Point(3, 163);
             this.servicioTextBox.Name = "servicioTextBox";
-            this.servicioTextBox.Size = new System.Drawing.Size(373, 20);
+            this.servicioTextBox.Size = new System.Drawing.Size(434, 20);
             this.servicioTextBox.TabIndex = 20;
             this.servicioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -312,7 +312,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 250);
+            this.ClientSize = new System.Drawing.Size(440, 250);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
