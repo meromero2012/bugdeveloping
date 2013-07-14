@@ -78,7 +78,6 @@
             this.label_CodigoRecorrido.Size = new System.Drawing.Size(67, 13);
             this.label_CodigoRecorrido.TabIndex = 55;
             this.label_CodigoRecorrido.Text = "TextoCodigo";
-            this.label_CodigoRecorrido.Click += new System.EventHandler(this.label_CodigoRecorrido_Click);
             // 
             // button_Guardar
             // 

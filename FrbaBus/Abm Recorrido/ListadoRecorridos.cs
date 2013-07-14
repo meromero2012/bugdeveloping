@@ -10,9 +10,10 @@ using FrbaBus.ConnectorSQL;
 
 namespace FrbaBus.Abm_Recorrido
 {
-    public partial class ListadoRecorridos : Form
+    public partial class ListadoRecorridos : BaseForm
     {
-        public ListadoRecorridos()
+        public ListadoRecorridos():
+               base()
         {
             InitializeComponent();
         }
@@ -22,11 +23,6 @@ namespace FrbaBus.Abm_Recorrido
         public string numeroRecorrido;
         public string tipoServicio;
         public bool esModificacion = false;
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ListadoRecorridos_Load(object sender, EventArgs e)
         {
@@ -90,7 +86,6 @@ namespace FrbaBus.Abm_Recorrido
                 BajaRecorrido formBaja = new BajaRecorrido();
                 formBaja.codigoRecorrido = numeroRecorrido;
                 formBaja.ShowDialog();                   
-           
             }
         
         }

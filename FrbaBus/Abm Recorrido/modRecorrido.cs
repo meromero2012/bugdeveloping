@@ -11,16 +11,13 @@ namespace FrbaBus.Abm_Recorrido
 {
     public partial class modRecorrido : Form
     {
+        public string codigoRecorrido = "";
+
         public modRecorrido()
         {
             InitializeComponent();
         }
 
-        public string codigoRecorrido = "";
-
-        private void modRecorrido_Load(object sender, EventArgs e)
-        {
-       }
         private void loadComboBox()
         {
             DataTable DtCiudadesDestino;
@@ -43,17 +40,6 @@ namespace FrbaBus.Abm_Recorrido
             comboBox_TipoServicio.DisplayMember = "TIPO_SERVICIO_NOMBRE";
             comboBox_TipoServicio.ValueMember = "TIPO_SERVICIO_CODIGO";
             comboBox_TipoServicio.Enabled = true;
-        }
-
-        
-        private void loadRecorrido()
-        {
-
-        }
-
-        private void label_CodigoRecorrido_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void modRecorrido_Load_1(object sender, EventArgs e)
