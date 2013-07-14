@@ -29,12 +29,14 @@ namespace FrbaBus.Abm_Micro
 
         private void bajaButton_Click(object sender, EventArgs e)
         {
-            (new MicroBaja()).ShowDialog();
+            (new ListadoMicros()).ShowDialog();
         }
 
         private void modificacionButton_Click(object sender, EventArgs e)
         {
-            (new Micro_Modificacion()).ShowDialog();
+            ListadoMicros formListadoMicros = new ListadoMicros();
+            formListadoMicros.esModificacion = true;
+            formListadoMicros.ShowDialog();
         }
 
         private void volverMenu_Click(object sender, EventArgs e)

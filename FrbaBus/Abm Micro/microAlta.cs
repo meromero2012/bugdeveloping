@@ -12,27 +12,12 @@ namespace FrbaBus.Abm_Micro
 {
     public partial class microAlta : BaseForm
     {
-        public microAlta()
-            :base()
+        public microAlta():
+               base()
         {
             InitializeComponent();
         }
 
-        private void textBox_Patente_TextChanged(object sender, EventArgs e)
-        {
-            comboBox_Marca.Enabled = false;
-            textBox_Modelo.Enabled = false;
-            comboBox_Servicio.Enabled = false;
-            comboBox_NumeroDeMicro.Enabled = false;
-            dateTimePicker_Vida_Util.Enabled = false;
-            textBox_KG.Enabled = false;
-            comboBox_Asientos_Piso1.Enabled = false;
-            comboBox_Asientos_Piso2.Enabled = false;
-            checkedListBox_Piso1.Visible = false;
-            checkedListBox_Piso2.Visible = false;
-            label_EsVentana_P1.Visible = false;
-            label_EsVentana_P2.Visible = false;
-        }
         private void textBox_Patente_Validating(object sender, EventArgs e)
         {
             MessageBox.Show("validando");
@@ -40,120 +25,43 @@ namespace FrbaBus.Abm_Micro
 
         private void microAlta_Load(object sender, EventArgs e)
         {
-            comboBox_Marca.Enabled = false;
-            textBox_Modelo.Enabled = false;
-            comboBox_Servicio.Enabled = false;
-            comboBox_NumeroDeMicro.Enabled = false;
-            dateTimePicker_Vida_Util.Enabled = false;
-            textBox_KG.Enabled = false;
-            comboBox_Asientos_Piso1.Enabled = false;
-            comboBox_Asientos_Piso2.Enabled = false;
+            /* Seteo invicible los checkedListBox de los asientos*/
             checkedListBox_Piso1.Visible = false;
             checkedListBox_Piso2.Visible = false;
             label_EsVentana_P1.Visible = false;
             label_EsVentana_P2.Visible = false;
 
+            /* Cargo los combo Box*/
+            loadComboBox();
         }
 
-        private void button_ValidarPatente_Click(object sender, EventArgs e)
+        public void loadComboBox()
         {
-            if(textBox_Patente.Text.Length == 0)
-                {
-                    MessageBox.Show("Debe ingresar una patente para ser validada");
-                    textBox_Patente.Focus();
-                return;
-                }
-            
-             bool patenteValida =  validarPatente(textBox_Patente.Text);
-            if(!patenteValida)
-                {
-                    MessageBox.Show("Debe ingresar una patente para ser validada");
-                 
-                }
-            else
-                {
-                if(comboBox_Marca.Items.Count != 0)//Quiere decir que ya se habian cargado datos
-                {
-                    comboBox_Marca.Enabled = true;
-                    textBox_Modelo.Enabled = true;
-                    comboBox_Servicio.Enabled = true;
-                    comboBox_NumeroDeMicro.Enabled = true;
-                    dateTimePicker_Vida_Util.Enabled = true;
-                    textBox_KG.Enabled = true;
-                    comboBox_Asientos_Piso1.Enabled = true;
-                    comboBox_Asientos_Piso2.Enabled = true;
-                    checkedListBox_Piso1.Visible = true;
-                    checkedListBox_Piso2.Visible = true;
-                    label_EsVentana_P1.Visible = true;
-                    label_EsVentana_P2.Visible = true;
-                }
-                else
-                {
-                    comboBox_Marca.Enabled = true;
-                    textBox_Modelo.Enabled = true;
-                    comboBox_Servicio.Enabled = true;
-                    comboBox_NumeroDeMicro.Enabled = true;
-                    dateTimePicker_Vida_Util.Enabled = true;
-                    textBox_KG.Enabled = true;
-                    comboBox_Asientos_Piso1.Enabled = true;
-                    comboBox_Asientos_Piso2.Enabled = true;
-                    checkedListBox_Piso1.Visible = false;
-                    checkedListBox_Piso2.Visible = false;
+            comboBox_NumeroDeMicro.Items.AddRange(Enumerable.Range(0, 100).Cast<object>().ToArray());
 
-                    comboBox_NumeroDeMicro.Items.AddRange(Enumerable.Range(0, 100).Cast<object>().ToArray());
-                 
+            DataTable DtMarcas;
+            DtMarcas = FrbaBus.Abm_Micro.FuncionesMicro.obtenerMarcas();
+            comboBox_Marca.DataSource = DtMarcas;
+            comboBox_Marca.DisplayMember = "MARCA_NOMBRE";
+            comboBox_Marca.ValueMember = "MARCA_CODIGO";
 
-                    DataTable DtMarcas;
-                    DtMarcas = obtenerMarcas();
-                    comboBox_Marca.DataSource = DtMarcas;
-                    comboBox_Marca.DisplayMember = "MARCA_NOMBRE";
-                    comboBox_Marca.ValueMember = "MARCA_CODIGO";
+            DataTable DtTipoServicios;
+            DtTipoServicios = FrbaBus.Abm_Micro.FuncionesMicro.obtenerTipoServicios();
+            comboBox_Servicio.DataSource = DtTipoServicios;
+            comboBox_Servicio.DisplayMember = "TIPO_SERVICIO_NOMBRE";
+            comboBox_Servicio.ValueMember = "TIPO_SERVICIO_CODIGO";
 
-                    DataTable DtTipoServicios;
-                    DtTipoServicios = obtenerTipoServicios();
-                    comboBox_Servicio.DataSource = DtTipoServicios;
-                    comboBox_Servicio.DisplayMember = "TIPO_SERVICIO_NOMBRE";
-                    comboBox_Servicio.ValueMember = "TIPO_SERVICIO_CODIGO";
+            /*Agrego para que cada piso tenga como mucho 100 asientos por cada piso*/
+            comboBox_Asientos_Piso1.Items.AddRange(Enumerable.Range(0, 100).Cast<object>().ToArray());
+            comboBox_Asientos_Piso2.Items.AddRange(Enumerable.Range(0, 100).Cast<object>().ToArray());
 
-                    comboBox_Asientos_Piso1.Items.AddRange(Enumerable.Range(0, 100).Cast<object>().ToArray());
-                    comboBox_Asientos_Piso2.Items.AddRange(Enumerable.Range(0, 100).Cast<object>().ToArray());
-
-                }
-                }
-        
-        
-        }
-
-        public static bool validarPatente(string patente)
-        {
-            DataTable Dt;
-            String query = "SELECT MICRO_PATENTE FROM  BUGDEVELOPING.MICRO WHERE MICRO_PATENTE = '"+patente+"'";
-            ConnectorClass conexion = ConnectorClass.Instance;
-            Dt = conexion.executeQuery(query);
-            if (Dt.Rows.Count == 0) return true;
-            else return false;
-        }
-
-        public static DataTable obtenerMarcas()
-        {
-            DataTable Dt;
-            String query = "SELECT * FROM  BUGDEVELOPING.MARCA";
-            ConnectorClass conexion = ConnectorClass.Instance;
-            Dt = conexion.executeQuery(query);
-            return Dt;    
-        }
-
-        public static DataTable obtenerTipoServicios()
-        {
-            DataTable Dt;
-            String query = "SELECT * FROM BUGDEVELOPING.TIPO_SERVICIO";
-            ConnectorClass conexion = ConnectorClass.Instance;
-            Dt = conexion.executeQuery(query);
-            return Dt;
         }
 
         private void comboBox_Asientos_Piso1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*Cuando cambian la cantidad de asientos de un piso cargo devuelta la lista 
+             *con la nueva cantidad para seleccionar si es ventana o pasillo
+             */
             int asientos = comboBox_Asientos_Piso1.SelectedIndex;
             if (asientos == 0) checkedListBox_Piso1.Visible = false;
             else
@@ -162,14 +70,16 @@ namespace FrbaBus.Abm_Micro
                 string valueInComboBox = comboBox_Asientos_Piso1.SelectedItem.ToString();
                 checkedListBox_Piso1.Items.Clear();
                 checkedListBox_Piso1.Items.AddRange(Enumerable.Range(0,Convert.ToInt16(valueInComboBox) ).Cast<object>().ToArray());
-                label_EsVentana_P1.Visible = true;
-                
-                
+                label_EsVentana_P1.Visible = true;   
             }
         }
 
         private void comboBox_Asientos_Piso2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*Cuando cambian la cantidad de asientos de un piso cargo devuelta la lista 
+             *con la nueva cantidad para seleccionar si es ventana o pasillo
+             */
+
             int asientos = comboBox_Asientos_Piso2.SelectedIndex;
             if (asientos == 0) checkedListBox_Piso2.Visible = false;
             else
@@ -185,97 +95,134 @@ namespace FrbaBus.Abm_Micro
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
-          //TODO poner aca lo del archivo de configuracion
+            /* Verifico si falta algun campo o si esta mal formateado*/
+            /* Si no falta ningun campo guardo*/
+            if (!fieldsHaveMissingValues()& !fieldsFormatError()) saveChangesToDB();            
+        }
+
+        private bool fieldsFormatError()
+        {
+            bool formatHasError = false;
+            formatHasError = validatePatente();
+            return formatHasError;
+        }
+
+        private bool validatePatente()
+        {
+            /*Me fijo que la patente este formada por 7 caracteres, "LLL-DDD" L=Letra -= guion D= Digito*/
+            bool formatHasError = false;
+            if (textBox_Patente.Text.Length != 7) formatHasError = true;
+            if(!formatHasError)
+            {
+                string letras = textBox_Patente.Text.Substring(0, 3);
+                string numeros = textBox_Patente.Text.Substring(4, 3);
+                string guion = textBox_Patente.Text.Substring(3, 1);
+
+                formatHasError = !letras.All(Char.IsLetter) || !numeros.All(Char.IsDigit) || guion != "-";
+            }
+
+            if (formatHasError) 
+            {
+                MessageBox.Show("El formato de la patente debe ser tres caracteres seguidos por '-' y 3 numeros", "Alta de micro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            return formatHasError;
+        }
+
+
+        private bool fieldsHaveMissingValues()
+        {
+            /*Me fijo si falta llenar algun campo*/
+            bool hasMissingValue = false;
+            string errorMesaje = "Los siguientes campos son obligatorios y estan sin cargar:";
             string microPatente = textBox_Patente.Text;
-            string codigoMarga = comboBox_Marca.SelectedValue.ToString(); 
+            string codigoMarga = comboBox_Marca.SelectedValue.ToString();
             string modelo = textBox_Modelo.Text;
             string tipoServicio = comboBox_Servicio.SelectedValue.ToString();
-          
-            string numeroMicro = comboBox_NumeroDeMicro.SelectedItem.ToString();
+
+            string numeroMicro = comboBox_NumeroDeMicro.Text;
 
             string fechaAlta = dateTimePicker_Vida_Util.Value.ToUniversalTime().ToString();
             string fechaVidaUtil = dateTimePicker_Vida_Util.Value.ToUniversalTime().ToString();
 
             string KGEncomienda = textBox_KG.Text;
 
-            string mensaje2 = "Los siguientes campos son obligatorios y estan sin cargar o presentan errores:";
-            bool faltanDatos = false;
-
             if (modelo == "")
             {
-                mensaje2 += " Modelo ";
-                faltanDatos = true;
+                errorMesaje += " Modelo ";
+                hasMissingValue = true;
             }
 
             if (numeroMicro == "")
             {
-                mensaje2 += " Numero de Micro";
-                faltanDatos = true;
+                errorMesaje += " Numero de Micro";
+                hasMissingValue = true;
             }
 
             if (KGEncomienda == "")
             {
-                mensaje2 += " Espacio Encomiendas(KG) ";
-                faltanDatos = true;
+                errorMesaje += " Espacio Encomiendas(KG) ";
+                hasMissingValue = true;
+            }
+
+            if (comboBox_Asientos_Piso1.Text == "" || comboBox_Asientos_Piso2.Text == "")
+            {
+                errorMesaje += " Se debe indicar la cantidad de asientos en los pisos ";
+                hasMissingValue = true;
             }
 
             if (comboBox_Asientos_Piso1.SelectedIndex == 0 & comboBox_Asientos_Piso2.SelectedIndex == 0)
             {
-                //TODO nose como hacer si no se selecciono nunca AAAA LPTM
-                mensaje2 += " Al menos un piso debe tener asientos ";
-                faltanDatos = true;
+                errorMesaje += " Al menos un piso debe tener asientos ";
+                hasMissingValue = true;
             }
 
-            if (faltanDatos == true)
+            if (hasMissingValue == true)
             {
-                MessageBox.Show(mensaje2, "Alta de micro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(errorMesaje, "Alta de micro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
-            {
-            //Guardar micro
+            return hasMissingValue;
+         }
 
-              if(guardarNuevoMicro(microPatente, numeroMicro, fechaAlta, codigoMarga, modelo, tipoServicio, KGEncomienda, fechaVidaUtil))
-              {
+        private void saveChangesToDB()
+        {
+            /*Guardo los cambios en la base de datos*/
+            string microPatente = textBox_Patente.Text;
+            string codigoMarga = comboBox_Marca.SelectedValue.ToString();
+            string modelo = textBox_Modelo.Text;
+            string tipoServicio = comboBox_Servicio.SelectedValue.ToString();
+            string numeroMicro = comboBox_NumeroDeMicro.SelectedItem.ToString();
+            string fechaAlta = dateTimePicker_Vida_Util.Value.ToUniversalTime().ToString();
+            string KGEncomienda = textBox_KG.Text;
+
+            /*Guardo el micro*/
+            if (guardarNuevoMicro(microPatente, numeroMicro, fechaAlta, codigoMarga, modelo, tipoServicio, KGEncomienda))
+            {
+                /*Si logro guardar el micro guardo las butacas correspondientes*/
                 guardarButacasDeNuevoMicro(microPatente, checkedListBox_Piso1, checkedListBox_Piso2);
-              }
-              else                  
-              {
-                comboBox_Marca.Enabled = false;
-                textBox_Modelo.Enabled = false;
-                comboBox_Servicio.Enabled = false;
-                comboBox_NumeroDeMicro.Enabled = false;
-                dateTimePicker_Vida_Util.Enabled = false;
-                textBox_KG.Enabled = false;
-                comboBox_Asientos_Piso1.Enabled = false;
-                comboBox_Asientos_Piso2.Enabled = false;
-                checkedListBox_Piso1.Enabled = false;
-                checkedListBox_Piso2.Enabled = false;
-              }
-           }
-        
+            }
         }
 
-        public  Boolean guardarNuevoMicro(string microPatente, string numeroMicro, string fechaAlta, string codigoMarga, string modelo, string tipoServicio, string KGEncomienda, string fechaVidaUtil)
+
+
+        public  Boolean guardarNuevoMicro(string microPatente, string numeroMicro, string fechaAlta, string codigoMarga, string modelo, string tipoServicio, string KGEncomienda)
         {
-            //TODO CHECKEO DE INGRESAR COMAS DEL ORTO
             bool exito = false;
             DataTable Dt;
-            String query = "EXEC [BUGDEVELOPING].[MICRO_ALTA] " 
+            String query = "EXEC [BUGDEVELOPING].[MICRO_ALTA] '"
                     + microPatente +
-                "," + numeroMicro +
+                "'," + numeroMicro +
                 ",'" + fechaAlta +
                 "'," + codigoMarga +
-                "," + modelo +
-                "," + tipoServicio +
-                "," + KGEncomienda +
-                ",'" + fechaVidaUtil+"'";
+                ",'" + modelo +
+                "'," + tipoServicio +
+                "," + KGEncomienda;
 
             ConnectorClass conexion = ConnectorClass.Instance;
             Dt = conexion.executeQuery(query);
 
             if(Dt.Rows[0].ItemArray[0].ToString() == "PatenteExistente")
             {
-            MessageBox.Show("La patente acaba de ser tomada y ya existe, porfavor, seleccione una nueva", "Alta de micro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("La patente ya existe, porfavor, seleccione una nueva", "Alta de micro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
             }
             else if (Dt.Rows[0].ItemArray[0].ToString() == "GuardadoExistoso")
@@ -283,6 +230,7 @@ namespace FrbaBus.Abm_Micro
             MessageBox.Show("El micro fue dado de alta exitosamente", "Alta de micro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             exito = true;
             }
+            Close();
             return exito;
         }
 
@@ -311,9 +259,9 @@ namespace FrbaBus.Abm_Micro
                     if (butacaTipo == 0) butacaTipoString = "Pasillo";
                     else butacaTipoString = "Ventanilla";
 
-                    String query = "EXEC [BUGDEVELOPING].[BUTACA_ALTA] " +
+                    String query = "EXEC [BUGDEVELOPING].[BUTACA_ALTA] '" +
                     microPatente+
-                    ", "+butacaPiso+
+                    "', "+butacaPiso+
                     ", "+butacaNumero+
                     ", "+butacaTipoString;
 
@@ -341,21 +289,6 @@ namespace FrbaBus.Abm_Micro
             }
 
           }            
-        }
-
-        private void checkedListBox_Piso1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker_Vida_Util_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox_Marca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button_Cancelar_Click(object sender, EventArgs e)

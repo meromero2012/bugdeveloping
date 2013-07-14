@@ -13,110 +13,101 @@ namespace FrbaBus.Abm_Micro
     public partial class MicroBaja : BaseForm
     {
         public bool mainloadFinished = false;
-        public MicroBaja()
-            :base()
+        
+        public MicroBaja():
+               base()
         {
             InitializeComponent();
         }
 
+        public string microPatente= "";
+
         private void MicroBaja_Load(object sender, EventArgs e)
         {
-            DataTable DtPatentes;
-            DtPatentes = obtenerPatentes();
-            comboBox_Patente.DataSource = DtPatentes;
-            comboBox_Patente.DisplayMember = "MICRO_PATENTE";
-            comboBox_Patente.ValueMember = "MICRO_PATENTE";
+            label_Patente.Text = microPatente;
 
-            mainloadFinished = true;
-        }
+            /*Cargo las fechas del date picker*/
 
-        public static DataTable obtenerPatentes()
-        {
-            DataTable patentes;
-
-            String query = "SELECT MICRO_PATENTE FROM BUGDEVELOPING.MICRO";
-            ConnectorClass conexion = ConnectorClass.Instance;
-            patentes = conexion.executeQuery(query);
-
-            return patentes;
-        }
-
-        private void comboBox_Patente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!mainloadFinished) return;
+            loadDatePickers();
             
-            textBox_FechaBaja.Text = obtenerFechaBajaDeMicro(comboBox_Patente.SelectedValue);
-            textBox_FechaBaja.Enabled = false;
-            textBox_FechaBaja.BackColor = Color.White;
-            DateTime fechaBaja = Convert.ToDateTime(textBox_FechaBaja.Text);
-            var result = DateTime.Compare(fechaBaja, DateTime.Today);
-            if(result < 0)
-            {
-                dateTimePicker_FechaBajaNuevaC.Visible = false;
-                dateTimePicker_FechaBajaNuevaF.Visible = false;
-                label_Finaliza.Visible = false;
-                label9_Comienzo.Visible = false;
-                button_Confirmar.Visible = false;
+        }
 
-                button_DarDeBaja.Visible = true;
-                label_FechaBaja.Visible = true;
+        private void loadDatePickers()
+        {
+            /*Cargo los date pickers y limito las fechas */
+            dateTimePicker_FechaBajaNuevaC.MinDate = DateTime.Today;
+            dateTimePicker_FechaBajaNuevaC.MaxDate = DateTime.Today.AddYears(50);
+            dateTimePicker_FechaBajaNuevaF.MinDate = DateTime.Today;
+            dateTimePicker_FechaBajaNuevaF.MaxDate = DateTime.Today.AddYears(50);
+        }
 
+        private void button_Confirmar_Click(object sender, EventArgs e)
+        {
+                
+            bool hasDateError = false;
+            /*Chequeo que la fecha de comienzo sea menor a la de finalizacion*/
+            hasDateError = checkDateInterval(dateTimePicker_FechaBajaNuevaC.Value, dateTimePicker_FechaBajaNuevaF.Value);
+            /*Chequeo que el micro no se encuentre ya afuera de servicio en esa fecha*/
+            if (!hasDateError)
+            { 
+               hasDateError = isMicroOutInDate(dateTimePicker_FechaBajaNuevaC.Value, dateTimePicker_FechaBajaNuevaF.Value);
             }
-            else
+
+            if (!hasDateError)
             {
-                dateTimePicker_FechaBajaNuevaC.Visible = true;
-                dateTimePicker_FechaBajaNuevaF.Visible = true;
-                label_Finaliza.Visible = true;
-                label9_Comienzo.Visible = true;
-                button_Confirmar.Visible = true;
-
-                button_DarDeBaja.Visible = false;
-
-                dateTimePicker_FechaBajaNuevaC.MinDate = DateTime.Today;
-                dateTimePicker_FechaBajaNuevaC.MaxDate = Convert.ToDateTime(textBox_FechaBaja.Text);
-                dateTimePicker_FechaBajaNuevaF.MinDate = DateTime.Today;
-                dateTimePicker_FechaBajaNuevaF.MaxDate = Convert.ToDateTime(textBox_FechaBaja.Text);
-
+                /*Pasar los viajes a micros similares los que no los cancelo*/
+                FrbaBus.Abm_Micro.FuncionesMicro.cancelarOMoverViajesDeMicroParaFecha(microPatente, dateTimePicker_FechaBajaNuevaC.Value, dateTimePicker_FechaBajaNuevaF.Value);
+                /* Mandar a fuera de servicio al micro */
+                FrbaBus.Abm_Micro.FuncionesMicro.mandarMicroFueraServicio(microPatente, dateTimePicker_FechaBajaNuevaC.Value, dateTimePicker_FechaBajaNuevaF.Value);
+                
             }
-            
-            
+
+         
         }
 
-         public static string obtenerFechaBajaDeMicro(object micro)
+                  
+        private bool checkDateInterval(DateTime fechaComienzo, DateTime fechaFinalizacion)
         {
-            DataTable patentes;
-            string date;
-            String query = "SELECT MICRO_FECHA_BAJA FROM BUGDEVELOPING.MICRO WHERE MICRO_PATENTE = '"+micro+"'";
-            ConnectorClass conexion = ConnectorClass.Instance;
-            patentes = conexion.executeQuery(query);
-            date = patentes.Rows[0].ItemArray[0].ToString();
-            return date;
+            /*Me fijo que la fecha de inicio sea menor a la de reincorporacion*/
+            bool dateHasError = false;
+            var comparacionFechas = DateTime.Compare(fechaComienzo, fechaFinalizacion);
+            if (comparacionFechas > 0)
+            {
+                dateHasError = true;
+                MessageBox.Show("Fecha comienzo menor a la fecha de finalizacion");
+            }
+            return dateHasError;
         }
 
-         private void label9_FechaDeBajaNuevo_Click(object sender, EventArgs e)
-         {
+        private bool isMicroOutInDate(DateTime fechaComienzo, DateTime fechaFinalizacion)
+        {
+            /*Controlo que el micro no se encuentre previamente fuera de servicio en esas fechas*/
+            bool dateHasError = false;
+            dateHasError = FrbaBus.Abm_Micro.FuncionesMicro.microEstaFueraDeServicioDurante(microPatente, fechaComienzo, fechaFinalizacion);
+            
+            if(dateHasError) MessageBox.Show("El micro ya se encuentra fuera de servicio en esas fechas");
+            
+            return dateHasError;
+        }
 
-         }
-
-         private void dateTimePicker_FechaBajaNuevaC_ValueChanged(object sender, EventArgs e)
-         {
-         }
-
-         private void button_Confirmar_Click(object sender, EventArgs e)
-         {
-             DateTime fechaComienzo =  dateTimePicker_FechaBajaNuevaC.Value;
-             DateTime fechaFinalizacion = dateTimePicker_FechaBajaNuevaF.Value;
-             var comparacionFechas = DateTime.Compare(fechaComienzo, fechaFinalizacion);
-             if(comparacionFechas > 0)
-             {
-                 MessageBox.Show("Fecha comienzo menor");
-             }  
-
-         }
-
-         private void cancelarButton_Click(object sender, EventArgs e)
+         private void button_Volver_Click(object sender, EventArgs e)
          {
              this.Close();
+         }
+
+         private void button_baja_Click(object sender, EventArgs e)
+         {
+             /*Pasar los viajes a micros similares los que no los cancelo*/
+             FrbaBus.Abm_Micro.FuncionesMicro.cancelarOMoverViajesDeMicroParaFecha(microPatente, DateTime.Today, DateTime.Today.AddYears(100));
+
+             /*Guardo el micro en micros baja*/
+             FrbaBus.Abm_Micro.FuncionesMicro.bajarMicroEnDB(microPatente, DateTime.Today);
+             
+             /*Imprimo por pantalla que el micro fue dado de baja y cierro*/
+             MessageBox.Show("El micro fue dado de baja");
+             Close();
+
+
          }
     }
 }

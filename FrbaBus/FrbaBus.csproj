@@ -63,16 +63,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abm Micro\FuncionesMicro.cs" />
+    <Compile Include="Abm Micro\ListadoMicros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Micro\ListadoMicros.designer.cs">
+      <DependentUpon>ListadoMicros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abm Micro\microAlta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Micro\microAlta.Designer.cs">
+    <Compile Include="Abm Micro\microAlta.designer.cs">
       <DependentUpon>microAlta.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Micro\MicroBaja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Micro\MicroBaja.Designer.cs">
+    <Compile Include="Abm Micro\MicroBaja.designer.cs">
       <DependentUpon>MicroBaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Micro\MicroMenu.cs">
@@ -241,6 +248,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Abm Micro\ListadoMicros.resx">
+      <DependentUpon>ListadoMicros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Abm Micro\microAlta.resx">
       <DependentUpon>microAlta.cs</DependentUpon>
     </EmbeddedResource>
