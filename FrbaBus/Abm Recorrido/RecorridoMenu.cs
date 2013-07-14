@@ -28,12 +28,14 @@ namespace FrbaBus.Abm_Recorrido
 
         private void bajaButton_Click(object sender, EventArgs e)
         {
-            (new BajaRecorrido()).ShowDialog();
+            (new ListadoRecorridos()).ShowDialog();
         }
 
         private void modificacionButton_Click(object sender, EventArgs e)
         {
-            (new ModificacionRecorrido()).ShowDialog();
+            ListadoRecorridos formListadoRecorridos = new ListadoRecorridos();
+            formListadoRecorridos.esModificacion = true;
+            formListadoRecorridos.ShowDialog();
         }
 
         private void volverButton_Click(object sender, EventArgs e)

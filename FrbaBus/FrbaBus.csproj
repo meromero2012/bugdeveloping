@@ -122,27 +122,27 @@
     <Compile Include="Abm Recorrido\AltaRecorrido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Recorrido\AltaRecorrido.Designer.cs">
+    <Compile Include="Abm Recorrido\AltaRecorrido.designer.cs">
       <DependentUpon>AltaRecorrido.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Recorrido\BajaRecorrido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Recorrido\BajaRecorrido.Designer.cs">
+    <Compile Include="Abm Recorrido\BajaRecorrido.designer.cs">
       <DependentUpon>BajaRecorrido.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Recorrido\FuncionesRecorrido.cs" />
     <Compile Include="Abm Recorrido\ListadoRecorridos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Recorrido\ListadoRecorridos.Designer.cs">
+    <Compile Include="Abm Recorrido\ListadoRecorridos.designer.cs">
       <DependentUpon>ListadoRecorridos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm Recorrido\ModificacionRecorrido.cs">
+    <Compile Include="Abm Recorrido\modRecorrido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Recorrido\ModificacionRecorrido.Designer.cs">
-      <DependentUpon>ModificacionRecorrido.cs</DependentUpon>
+    <Compile Include="Abm Recorrido\modRecorrido.designer.cs">
+      <DependentUpon>modRecorrido.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Recorrido\RecorridoMenu.cs">
       <SubType>Form</SubType>
@@ -284,8 +284,8 @@
     <EmbeddedResource Include="Abm Recorrido\ListadoRecorridos.resx">
       <DependentUpon>ListadoRecorridos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm Recorrido\ModificacionRecorrido.resx">
-      <DependentUpon>ModificacionRecorrido.cs</DependentUpon>
+    <EmbeddedResource Include="Abm Recorrido\modRecorrido.resx">
+      <DependentUpon>modRecorrido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm Recorrido\RecorridoMenu.resx">
       <DependentUpon>RecorridoMenu.cs</DependentUpon>

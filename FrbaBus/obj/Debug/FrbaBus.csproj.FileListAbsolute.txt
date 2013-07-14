@@ -207,3 +207,5 @@ C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\Frb
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.MenuPrincipal.MenuPrincipal.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Permisos.RolMenu.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Micro.ListadoMicros.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.ListadoRecorridos.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Debug\FrbaBus.Abm_Recorrido.modRecorrido.resources

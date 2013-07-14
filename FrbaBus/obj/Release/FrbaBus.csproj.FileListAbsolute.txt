@@ -125,8 +125,6 @@ C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\F
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Permisos.FiltrarRol.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Recorrido.AltaRecorrido.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Recorrido.BajaRecorrido.resources
-C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Micro.ListadoRecorridos.resources
-C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Recorrido.ModificacionRecorrido.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Recorrido.RecorridoMenu.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.BaseForm.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Canje_de_Ptos.CanjePuntos.resources
@@ -139,3 +137,5 @@ C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\F
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Top_5.ListadoEstadistico.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Permisos.RolMenu.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Micro.ListadoMicros.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Recorrido.ListadoRecorridos.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Recorrido.modRecorrido.resources

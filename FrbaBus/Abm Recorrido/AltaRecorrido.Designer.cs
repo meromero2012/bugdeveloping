@@ -48,7 +48,7 @@
             this.button_Aceptar.Name = "button_Aceptar";
             this.button_Aceptar.Size = new System.Drawing.Size(75, 23);
             this.button_Aceptar.TabIndex = 0;
-            this.button_Aceptar.Text = "Aceptar";
+            this.button_Aceptar.Text = "Guardar";
             this.button_Aceptar.UseVisualStyleBackColor = true;
             this.button_Aceptar.Click += new System.EventHandler(this.button_Aceptar_Click);
             // 
@@ -69,7 +69,6 @@
             this.comboBox_CiudadOrigen.Name = "comboBox_CiudadOrigen";
             this.comboBox_CiudadOrigen.Size = new System.Drawing.Size(101, 21);
             this.comboBox_CiudadOrigen.TabIndex = 2;
-            this.comboBox_CiudadOrigen.SelectedIndexChanged += new System.EventHandler(this.comboBox_CiudadOrigen_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -79,7 +78,6 @@
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Ciudad Origen";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -163,7 +161,7 @@
             this.Controls.Add(this.button_Volver);
             this.Controls.Add(this.button_Aceptar);
             this.Name = "AltaRecorrido";
-            this.Text = "AltaRecorrido";
+            this.Text = "Alta Recorrido";
             this.Load += new System.EventHandler(this.AltaRecorrido_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
