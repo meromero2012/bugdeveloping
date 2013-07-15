@@ -9,11 +9,12 @@ using System.Windows.Forms;
 
 namespace FrbaBus.Abm_Recorrido
 {
-    public partial class modRecorrido : Form
+    public partial class modRecorrido : BaseForm
     {
         public string codigoRecorrido = "";
 
-        public modRecorrido()
+        public modRecorrido():
+               base()
         {
             InitializeComponent();
         }

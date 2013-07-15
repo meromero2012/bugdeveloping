@@ -27,10 +27,7 @@ namespace FrbaBus.Abm_Recorrido
         private void ListadoRecorridos_Load(object sender, EventArgs e)
         {
             //carga del dataGridView lista de recorridos
-            cc = ConnectorClass.Instance;
-            dt = cc.executeQuery("SELECT RECORRIDO_CODIGO AS 'NRO', CO.CIUDAD_NOMBRE AS 'CIUDAD ORIGEN', CD.CIUDAD_NOMBRE AS 'CIUDAD DESTINO', TIPO_SERVICIO_NOMBRE AS 'TIPO SERVICIO'  FROM BUGDEVELOPING.RECORRIDO JOIN BUGDEVELOPING.TIPO_SERVICIO ON (RECORRIDO_TIPO_SERVICIO = TIPO_SERVICIO_CODIGO) JOIN BUGDEVELOPING.CIUDAD CD ON (RECORRIDO_ID_CIUDAD_DESTINO = CD.CIUDAD_ID) JOIN BUGDEVELOPING.CIUDAD CO ON (RECORRIDO_ID_CIUDAD_ORIGEN = CO.CIUDAD_ID) WHERE RECORRIDO_ACTIVO = 1");
-            dataGridView_Recorridos.DataSource = dt;
-
+            this.bFiltrar_Click(sender, e);
             //carga del comboboxTipoServicio
             cc = ConnectorClass.Instance;
             dt = cc.executeQuery("SELECT TIPO_SERVICIO_CODIGO, TIPO_SERVICIO_NOMBRE FROM BUGDEVELOPING.TIPO_SERVICIO");
@@ -52,7 +49,10 @@ namespace FrbaBus.Abm_Recorrido
             cc = ConnectorClass.Instance;
             string seleccion = "SELECT RECORRIDO_CODIGO AS 'NRO', CO.CIUDAD_NOMBRE AS 'CIUDAD ORIGEN', CD.CIUDAD_NOMBRE AS 'CIUDAD DESTINO', TIPO_SERVICIO_NOMBRE AS 'TIPO SERVICIO'";
             string origen = "FROM BUGDEVELOPING.RECORRIDO JOIN BUGDEVELOPING.TIPO_SERVICIO ON (RECORRIDO_TIPO_SERVICIO = TIPO_SERVICIO_CODIGO) JOIN BUGDEVELOPING.CIUDAD CD ON (RECORRIDO_ID_CIUDAD_DESTINO = CD.CIUDAD_ID) JOIN BUGDEVELOPING.CIUDAD CO ON (RECORRIDO_ID_CIUDAD_ORIGEN = CO.CIUDAD_ID)";
-            string condicion = " where 1=1";
+            string condicion = " where RECORRIDO_ACTIVO = 1 ";
+
+            if (esModificacion) condicion += "and RECORRIDO_CODIGO IN (SELECT B.RECORRIDO_CODIGO from BUGDEVELOPING.V_RECORRIDO_CODIGO_MODIFICABLE as B)";
+
 
             if (textBoxCiudadOrigen.Text != "")
             { condicion += " and CO.CIUDAD_NOMBRE like " + "'%" + textBoxCiudadOrigen.Text + "%'"; }
