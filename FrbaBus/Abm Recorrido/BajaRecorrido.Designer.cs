@@ -198,7 +198,7 @@
             this.Controls.Add(this.button_Volver);
             this.Controls.Add(this.button1);
             this.Name = "BajaRecorrido";
-            this.Text = "Baja Recorrido";
+            this.Text = "Baja de Recorrido";
             this.Load += new System.EventHandler(this.BajaRecorrido_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

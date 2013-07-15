@@ -161,7 +161,7 @@
             this.Controls.Add(this.button_Volver);
             this.Controls.Add(this.button_Aceptar);
             this.Name = "AltaRecorrido";
-            this.Text = "Alta Recorrido";
+            this.Text = "Alta de Recorridos";
             this.Load += new System.EventHandler(this.AltaRecorrido_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

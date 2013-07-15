@@ -198,7 +198,7 @@
             this.Controls.Add(this.button_Cancelar);
             this.Controls.Add(this.label2);
             this.Name = "modRecorrido";
-            this.Text = "modRecorrido";
+            this.Text = "Modificacion de Recorridos";
             this.Load += new System.EventHandler(this.modRecorrido_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();

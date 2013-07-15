@@ -156,7 +156,7 @@
             this.Controls.Add(this.bFiltrar);
             this.Controls.Add(this.dataGridView_Recorridos);
             this.Name = "ListadoRecorridos";
-            this.Text = "Listado Recorridos";
+            this.Text = "Listado de Recorridos";
             this.Load += new System.EventHandler(this.ListadoRecorridos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Recorridos)).EndInit();
             this.ResumeLayout(false);
