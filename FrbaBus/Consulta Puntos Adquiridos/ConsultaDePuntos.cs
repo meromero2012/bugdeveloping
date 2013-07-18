@@ -28,6 +28,8 @@ namespace FrbaBus.Consulta_Puntos_Adquiridos
 
         }
 
+        //Busca en la BBDD el dni, si lo encuentra devuelve el calculo de puntos acumulados,
+        //caso contrario devuelve un error.
         private void bFiltrar_Click(object sender, EventArgs e)
         {
             conn = ConnectorClass.Instance;
@@ -40,6 +42,17 @@ namespace FrbaBus.Consulta_Puntos_Adquiridos
         {
             this.Close();
             Program.MenuPrincipal.Show();
+        }
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solamente valores numericos
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
+
+            // Evita que se puedan ingresar puntos para valores decimales
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') < 0)
+                e.Handled = true;
         }
 
     }

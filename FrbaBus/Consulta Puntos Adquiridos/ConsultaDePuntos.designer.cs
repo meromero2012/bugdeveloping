@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cantidadLabel = new System.Windows.Forms.Label();
+            this.puntosLabel = new System.Windows.Forms.Label();
+            this.volverButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.bFiltrar = new System.Windows.Forms.Button();
             this.txtbDNI = new System.Windows.Forms.TextBox();
-            this.volverButton = new System.Windows.Forms.Button();
-            this.puntosLabel = new System.Windows.Forms.Label();
-            this.cantidadLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,33 @@
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese su DNI:";
+            // 
+            // cantidadLabel
+            // 
+            this.cantidadLabel.AutoSize = true;
+            this.cantidadLabel.Location = new System.Drawing.Point(181, 60);
+            this.cantidadLabel.Name = "cantidadLabel";
+            this.cantidadLabel.Size = new System.Drawing.Size(0, 13);
+            this.cantidadLabel.TabIndex = 37;
+            // 
+            // puntosLabel
+            // 
+            this.puntosLabel.AutoSize = true;
+            this.puntosLabel.Location = new System.Drawing.Point(71, 60);
+            this.puntosLabel.Name = "puntosLabel";
+            this.puntosLabel.Size = new System.Drawing.Size(103, 13);
+            this.puntosLabel.TabIndex = 36;
+            this.puntosLabel.Text = "Puntos acumulados:";
+            // 
+            // volverButton
+            // 
+            this.volverButton.Location = new System.Drawing.Point(191, 90);
+            this.volverButton.Name = "volverButton";
+            this.volverButton.Size = new System.Drawing.Size(108, 26);
+            this.volverButton.TabIndex = 35;
+            this.volverButton.Text = "Volver";
+            this.volverButton.UseVisualStyleBackColor = true;
+            this.volverButton.Click += new System.EventHandler(this.volverButton_Click);
             // 
             // label2
             // 
@@ -78,33 +105,7 @@
             this.txtbDNI.Name = "txtbDNI";
             this.txtbDNI.Size = new System.Drawing.Size(384, 20);
             this.txtbDNI.TabIndex = 25;
-            // 
-            // volverButton
-            // 
-            this.volverButton.Location = new System.Drawing.Point(191, 90);
-            this.volverButton.Name = "volverButton";
-            this.volverButton.Size = new System.Drawing.Size(108, 26);
-            this.volverButton.TabIndex = 35;
-            this.volverButton.Text = "Volver";
-            this.volverButton.UseVisualStyleBackColor = true;
-            this.volverButton.Click += new System.EventHandler(this.volverButton_Click);
-            // 
-            // puntosLabel
-            // 
-            this.puntosLabel.AutoSize = true;
-            this.puntosLabel.Location = new System.Drawing.Point(71, 60);
-            this.puntosLabel.Name = "puntosLabel";
-            this.puntosLabel.Size = new System.Drawing.Size(103, 13);
-            this.puntosLabel.TabIndex = 36;
-            this.puntosLabel.Text = "Puntos acumulados:";
-            // 
-            // cantidadLabel
-            // 
-            this.cantidadLabel.AutoSize = true;
-            this.cantidadLabel.Location = new System.Drawing.Point(181, 60);
-            this.cantidadLabel.Name = "cantidadLabel";
-            this.cantidadLabel.Size = new System.Drawing.Size(0, 13);
-            this.cantidadLabel.TabIndex = 37;
+            this.txtbDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // ConsultaPuntos
             // 
