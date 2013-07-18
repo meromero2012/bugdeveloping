@@ -32,14 +32,14 @@
             this.dniLabel = new System.Windows.Forms.Label();
             this.dniTextBox = new System.Windows.Forms.TextBox();
             this.buscarDniButton = new System.Windows.Forms.Button();
-            this.puntosLabel = new System.Windows.Forms.Label();
-            this.puntosTextBox = new System.Windows.Forms.TextBox();
+            this.puntosDisponiblesLabel = new System.Windows.Forms.Label();
             this.productosLabel = new System.Windows.Forms.Label();
             this.productosComboBox = new System.Windows.Forms.ComboBox();
             this.canjearButton = new System.Windows.Forms.Button();
             this.volverButton = new System.Windows.Forms.Button();
             this.descripcionLabel = new System.Windows.Forms.Label();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.puntosLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,14 +51,14 @@
             this.tableLayoutPanel1.Controls.Add(this.dniLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.dniTextBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.buscarDniButton, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.puntosLabel, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.puntosTextBox, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.puntosDisponiblesLabel, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.productosLabel, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.productosComboBox, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.canjearButton, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.volverButton, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.descripcionLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.errorLabel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.puntosLabel, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -92,6 +92,7 @@
             this.dniTextBox.Size = new System.Drawing.Size(132, 20);
             this.dniTextBox.TabIndex = 2;
             this.dniTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dniTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // buscarDniButton
             // 
@@ -105,26 +106,16 @@
             this.buscarDniButton.UseVisualStyleBackColor = true;
             this.buscarDniButton.Click += new System.EventHandler(this.buscarDniButton_Click);
             // 
-            // puntosLabel
+            // puntosDisponiblesLabel
             // 
-            this.puntosLabel.AutoSize = true;
-            this.puntosLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.puntosLabel.Location = new System.Drawing.Point(3, 144);
-            this.puntosLabel.Name = "puntosLabel";
-            this.puntosLabel.Size = new System.Drawing.Size(132, 36);
-            this.puntosLabel.TabIndex = 4;
-            this.puntosLabel.Text = "Puntos disponibles:";
-            this.puntosLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // puntosTextBox
-            // 
-            this.puntosTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.puntosTextBox.Enabled = false;
-            this.puntosTextBox.Location = new System.Drawing.Point(141, 147);
-            this.puntosTextBox.Name = "puntosTextBox";
-            this.puntosTextBox.Size = new System.Drawing.Size(132, 20);
-            this.puntosTextBox.TabIndex = 5;
-            this.puntosTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.puntosDisponiblesLabel.AutoSize = true;
+            this.puntosDisponiblesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.puntosDisponiblesLabel.Location = new System.Drawing.Point(3, 144);
+            this.puntosDisponiblesLabel.Name = "puntosDisponiblesLabel";
+            this.puntosDisponiblesLabel.Size = new System.Drawing.Size(132, 36);
+            this.puntosDisponiblesLabel.TabIndex = 4;
+            this.puntosDisponiblesLabel.Text = "Puntos disponibles:";
+            this.puntosDisponiblesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // productosLabel
             // 
@@ -194,6 +185,17 @@
             this.errorLabel.TabIndex = 11;
             this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // puntosLabel
+            // 
+            this.puntosLabel.AutoSize = true;
+            this.puntosLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.puntosLabel.Location = new System.Drawing.Point(141, 144);
+            this.puntosLabel.Name = "puntosLabel";
+            this.puntosLabel.Size = new System.Drawing.Size(132, 36);
+            this.puntosLabel.TabIndex = 12;
+            this.puntosLabel.Text = "-";
+            this.puntosLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CanjePuntos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,14 +219,14 @@
         private System.Windows.Forms.Label dniLabel;
         private System.Windows.Forms.TextBox dniTextBox;
         private System.Windows.Forms.Button buscarDniButton;
-        private System.Windows.Forms.Label puntosLabel;
-        private System.Windows.Forms.TextBox puntosTextBox;
+        private System.Windows.Forms.Label puntosDisponiblesLabel;
         private System.Windows.Forms.Label productosLabel;
         private System.Windows.Forms.ComboBox productosComboBox;
         private System.Windows.Forms.Button canjearButton;
         private System.Windows.Forms.Button volverButton;
         private System.Windows.Forms.Label descripcionLabel;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Label puntosLabel;
 
     }
 }

@@ -30,8 +30,8 @@ namespace FrbaBus.Canje_de_Ptos
 
         private void resetFormPorPuntosInsuficientes()
         {
-            puntosTextBox.Text = "";
-            puntosTextBox.Enabled = false;
+            puntosLabel.Text = "-";
+            puntosLabel.Enabled = false;
             dniTextBox.Text = "";
             dniTextBox.Enabled = true;
             buscarDniButton.Enabled = true;
@@ -57,8 +57,8 @@ namespace FrbaBus.Canje_de_Ptos
                     String puntosDisponibles = FrbaBus.Canje_de_Ptos.FuncionesCanjePuntos.getPuntosDisponibles(dni, DateTime.Now);
                     productosQuePuedeCanjearDt = FrbaBus.Canje_de_Ptos.FuncionesCanjePuntos.getProductosDisponibles(puntosDisponibles);
 
-                    puntosTextBox.Text = puntosDisponibles;
-                    puntosTextBox.Enabled = true;
+                    puntosLabel.Text = puntosDisponibles;
+                    puntosLabel.Enabled = true;
 
                     if (productosQuePuedeCanjearDt.Rows.Count != 0)
                     {
@@ -86,6 +86,7 @@ namespace FrbaBus.Canje_de_Ptos
             FrbaBus.Canje_de_Ptos.FuncionesCanjePuntos.updateProducto(productoSeleccionado);
             FrbaBus.Canje_de_Ptos.FuncionesCanjePuntos.insertCanje(dniTextBox.Text, productosComboBox.SelectedValue.ToString());
             MessageBox.Show("Canje realizado exitosamente");
+            volverButton_Click(sender, e);
         }
 
         private void CanjePuntos_Load(object sender, EventArgs e)
@@ -97,6 +98,17 @@ namespace FrbaBus.Canje_de_Ptos
         {
             this.Close();
             Program.MenuPrincipal.Show();
+        }
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solamente valores numericos
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
+
+            // Evita que se puedan ingresar puntos para valores decimales
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') < 0)
+                e.Handled = true;
         }
     }
 }
