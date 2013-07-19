@@ -64,14 +64,14 @@
             this.groupBox1.Controls.Add(this.usuarioRegistradoRadioButton);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(127, 67);
+            this.groupBox1.Size = new System.Drawing.Size(138, 67);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Elija el tipo de usuario";
             // 
             // continuarButton
             // 
-            this.continuarButton.Location = new System.Drawing.Point(145, 12);
+            this.continuarButton.Location = new System.Drawing.Point(156, 13);
             this.continuarButton.Name = "continuarButton";
             this.continuarButton.Size = new System.Drawing.Size(75, 23);
             this.continuarButton.TabIndex = 3;
@@ -81,7 +81,7 @@
             // 
             // salirButton
             // 
-            this.salirButton.Location = new System.Drawing.Point(146, 55);
+            this.salirButton.Location = new System.Drawing.Point(157, 56);
             this.salirButton.Name = "salirButton";
             this.salirButton.Size = new System.Drawing.Size(75, 23);
             this.salirButton.TabIndex = 4;
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(231, 87);
+            this.ClientSize = new System.Drawing.Size(244, 87);
             this.Controls.Add(this.salirButton);
             this.Controls.Add(this.continuarButton);
             this.Controls.Add(this.groupBox1);
