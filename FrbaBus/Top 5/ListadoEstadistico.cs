@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Configuration;
 using FrbaBus.ConnectorSQL;
 
 namespace FrbaBus.Top_5
@@ -88,17 +89,18 @@ namespace FrbaBus.Top_5
 
             if (top5Seleccion == "2")
             {
-                String fechaActual = (DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day).ToString();
-                String query = "select top 5 CLIENTE_DNI, " +
+                String query = "select top 5 CLIENTE_DNI as 'DNI', CLIENTE_NOMBRE as 'NOMBRE', CLIENTE_APELLIDO as 'APELLIDO', " +
                                "(select CAST(isnull(ROUND(SUM(isnull(PASAJE_ENCOMIENDA_PRECIO, 0))/5, 0, 1), 0) as decimal(12,0)) from BUGDEVELOPING.PASAJE_ENCOMIENDA" +
                                " join BUGDEVELOPING.VIAJE on (PASAJE_ENCOMIENDA_CODIGO_VIAJE = VIAJE_CODIGO)" +
                                " where CLIENTE_DNI = PASAJE_ENCOMIENDA_VIAJERO and YEAR(VIAJE_FECHA_LLEGADA) = " + añoSeleccion + " and (MONTH(VIAJE_FECHA_LLEGADA) BETWEEN " + mesMinimo + " and " + mesMaximo + ") and PASAJE_ENCOMIENDA_CODIGO not in (select CANCELACION_CODIGO_PASAJE_ENCOMIENDA" +
-                               " from BUGDEVELOPING.CANCELACION) and DATEDIFF( DAY, VIAJE_FECHA_LLEGADA, CAST('"+ fechaActual + "' as datetime) )<365) as 'PUNTOS_VALIDOS'" +
+                               " from BUGDEVELOPING.CANCELACION)) as 'PUNTOS'" +
                                " from BUGDEVELOPING.CLIENTE" +
-                               " order by PUNTOS_VALIDOS desc";
+                               " order by PUNTOS desc";
                 dataGridView1.DataSource = connection.executeQuery(query);
                 dataGridView1.AutoResizeColumn(0);
                 dataGridView1.AutoResizeColumn(1);
+                dataGridView1.AutoResizeColumn(2);
+                dataGridView1.AutoResizeColumn(3);
             }
 
             if (top5Seleccion == "3")

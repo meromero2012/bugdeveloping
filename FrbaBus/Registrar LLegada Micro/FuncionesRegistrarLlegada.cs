@@ -40,7 +40,7 @@ namespace FrbaBus.Registrar_LLegada_Micro
         {
             /*registra la llegada*/
             ConnectorClass cc = ConnectorClass.Instance;
-            cc.executeQuery("UPDATE BUGDEVELOPING.VIAJE SET VIAJE_FECHA_LLEGADA = '" + fechaLlegada + "' WHERE VIAJE_FECHA_LLEGADA IS NULL AND VIAJE_MICRO_PATENTE = '" + micro + "'");
+            cc.executeQuery("UPDATE TOP (1) BUGDEVELOPING.VIAJE SET VIAJE_FECHA_LLEGADA = '" + fechaLlegada + "' WHERE VIAJE_FECHA_LLEGADA IS NULL AND VIAJE_MICRO_PATENTE = '" + micro + "'");
         }
     }
 }
