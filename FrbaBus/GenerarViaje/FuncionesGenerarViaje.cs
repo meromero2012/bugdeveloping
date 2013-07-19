@@ -26,7 +26,8 @@ namespace FrbaBus.GenerarViaje
         {
             /*valida que la fechas se correspondan y que la de llegada estimada no supere las 24 hs de la salida del micro*/
             DateTime fechaSalida24despues = fechaSalida.AddDays(1);
-            if ((fechaSalida > DateTime.Now) & (fechaSalida < fechaLlegadaEstimada) & (fechaLlegadaEstimada <= fechaSalida24despues))
+            DateTime fechaLimiteInferior = fechaSalida;
+            if (fechaSalida >= fechaLimiteInferior & fechaSalida < fechaLlegadaEstimada & fechaLlegadaEstimada <= fechaSalida24despues)
                 return true;
             else
                 return false;

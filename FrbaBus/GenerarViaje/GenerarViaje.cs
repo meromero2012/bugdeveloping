@@ -46,7 +46,6 @@ namespace FrbaBus.GenerarViaje
                 textBox_numeroPatenteMicro.Enabled = true;
                 textBox_numeroPatenteMicro.BackColor = System.Drawing.Color.White;
                 textBox_numeroPatenteMicro.Text = formListadoDeMicros.numeroPatenteMicro;
-                tipoServicio = formListadoDeMicros.tipoServicio;
             }
         }
 
