@@ -115,6 +115,7 @@
             this.nvoucherTextBox.Size = new System.Drawing.Size(140, 20);
             this.nvoucherTextBox.TabIndex = 3;
             this.nvoucherTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nvoucherTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // descripcionBusquedaLabel
             // 
