@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using FrbaBus.ConnectorSQL;
 using System.Data;
+using System.Configuration;
 
 namespace FrbaBus.CancelarViaje
 {
@@ -53,7 +54,8 @@ namespace FrbaBus.CancelarViaje
 
         public static void actualizarCancelacion(String codigoPasajeEncomienda, String motivoCancelacion)
         {
-            String query = "insert into BUGDEVELOPING.CANCELACION(CANCELACION_CODIGO_PASAJE_ENCOMIENDA, CANCELACION_FECHA_DEVOLUCION, CANCELACION_MOTIVO) values ('" + codigoPasajeEncomienda + "', cast('" + (DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day).ToString() + "' as datetime), '" + motivoCancelacion + "')";
+            String fecha = ConfigurationManager.AppSettings["SystemYear"] + ConfigurationManager.AppSettings["SystemMonth"] + ConfigurationManager.AppSettings["SystemDay"];
+            String query = "insert into BUGDEVELOPING.CANCELACION(CANCELACION_CODIGO_PASAJE_ENCOMIENDA, CANCELACION_FECHA_DEVOLUCION, CANCELACION_MOTIVO) values ('" + codigoPasajeEncomienda + "', cast('" + fecha + "' as datetime), '" + motivoCancelacion + "')";
             ConnectorClass conexion = ConnectorClass.Instance;
             DataTable dt = conexion.executeQuery(query);
         }
