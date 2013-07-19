@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Configuration;
+using FrbaBus.ConnectorSQL;
 
 namespace FrbaBus.Compra_de_Pasajes
 {
@@ -150,7 +152,7 @@ namespace FrbaBus.Compra_de_Pasajes
         private void siguienteButton_Click(object sender, EventArgs e)
         {
             string dni = dniTextBox.Text;
-            string fechaNacimiento = (nacimientoDateTimePicker.Value.Year * 10000 + nacimientoDateTimePicker.Value.Month * 100 + nacimientoDateTimePicker.Value.Day).ToString();
+            string fechaNacimiento = ConnectorClass.ParseDateTime(nacimientoDateTimePicker.Value);
             string nombre = nombreTextBox.Text;
             string apellido = apellidoTextBox.Text;
             string sexo = "M";
@@ -188,7 +190,9 @@ namespace FrbaBus.Compra_de_Pasajes
 
         private void IngresoDatosEncomienda_Load(object sender, EventArgs e)
         {
-
+            nacimientoDateTimePicker.Value = new DateTime(Convert.ToInt32(ConfigurationManager.AppSettings["SystemYear"]),
+                                          Convert.ToInt32(ConfigurationManager.AppSettings["SystemMonth"]),
+                                          Convert.ToInt32(ConfigurationManager.AppSettings["SystemDay"]));
         }
 
         private void textBox_KeyPress(object sender, KeyPressEventArgs e)
