@@ -143,7 +143,7 @@ namespace FrbaBus.Compra_de_Pasajes
 
             getPrecioPasaje();
 
-            precioTextBox.Enabled = true;
+            precioLabel.Enabled = true;
 
             siguienteButton.Enabled = true;
         }
@@ -175,7 +175,7 @@ namespace FrbaBus.Compra_de_Pasajes
                 }
             }
 
-            precioTextBox.Text = precioFinal.ToString();
+            precioLabel.Text = precioFinal.ToString();
         }
 
         private void resetForm()
@@ -201,8 +201,8 @@ namespace FrbaBus.Compra_de_Pasajes
             pisoComboBox.Enabled = false;
             buscarButacasButton.Enabled = false;
             nroComboBox.Enabled = false;
-            precioTextBox.Enabled = false;
-            precioTextBox.Text = "";
+            precioLabel.Enabled = false;
+            precioLabel.Text = "-";
             siguienteButton.Enabled = false;
         }
 
@@ -240,7 +240,7 @@ namespace FrbaBus.Compra_de_Pasajes
             string telefono = telefonoTextBox.Text;
             string mail = mailTextBox.Text;
             string pasajeNro = FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.getPasajeEncomiendaNumero();
-            string precio = precioTextBox.Text;
+            string precio = precioLabel.Text;
             string butacaPiso = pisoComboBox.SelectedValue.ToString();
             string butacaNro = nroComboBox.SelectedIndex.ToString();
 
@@ -268,6 +268,17 @@ namespace FrbaBus.Compra_de_Pasajes
         private void IngresoDatosPasaje_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solamente valores numericos
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
+
+            // Evita que se puedan ingresar puntos para valores decimales
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') < 0)
+                e.Handled = true;
         }
     }
 }

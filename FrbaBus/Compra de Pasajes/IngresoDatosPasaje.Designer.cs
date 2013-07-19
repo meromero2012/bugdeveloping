@@ -51,12 +51,12 @@
             this.nroButacaLabel = new System.Windows.Forms.Label();
             this.pisoComboBox = new System.Windows.Forms.ComboBox();
             this.nroComboBox = new System.Windows.Forms.ComboBox();
-            this.precioLabel = new System.Windows.Forms.Label();
-            this.precioTextBox = new System.Windows.Forms.TextBox();
+            this.precioDescripcionLabel = new System.Windows.Forms.Label();
             this.siguienteButton = new System.Windows.Forms.Button();
             this.buscarDniButton = new System.Windows.Forms.Button();
             this.discapacidadCheckBox = new System.Windows.Forms.CheckBox();
             this.buscarButacasButton = new System.Windows.Forms.Button();
+            this.precioLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,12 +88,12 @@
             this.tableLayoutPanel1.Controls.Add(this.nroButacaLabel, 2, 11);
             this.tableLayoutPanel1.Controls.Add(this.pisoComboBox, 0, 12);
             this.tableLayoutPanel1.Controls.Add(this.nroComboBox, 2, 12);
-            this.tableLayoutPanel1.Controls.Add(this.precioLabel, 0, 13);
-            this.tableLayoutPanel1.Controls.Add(this.precioTextBox, 1, 14);
+            this.tableLayoutPanel1.Controls.Add(this.precioDescripcionLabel, 0, 13);
             this.tableLayoutPanel1.Controls.Add(this.siguienteButton, 1, 15);
             this.tableLayoutPanel1.Controls.Add(this.buscarDniButton, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.discapacidadCheckBox, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.buscarButacasButton, 1, 12);
+            this.tableLayoutPanel1.Controls.Add(this.precioLabel, 1, 14);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -159,6 +159,7 @@
             this.dniTextBox.Size = new System.Drawing.Size(126, 20);
             this.dniTextBox.TabIndex = 3;
             this.dniTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dniTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // nacimientoDateTimePicker
             // 
@@ -354,27 +355,17 @@
             this.nroComboBox.Size = new System.Drawing.Size(126, 21);
             this.nroComboBox.TabIndex = 22;
             // 
-            // precioLabel
+            // precioDescripcionLabel
             // 
-            this.precioLabel.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.precioLabel, 3);
-            this.precioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.precioLabel.Location = new System.Drawing.Point(3, 325);
-            this.precioLabel.Name = "precioLabel";
-            this.precioLabel.Size = new System.Drawing.Size(324, 25);
-            this.precioLabel.TabIndex = 23;
-            this.precioLabel.Text = "Precio del pasaje";
-            this.precioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // precioTextBox
-            // 
-            this.precioTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.precioTextBox.Enabled = false;
-            this.precioTextBox.Location = new System.Drawing.Point(135, 353);
-            this.precioTextBox.Name = "precioTextBox";
-            this.precioTextBox.Size = new System.Drawing.Size(60, 20);
-            this.precioTextBox.TabIndex = 24;
-            this.precioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.precioDescripcionLabel.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.precioDescripcionLabel, 3);
+            this.precioDescripcionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.precioDescripcionLabel.Location = new System.Drawing.Point(3, 325);
+            this.precioDescripcionLabel.Name = "precioDescripcionLabel";
+            this.precioDescripcionLabel.Size = new System.Drawing.Size(324, 25);
+            this.precioDescripcionLabel.TabIndex = 23;
+            this.precioDescripcionLabel.Text = "Precio del pasaje";
+            this.precioDescripcionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // siguienteButton
             // 
@@ -423,6 +414,17 @@
             this.buscarButacasButton.UseVisualStyleBackColor = true;
             this.buscarButacasButton.Click += new System.EventHandler(this.buscarButacasButton_Click);
             // 
+            // precioLabel
+            // 
+            this.precioLabel.AutoSize = true;
+            this.precioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.precioLabel.Location = new System.Drawing.Point(135, 350);
+            this.precioLabel.Name = "precioLabel";
+            this.precioLabel.Size = new System.Drawing.Size(60, 25);
+            this.precioLabel.TabIndex = 30;
+            this.precioLabel.Text = "-";
+            this.precioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // IngresoDatosPasaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,11 +467,11 @@
         private System.Windows.Forms.Label nroButacaLabel;
         private System.Windows.Forms.ComboBox pisoComboBox;
         private System.Windows.Forms.ComboBox nroComboBox;
-        private System.Windows.Forms.Label precioLabel;
-        private System.Windows.Forms.TextBox precioTextBox;
+        private System.Windows.Forms.Label precioDescripcionLabel;
         private System.Windows.Forms.Button siguienteButton;
         private System.Windows.Forms.Button buscarDniButton;
         private System.Windows.Forms.CheckBox discapacidadCheckBox;
         private System.Windows.Forms.Button buscarButacasButton;
+        private System.Windows.Forms.Label precioLabel;
     }
 }
