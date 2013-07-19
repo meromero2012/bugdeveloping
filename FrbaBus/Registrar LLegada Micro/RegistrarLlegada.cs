@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Configuration;
 using FrbaBus.ConnectorSQL;
 
 namespace FrbaBus.Registrar_LLegada_Micro
@@ -22,6 +23,8 @@ namespace FrbaBus.Registrar_LLegada_Micro
         DataTable dt;
         string origen;
         string arribo;
+
+        DateTime fechaActual = new DateTime(Convert.ToInt32(ConfigurationManager.AppSettings["SystemYear"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemMonth"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemDay"]));
 
         private void CargarComboBoxMicro()
         {
@@ -48,6 +51,7 @@ namespace FrbaBus.Registrar_LLegada_Micro
             CargarComboBoxCiudades(comboBox_Arribo);
             CargarComboBoxCiudades(comboBox_Origen);
             CargarComboBoxMicro();
+            ReestablecerFecha();
         }
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
@@ -73,7 +77,7 @@ namespace FrbaBus.Registrar_LLegada_Micro
         private void ReestablecerFecha() 
         {
             /*vuelve las fechas al estado inicial*/
-            dateTimePicker_fechaLlegada.Value = DateTime.Now;
+            dateTimePicker_fechaLlegada.Value = fechaActual;
             dateTimePicker_fechaLlegada.ShowUpDown = false;
             dateTimePicker_fechaLlegada.Format = DateTimePickerFormat.Long;
             dateTimePicker_fechaLlegada.Width = 200;

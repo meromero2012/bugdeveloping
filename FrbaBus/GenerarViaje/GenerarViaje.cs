@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using FrbaBus.ConnectorSQL;
+using System.Configuration;
 
 namespace FrbaBus.GenerarViaje
 {
@@ -19,7 +20,8 @@ namespace FrbaBus.GenerarViaje
         }
 
         string tipoServicio;
-
+        DateTime fechaActual = new DateTime(Convert.ToInt32(ConfigurationManager.AppSettings["SystemYear"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemMonth"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemDay"]));
+        
         private void buttonSeleccionarRecorrido_Click(object sender, EventArgs e)
         {
             /*al hacer click en seleccionar se abre la pantalla de Listado de Recorridos
@@ -69,14 +71,14 @@ namespace FrbaBus.GenerarViaje
         private void ReestablecerFechas()
         {
             /*vuelve al estado inicial las fechas, tanto de salida como de llegada estimada*/
-            dateTimePicker_fechaSalida.Value = DateTime.Now;
+            dateTimePicker_fechaSalida.Value = fechaActual;
             dateTimePicker_fechaSalida.Format = DateTimePickerFormat.Long;
             dateTimePicker_fechaSalida.Width = 200;
             dateTimePicker_fechaSalida.ShowUpDown = false;
-            dateTimePicker_fechaLlegadaEstimada.Value = DateTime.Now;
-            dateTimePicker_fechaLlegadaEstimada.ShowUpDown = false;
+            dateTimePicker_fechaLlegadaEstimada.Value = fechaActual;
             dateTimePicker_fechaLlegadaEstimada.Format = DateTimePickerFormat.Long;
             dateTimePicker_fechaLlegadaEstimada.Width = 200;
+            dateTimePicker_fechaLlegadaEstimada.ShowUpDown = false;
         }
 
         private void Limpiar()
@@ -169,7 +171,7 @@ namespace FrbaBus.GenerarViaje
 
         private void GenerarViaje_Load(object sender, EventArgs e)
         {
-
+            this.ReestablecerFechas();
         }
      }
 }
