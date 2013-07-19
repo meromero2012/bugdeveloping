@@ -204,15 +204,6 @@
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DateSystem\ConfiguracionFecha.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DateSystem\ConfiguracionFecha.designer.cs">
-      <DependentUpon>ConfiguracionFecha.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DateSystem\MySystemDate.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="GenerarViaje\GenerarViaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,9 +292,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compra de Pasajes\IngresoDatosPasaje.resx">
       <DependentUpon>IngresoDatosPasaje.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DateSystem\ConfiguracionFecha.resx">
-      <DependentUpon>ConfiguracionFecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenerarViaje\GenerarViaje.resx">
       <DependentUpon>GenerarViaje.cs</DependentUpon>

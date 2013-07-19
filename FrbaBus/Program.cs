@@ -18,7 +18,7 @@ namespace FrbaBus
         [STAThread]
         static void Main()
         {
-            Application.Run(new FrbaBus.DateSystem.ConfiguracionFecha());
+            Application.Run(new FrbaBus.Login.Login());
         }
 
     }

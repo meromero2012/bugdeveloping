@@ -130,7 +130,6 @@ C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\F
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Canje_de_Ptos.CanjePuntos.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Compra_de_Pasajes.IngresoDatosEncomienda.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Compra_de_Pasajes.IngresoDatosPasaje.resources
-C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.DateSystem.ConfiguracionFecha.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.GenerarViaje.ListadoMicro.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Consulta_Puntos_Adquiridos.ConsultaPuntos.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.MenuPrincipal.MenuPrincipal.resources
