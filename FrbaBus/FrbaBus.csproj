@@ -223,6 +223,12 @@
     <Compile Include="GenerarViaje\ListadoRecorridos.Designer.cs">
       <DependentUpon>ListadoRecorridos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\Operacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Operacion.Designer.cs">
+      <DependentUpon>Operacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\FuncionesLogin.cs" />
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
@@ -313,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta Puntos Adquiridos\ConsultaDePuntos.resx">
       <DependentUpon>ConsultaDePuntos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Operacion.resx">
+      <DependentUpon>Operacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
