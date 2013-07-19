@@ -54,7 +54,7 @@ namespace FrbaBus.Canje_de_Ptos
                     dniTextBox.Enabled = false;
                     buscarDniButton.Enabled = false;
 
-                    String puntosDisponibles = FrbaBus.Canje_de_Ptos.FuncionesCanjePuntos.getPuntosDisponibles(dni, DateTime.Now);
+                    String puntosDisponibles = FrbaBus.Canje_de_Ptos.FuncionesCanjePuntos.getPuntosDisponibles(dni);
                     productosQuePuedeCanjearDt = FrbaBus.Canje_de_Ptos.FuncionesCanjePuntos.getProductosDisponibles(puntosDisponibles);
 
                     puntosLabel.Text = puntosDisponibles;

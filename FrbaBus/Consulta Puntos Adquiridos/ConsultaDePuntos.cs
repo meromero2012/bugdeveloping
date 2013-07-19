@@ -33,10 +33,8 @@ namespace FrbaBus.Consulta_Puntos_Adquiridos
         private void bFiltrar_Click(object sender, EventArgs e)
         {
             conn = ConnectorClass.Instance;
-            cantidadLabel.Text = FuncionesCanjePuntos.getPuntosDisponibles(txtbDNI.Text,DateTime.Now);
-           
-
-          }
+            cantidadLabel.Text = FuncionesCanjePuntos.getPuntosDisponibles(txtbDNI.Text);   
+        }
 
         private void volverButton_Click(object sender, EventArgs e)
         {

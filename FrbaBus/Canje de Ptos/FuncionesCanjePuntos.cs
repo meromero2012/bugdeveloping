@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using FrbaBus.ConnectorSQL;
 using System.Data;
+using System.Configuration;
 
 namespace FrbaBus.Canje_de_Ptos
 {
     public class FuncionesCanjePuntos
     {
-        public static String getPuntosDisponibles(String dni, DateTime time)
+        public static String getPuntosDisponibles(String dni)
         {
-            String fecha = ConnectorClass.ParseDateTime(time);
+            String fecha = ConfigurationManager.AppSettings["SystemYear"] + ConfigurationManager.AppSettings["SystemMonth"] + ConfigurationManager.AppSettings["SystemDay"];
             String query = "select CAST(ROUND(SUM(PASAJE_ENCOMIENDA_PRECIO)/5,0,1) AS INT) - (SELECT isnull(SUM( isnull(PRODUCTO_PUNTOS_NECESARIOS, 0) ), 0) FROM BUGDEVELOPING.CANJE join BUGDEVELOPING.PRODUCTO on CANJE_PRODUCTO_ELEGIDO = PRODUCTO_ID WHERE CANJE_DNI = '" + dni + "' and datediff(DAY, cast(CANJE_FECHA as date), cast('" + fecha + "' as date)) < 365) FROM BUGDEVELOPING.PASAJE_ENCOMIENDA join BUGDEVELOPING.VIAJE on (PASAJE_ENCOMIENDA.PASAJE_ENCOMIENDA_CODIGO_VIAJE = VIAJE_CODIGO) where PASAJE_ENCOMIENDA_VIAJERO = '" + dni + "' and datediff(DAY, cast(VIAJE_FECHA_SALIDA as date), cast('" + fecha + "' as date)) < 365 and PASAJE_ENCOMIENDA_CODIGO not in (select CANCELACION_CODIGO_PASAJE_ENCOMIENDA from BUGDEVELOPING.CANCELACION) group by PASAJE_ENCOMIENDA_VIAJERO";
             ConnectorClass conexion = ConnectorClass.Instance;
             DataTable dt = conexion.executeQuery(query);

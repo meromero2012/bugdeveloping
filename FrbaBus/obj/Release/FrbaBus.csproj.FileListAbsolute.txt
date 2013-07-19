@@ -139,3 +139,4 @@ C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\F
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Recorrido.ListadoRecorridos.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Abm_Recorrido.modRecorrido.resources
 C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\obj\Release\FrbaBus.Login.Operacion.resources
+C:\Documents and Settings\Luciano\Escritorio\bugdeveloping\FrbaBus\bin\Release\FrbaBus.exe.config
