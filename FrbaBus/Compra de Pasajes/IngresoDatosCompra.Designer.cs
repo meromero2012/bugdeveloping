@@ -182,6 +182,7 @@
             this.dniTextBox.Size = new System.Drawing.Size(126, 20);
             this.dniTextBox.TabIndex = 32;
             this.dniTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dniTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // nacimientoDateTimePicker
             // 
@@ -392,6 +393,7 @@
             this.nroTarjetaTextBox.Size = new System.Drawing.Size(126, 20);
             this.nroTarjetaTextBox.TabIndex = 52;
             this.nroTarjetaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nroTarjetaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // codigoSeguridadtextBox
             // 
@@ -402,6 +404,7 @@
             this.codigoSeguridadtextBox.Size = new System.Drawing.Size(126, 20);
             this.codigoSeguridadtextBox.TabIndex = 53;
             this.codigoSeguridadtextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.codigoSeguridadtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // vtoLlabel
             // 
@@ -434,6 +437,7 @@
             this.vtoTextBox.Size = new System.Drawing.Size(126, 20);
             this.vtoTextBox.TabIndex = 56;
             this.vtoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.vtoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // cuotasTextBox
             // 
@@ -444,6 +448,7 @@
             this.cuotasTextBox.Size = new System.Drawing.Size(126, 20);
             this.cuotasTextBox.TabIndex = 57;
             this.cuotasTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cuotasTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // finalizarButton
             // 
