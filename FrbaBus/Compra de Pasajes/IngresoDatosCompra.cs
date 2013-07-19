@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using FrbaBus.AuthentificationSystem;
 using FrbaBus.ConnectorSQL;
+using System.Configuration;
 
 namespace FrbaBus.Compra_de_Pasajes
 {
@@ -112,7 +113,7 @@ namespace FrbaBus.Compra_de_Pasajes
         /* Escribe la tabla compras con la informacion del listado cargado durante el ingreso de encomienda y pasajes, dependiendo si el pago se realiza en efectivo o tarjeta */
         private void insertCompra(String tipo)
         {
-            string fechaCompra = ConnectorClass.ParseDateTime(DateTime.Now);
+            string fechaCompra = ConfigurationManager.AppSettings["SystemYear"] + ConfigurationManager.AppSettings["SystemMonth"] + ConfigurationManager.AppSettings["SystemDay"];
 
             string nroCompra = FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.getNroCompra();
 
@@ -135,7 +136,7 @@ namespace FrbaBus.Compra_de_Pasajes
         private void finalizarButton_Click(object sender, EventArgs e)
         {
             string dni = dniTextBox.Text;
-            string fechaNacimiento = (nacimientoDateTimePicker.Value.Year * 10000 + nacimientoDateTimePicker.Value.Month * 100 + nacimientoDateTimePicker.Value.Day).ToString();
+            string fechaNacimiento = ConnectorClass.ParseDateTime(nacimientoDateTimePicker.Value);
             string nombre = nombreTextBox.Text;
             string apellido = apellidoTextBox.Text;
             string sexo = "M";
@@ -159,6 +160,7 @@ namespace FrbaBus.Compra_de_Pasajes
                 {
                     insertCompra("Tarjeta");
                     this.Close();
+                    Program.MenuPrincipal.Show();
                 }
             }
             else
@@ -171,7 +173,9 @@ namespace FrbaBus.Compra_de_Pasajes
         
         private void IngresoDatosCompra_Load(object sender, EventArgs e)
         {
-
+            nacimientoDateTimePicker.Value = new DateTime(Convert.ToInt32(ConfigurationManager.AppSettings["SystemYear"]),
+                                          Convert.ToInt32(ConfigurationManager.AppSettings["SystemMonth"]),
+                                          Convert.ToInt32(ConfigurationManager.AppSettings["SystemDay"]));
         }
 
         private void tarjetaRadioButton_CheckedChanged(object sender, EventArgs e)
