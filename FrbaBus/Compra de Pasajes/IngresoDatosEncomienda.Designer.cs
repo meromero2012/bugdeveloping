@@ -52,13 +52,13 @@
             this.mailLabel = new System.Windows.Forms.Label();
             this.mailTextBox = new System.Windows.Forms.TextBox();
             this.kgsEncomiendaLabel = new System.Windows.Forms.Label();
-            this.precioLabel = new System.Windows.Forms.Label();
-            this.precioTextBox = new System.Windows.Forms.TextBox();
+            this.precioDescripcionLabel = new System.Windows.Forms.Label();
             this.siguienteButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.discapacidadCheckBox = new System.Windows.Forms.CheckBox();
-            this.kgsTextBox = new System.Windows.Forms.TextBox();
             this.continuarButton = new System.Windows.Forms.Button();
+            this.kgsLabel = new System.Windows.Forms.Label();
+            this.precioLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -137,13 +137,13 @@
             this.tableLayoutPanel2.Controls.Add(this.mailLabel, 0, 9);
             this.tableLayoutPanel2.Controls.Add(this.mailTextBox, 0, 10);
             this.tableLayoutPanel2.Controls.Add(this.kgsEncomiendaLabel, 0, 12);
-            this.tableLayoutPanel2.Controls.Add(this.precioLabel, 0, 14);
-            this.tableLayoutPanel2.Controls.Add(this.precioTextBox, 0, 15);
+            this.tableLayoutPanel2.Controls.Add(this.precioDescripcionLabel, 0, 14);
             this.tableLayoutPanel2.Controls.Add(this.siguienteButton, 1, 16);
             this.tableLayoutPanel2.Controls.Add(this.button1, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.discapacidadCheckBox, 2, 6);
-            this.tableLayoutPanel2.Controls.Add(this.kgsTextBox, 1, 13);
             this.tableLayoutPanel2.Controls.Add(this.continuarButton, 1, 11);
+            this.tableLayoutPanel2.Controls.Add(this.kgsLabel, 1, 13);
+            this.tableLayoutPanel2.Controls.Add(this.precioLabel, 1, 15);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -210,6 +210,7 @@
             this.dniTextBox.Size = new System.Drawing.Size(129, 20);
             this.dniTextBox.TabIndex = 3;
             this.dniTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dniTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // nacimientoDateTimePicker
             // 
@@ -372,28 +373,17 @@
             this.kgsEncomiendaLabel.Text = "Kgs. a enviar por encomienda*:";
             this.kgsEncomiendaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // precioLabel
+            // precioDescripcionLabel
             // 
-            this.precioLabel.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.precioLabel, 3);
-            this.precioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.precioLabel.Location = new System.Drawing.Point(3, 343);
-            this.precioLabel.Name = "precioLabel";
-            this.precioLabel.Size = new System.Drawing.Size(332, 22);
-            this.precioLabel.TabIndex = 23;
-            this.precioLabel.Text = "Precio del pasaje";
-            this.precioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // precioTextBox
-            // 
-            this.tableLayoutPanel2.SetColumnSpan(this.precioTextBox, 3);
-            this.precioTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.precioTextBox.Enabled = false;
-            this.precioTextBox.Location = new System.Drawing.Point(3, 368);
-            this.precioTextBox.Name = "precioTextBox";
-            this.precioTextBox.Size = new System.Drawing.Size(332, 20);
-            this.precioTextBox.TabIndex = 24;
-            this.precioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.precioDescripcionLabel.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.precioDescripcionLabel, 3);
+            this.precioDescripcionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.precioDescripcionLabel.Location = new System.Drawing.Point(3, 343);
+            this.precioDescripcionLabel.Name = "precioDescripcionLabel";
+            this.precioDescripcionLabel.Size = new System.Drawing.Size(332, 22);
+            this.precioDescripcionLabel.TabIndex = 23;
+            this.precioDescripcionLabel.Text = "Precio del pasaje";
+            this.precioDescripcionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // siguienteButton
             // 
@@ -430,16 +420,6 @@
             this.discapacidadCheckBox.TabIndex = 28;
             this.discapacidadCheckBox.UseVisualStyleBackColor = true;
             // 
-            // kgsTextBox
-            // 
-            this.kgsTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kgsTextBox.Enabled = false;
-            this.kgsTextBox.Location = new System.Drawing.Point(138, 319);
-            this.kgsTextBox.Name = "kgsTextBox";
-            this.kgsTextBox.Size = new System.Drawing.Size(61, 20);
-            this.kgsTextBox.TabIndex = 29;
-            this.kgsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // continuarButton
             // 
             this.continuarButton.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -451,6 +431,28 @@
             this.continuarButton.Text = "Continuar";
             this.continuarButton.UseVisualStyleBackColor = true;
             this.continuarButton.Click += new System.EventHandler(this.continuarButton_Click);
+            // 
+            // kgsLabel
+            // 
+            this.kgsLabel.AutoSize = true;
+            this.kgsLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kgsLabel.Location = new System.Drawing.Point(138, 316);
+            this.kgsLabel.Name = "kgsLabel";
+            this.kgsLabel.Size = new System.Drawing.Size(61, 27);
+            this.kgsLabel.TabIndex = 31;
+            this.kgsLabel.Text = "-";
+            this.kgsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // precioLabel
+            // 
+            this.precioLabel.AutoSize = true;
+            this.precioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.precioLabel.Location = new System.Drawing.Point(138, 365);
+            this.precioLabel.Name = "precioLabel";
+            this.precioLabel.Size = new System.Drawing.Size(61, 27);
+            this.precioLabel.TabIndex = 32;
+            this.precioLabel.Text = "-";
+            this.precioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // IngresoDatosEncomienda
             // 
@@ -497,12 +499,12 @@
         private System.Windows.Forms.Label mailLabel;
         private System.Windows.Forms.TextBox mailTextBox;
         private System.Windows.Forms.Label kgsEncomiendaLabel;
-        private System.Windows.Forms.Label precioLabel;
-        private System.Windows.Forms.TextBox precioTextBox;
+        private System.Windows.Forms.Label precioDescripcionLabel;
         private System.Windows.Forms.Button siguienteButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox discapacidadCheckBox;
-        private System.Windows.Forms.TextBox kgsTextBox;
         private System.Windows.Forms.Button continuarButton;
+        private System.Windows.Forms.Label kgsLabel;
+        private System.Windows.Forms.Label precioLabel;
     }
 }

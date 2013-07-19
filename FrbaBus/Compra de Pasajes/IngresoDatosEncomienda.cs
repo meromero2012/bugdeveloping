@@ -120,11 +120,11 @@ namespace FrbaBus.Compra_de_Pasajes
         {
             enableFormularioDatos(false);
 
-            kgsTextBox.Text = kgsCompra.ToString();
-            kgsTextBox.Enabled = true;
+            kgsLabel.Text = kgsCompra.ToString();
+            kgsLabel.Enabled = true;
 
-            precioTextBox.Text = getPrecioEncomienda();
-            precioTextBox.Enabled = true;
+            precioLabel.Text = getPrecioEncomienda();
+            precioLabel.Enabled = true;
 
             siguienteButton.Enabled = true;
         }
@@ -163,7 +163,7 @@ namespace FrbaBus.Compra_de_Pasajes
             string telefono = telefonoTextBox.Text;
             string mail = mailTextBox.Text;
             string encomiendaNro = FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.getPasajeEncomiendaNumero();
-            string precio = precioTextBox.Text;
+            string precio = precioLabel.Text;
 
             if (dniEncontradoBBDD)
                 FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.updateCliente(dni, fechaNacimiento, nombre, apellido, sexo, discapacidad, domicilio, telefono, mail);
@@ -189,6 +189,17 @@ namespace FrbaBus.Compra_de_Pasajes
         private void IngresoDatosEncomienda_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solamente valores numericos
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
+
+            // Evita que se puedan ingresar puntos para valores decimales
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') < 0)
+                e.Handled = true;
         }
 
     }
