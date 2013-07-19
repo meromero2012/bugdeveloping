@@ -69,21 +69,21 @@ namespace FrbaBus.Compra_de_Pasajes
 
                     if (!butacasDisponibles.Equals("0"))
                     {
-                        pasajesDisponiblesTextBox.Enabled = true;
-                        pasajesDisponiblesTextBox.Text = butacasDisponibles;
+                        pasajesDisponiblesLabel.Enabled = true;
+                        pasajesDisponiblesLabel.Text = butacasDisponibles;
                     }
 
                     if (!butacasDisponibles.Equals("0"))
                     {
-                        kgsDisponiblesTextBox.Enabled = true;
-                        kgsDisponiblesTextBox.Text = kgsDisponibles;
+                        kgsDisponiblesLabel.Enabled = true;
+                        kgsDisponiblesLabel.Text = kgsDisponibles;
                     }
 
                     tipoServicio = FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.getTipoServicio(codigoRecorrido);
                     if (!tipoServicio.Equals(""))
                     {
-                        servicioTextBox.Enabled = true;
-                        servicioTextBox.Text = tipoServicio;
+                        servicioLabel.Enabled = true;
+                        servicioLabel.Text = tipoServicio;
                     }
 
                     cantidadPasajesTextBox.Enabled = true;
@@ -100,8 +100,8 @@ namespace FrbaBus.Compra_de_Pasajes
         {
             errorViajeLabel.Text = "";
 
-            int pasajesDisponibles = Convert.ToInt16(pasajesDisponiblesTextBox.Text);
-            int kgsDisponibles = Convert.ToInt16(kgsDisponiblesTextBox.Text);
+            int pasajesDisponibles = Convert.ToInt16(pasajesDisponiblesLabel.Text);
+            int kgsDisponibles = Convert.ToInt16(kgsDisponiblesLabel.Text);
             pasajesCompra = Convert.ToInt16(cantidadPasajesTextBox.Text);
             kgsCompra = Convert.ToInt16(KgsEncomiendaTextBox.Text);
 
@@ -139,6 +139,17 @@ namespace FrbaBus.Compra_de_Pasajes
         {
             this.Close();
             Program.MenuPrincipal.Show();
+        }
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite solamente valores numericos
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+                e.Handled = true;
+
+            // Evita que se puedan ingresar puntos para valores decimales
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') < 0)
+                e.Handled = true;
         }
     }
 }

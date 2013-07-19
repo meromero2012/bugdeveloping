@@ -35,11 +35,9 @@
             this.ciudadOrigenLabel = new System.Windows.Forms.Label();
             this.ciudadDestinoLabel = new System.Windows.Forms.Label();
             this.ciudadDestinoComboBox = new System.Windows.Forms.ComboBox();
-            this.pasajesDisponiblesLabel = new System.Windows.Forms.Label();
-            this.kgsDisponiblesLabel = new System.Windows.Forms.Label();
-            this.pasajesDisponiblesTextBox = new System.Windows.Forms.TextBox();
-            this.kgsDisponiblesTextBox = new System.Windows.Forms.TextBox();
-            this.tipoServicioLabel = new System.Windows.Forms.Label();
+            this.pasajesDisponiblesDescripcionLabel = new System.Windows.Forms.Label();
+            this.kgsDisponiblesDescripcionLabel = new System.Windows.Forms.Label();
+            this.tipoServicioDescripcionLabel = new System.Windows.Forms.Label();
             this.menuPrincipalButton = new System.Windows.Forms.Button();
             this.siguienteButton = new System.Windows.Forms.Button();
             this.cantidadPasajesTextBox = new System.Windows.Forms.TextBox();
@@ -48,7 +46,9 @@
             this.kgsEncomiendaLabel = new System.Windows.Forms.Label();
             this.buscarViajeButton = new System.Windows.Forms.Button();
             this.errorViajeLabel = new System.Windows.Forms.Label();
-            this.servicioTextBox = new System.Windows.Forms.TextBox();
+            this.pasajesDisponiblesLabel = new System.Windows.Forms.Label();
+            this.kgsDisponiblesLabel = new System.Windows.Forms.Label();
+            this.servicioLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,11 +63,9 @@
             this.tableLayoutPanel1.Controls.Add(this.ciudadOrigenLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.ciudadDestinoLabel, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.ciudadDestinoComboBox, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.pasajesDisponiblesLabel, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.kgsDisponiblesLabel, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.pasajesDisponiblesTextBox, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.kgsDisponiblesTextBox, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.tipoServicioLabel, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.pasajesDisponiblesDescripcionLabel, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.kgsDisponiblesDescripcionLabel, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.tipoServicioDescripcionLabel, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.menuPrincipalButton, 1, 12);
             this.tableLayoutPanel1.Controls.Add(this.siguienteButton, 0, 12);
             this.tableLayoutPanel1.Controls.Add(this.cantidadPasajesTextBox, 0, 11);
@@ -76,7 +74,9 @@
             this.tableLayoutPanel1.Controls.Add(this.kgsEncomiendaLabel, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.buscarViajeButton, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.errorViajeLabel, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.servicioTextBox, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.pasajesDisponiblesLabel, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.kgsDisponiblesLabel, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.servicioLabel, 0, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -156,57 +156,37 @@
             this.ciudadDestinoComboBox.Size = new System.Drawing.Size(214, 21);
             this.ciudadDestinoComboBox.TabIndex = 5;
             // 
-            // pasajesDisponiblesLabel
+            // pasajesDisponiblesDescripcionLabel
             // 
-            this.pasajesDisponiblesLabel.AutoSize = true;
-            this.pasajesDisponiblesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pasajesDisponiblesLabel.Location = new System.Drawing.Point(3, 111);
-            this.pasajesDisponiblesLabel.Name = "pasajesDisponiblesLabel";
-            this.pasajesDisponiblesLabel.Size = new System.Drawing.Size(214, 12);
-            this.pasajesDisponiblesLabel.TabIndex = 6;
-            this.pasajesDisponiblesLabel.Text = "Cantidad de pasajes disponibles.";
+            this.pasajesDisponiblesDescripcionLabel.AutoSize = true;
+            this.pasajesDisponiblesDescripcionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pasajesDisponiblesDescripcionLabel.Location = new System.Drawing.Point(3, 111);
+            this.pasajesDisponiblesDescripcionLabel.Name = "pasajesDisponiblesDescripcionLabel";
+            this.pasajesDisponiblesDescripcionLabel.Size = new System.Drawing.Size(214, 12);
+            this.pasajesDisponiblesDescripcionLabel.TabIndex = 6;
+            this.pasajesDisponiblesDescripcionLabel.Text = "Cantidad de pasajes disponibles.";
             // 
-            // kgsDisponiblesLabel
+            // kgsDisponiblesDescripcionLabel
             // 
-            this.kgsDisponiblesLabel.AutoSize = true;
-            this.kgsDisponiblesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kgsDisponiblesLabel.Location = new System.Drawing.Point(223, 111);
-            this.kgsDisponiblesLabel.Name = "kgsDisponiblesLabel";
-            this.kgsDisponiblesLabel.Size = new System.Drawing.Size(214, 12);
-            this.kgsDisponiblesLabel.TabIndex = 7;
-            this.kgsDisponiblesLabel.Text = "Kgs. disponibles para encomiendas.";
+            this.kgsDisponiblesDescripcionLabel.AutoSize = true;
+            this.kgsDisponiblesDescripcionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kgsDisponiblesDescripcionLabel.Location = new System.Drawing.Point(223, 111);
+            this.kgsDisponiblesDescripcionLabel.Name = "kgsDisponiblesDescripcionLabel";
+            this.kgsDisponiblesDescripcionLabel.Size = new System.Drawing.Size(214, 12);
+            this.kgsDisponiblesDescripcionLabel.TabIndex = 7;
+            this.kgsDisponiblesDescripcionLabel.Text = "Kgs. disponibles para encomiendas.";
             // 
-            // pasajesDisponiblesTextBox
+            // tipoServicioDescripcionLabel
             // 
-            this.pasajesDisponiblesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pasajesDisponiblesTextBox.Enabled = false;
-            this.pasajesDisponiblesTextBox.Location = new System.Drawing.Point(3, 126);
-            this.pasajesDisponiblesTextBox.Name = "pasajesDisponiblesTextBox";
-            this.pasajesDisponiblesTextBox.Size = new System.Drawing.Size(214, 20);
-            this.pasajesDisponiblesTextBox.TabIndex = 8;
-            this.pasajesDisponiblesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // kgsDisponiblesTextBox
-            // 
-            this.kgsDisponiblesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kgsDisponiblesTextBox.Enabled = false;
-            this.kgsDisponiblesTextBox.Location = new System.Drawing.Point(223, 126);
-            this.kgsDisponiblesTextBox.Name = "kgsDisponiblesTextBox";
-            this.kgsDisponiblesTextBox.Size = new System.Drawing.Size(214, 20);
-            this.kgsDisponiblesTextBox.TabIndex = 9;
-            this.kgsDisponiblesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tipoServicioLabel
-            // 
-            this.tipoServicioLabel.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.tipoServicioLabel, 2);
-            this.tipoServicioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tipoServicioLabel.Location = new System.Drawing.Point(3, 148);
-            this.tipoServicioLabel.Name = "tipoServicioLabel";
-            this.tipoServicioLabel.Size = new System.Drawing.Size(434, 12);
-            this.tipoServicioLabel.TabIndex = 10;
-            this.tipoServicioLabel.Text = "Seleccione el servicio disponible del micro";
-            this.tipoServicioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tipoServicioDescripcionLabel.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.tipoServicioDescripcionLabel, 2);
+            this.tipoServicioDescripcionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tipoServicioDescripcionLabel.Location = new System.Drawing.Point(3, 148);
+            this.tipoServicioDescripcionLabel.Name = "tipoServicioDescripcionLabel";
+            this.tipoServicioDescripcionLabel.Size = new System.Drawing.Size(434, 12);
+            this.tipoServicioDescripcionLabel.TabIndex = 10;
+            this.tipoServicioDescripcionLabel.Text = "Servicio del Micro Disponible:";
+            this.tipoServicioDescripcionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // menuPrincipalButton
             // 
@@ -241,6 +221,7 @@
             this.cantidadPasajesTextBox.TabIndex = 14;
             this.cantidadPasajesTextBox.Text = "0";
             this.cantidadPasajesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cantidadPasajesTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // KgsEncomiendaTextBox
             // 
@@ -252,6 +233,7 @@
             this.KgsEncomiendaTextBox.TabIndex = 15;
             this.KgsEncomiendaTextBox.Text = "0";
             this.KgsEncomiendaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.KgsEncomiendaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // cantidadPasajesLabel
             // 
@@ -297,16 +279,39 @@
             this.errorViajeLabel.TabIndex = 19;
             this.errorViajeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // servicioTextBox
+            // pasajesDisponiblesLabel
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.servicioTextBox, 2);
-            this.servicioTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.servicioTextBox.Enabled = false;
-            this.servicioTextBox.Location = new System.Drawing.Point(3, 163);
-            this.servicioTextBox.Name = "servicioTextBox";
-            this.servicioTextBox.Size = new System.Drawing.Size(434, 20);
-            this.servicioTextBox.TabIndex = 20;
-            this.servicioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pasajesDisponiblesLabel.AutoSize = true;
+            this.pasajesDisponiblesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pasajesDisponiblesLabel.Location = new System.Drawing.Point(3, 123);
+            this.pasajesDisponiblesLabel.Name = "pasajesDisponiblesLabel";
+            this.pasajesDisponiblesLabel.Size = new System.Drawing.Size(214, 25);
+            this.pasajesDisponiblesLabel.TabIndex = 21;
+            this.pasajesDisponiblesLabel.Text = "-";
+            this.pasajesDisponiblesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // kgsDisponiblesLabel
+            // 
+            this.kgsDisponiblesLabel.AutoSize = true;
+            this.kgsDisponiblesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kgsDisponiblesLabel.Location = new System.Drawing.Point(223, 123);
+            this.kgsDisponiblesLabel.Name = "kgsDisponiblesLabel";
+            this.kgsDisponiblesLabel.Size = new System.Drawing.Size(214, 25);
+            this.kgsDisponiblesLabel.TabIndex = 22;
+            this.kgsDisponiblesLabel.Text = "-";
+            this.kgsDisponiblesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // servicioLabel
+            // 
+            this.servicioLabel.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.servicioLabel, 2);
+            this.servicioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.servicioLabel.Location = new System.Drawing.Point(3, 160);
+            this.servicioLabel.Name = "servicioLabel";
+            this.servicioLabel.Size = new System.Drawing.Size(434, 25);
+            this.servicioLabel.TabIndex = 23;
+            this.servicioLabel.Text = "-";
+            this.servicioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // IngresoDatosViaje
             // 
@@ -334,11 +339,9 @@
         private System.Windows.Forms.Label ciudadOrigenLabel;
         private System.Windows.Forms.Label ciudadDestinoLabel;
         private System.Windows.Forms.ComboBox ciudadDestinoComboBox;
-        private System.Windows.Forms.Label pasajesDisponiblesLabel;
-        private System.Windows.Forms.Label kgsDisponiblesLabel;
-        private System.Windows.Forms.TextBox pasajesDisponiblesTextBox;
-        private System.Windows.Forms.TextBox kgsDisponiblesTextBox;
-        private System.Windows.Forms.Label tipoServicioLabel;
+        private System.Windows.Forms.Label pasajesDisponiblesDescripcionLabel;
+        private System.Windows.Forms.Label kgsDisponiblesDescripcionLabel;
+        private System.Windows.Forms.Label tipoServicioDescripcionLabel;
         private System.Windows.Forms.Button menuPrincipalButton;
         private System.Windows.Forms.Button siguienteButton;
         private System.Windows.Forms.TextBox cantidadPasajesTextBox;
@@ -347,6 +350,8 @@
         private System.Windows.Forms.Label kgsEncomiendaLabel;
         private System.Windows.Forms.Button buscarViajeButton;
         private System.Windows.Forms.Label errorViajeLabel;
-        private System.Windows.Forms.TextBox servicioTextBox;
+        private System.Windows.Forms.Label pasajesDisponiblesLabel;
+        private System.Windows.Forms.Label kgsDisponiblesLabel;
+        private System.Windows.Forms.Label servicioLabel;
     }
 }
