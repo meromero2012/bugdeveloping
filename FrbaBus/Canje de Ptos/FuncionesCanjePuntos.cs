@@ -37,7 +37,8 @@ namespace FrbaBus.Canje_de_Ptos
 
         public static void insertCanje(String dni, String producto)
         {
-            String query = "insert into BUGDEVELOPING.CANJE (CANJE_DNI, CANJE_FECHA, CANJE_PRODUCTO_ELEGIDO) values ('" + dni + "', cast('" + (DateTime.Now.Year * 10000 + DateTime.Now.Month * 100 + DateTime.Now.Day).ToString() + "' as datetime), '" + producto + "')";
+            String fecha = ConfigurationManager.AppSettings["SystemYear"] + ConfigurationManager.AppSettings["SystemMonth"] + ConfigurationManager.AppSettings["SystemDay"];
+            String query = "insert into BUGDEVELOPING.CANJE (CANJE_DNI, CANJE_FECHA, CANJE_PRODUCTO_ELEGIDO) values ('" + dni + "', cast('" + fecha + "' as datetime), '" + producto + "')";
             ConnectorClass conexion = ConnectorClass.Instance;
             conexion.executeQuery(query);
         }
