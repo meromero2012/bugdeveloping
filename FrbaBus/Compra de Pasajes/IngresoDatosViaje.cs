@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Configuration;
+using FrbaBus.ConnectorSQL;
 
 /*Formulario en donde se ingresaran los datos del viaje a comprar*/
 
@@ -50,9 +52,9 @@ namespace FrbaBus.Compra_de_Pasajes
         {
             errorViajeLabel.Text = "";
 
-            String fechaSeleccionada = (viajeDateTimePicker.Value.Year * 10000 + viajeDateTimePicker.Value.Month * 100 + viajeDateTimePicker.Value.Day).ToString();
-            String origenSeleccionado = (ciudadOrigencomboBox.SelectedIndex + 1).ToString();
-            String destinoSeleccionado = (ciudadDestinoComboBox.SelectedIndex + 1).ToString();
+            String fechaSeleccionada = ConnectorClass.ParseDateTime(viajeDateTimePicker.Value);
+            String origenSeleccionado = (ciudadOrigencomboBox.SelectedValue).ToString();
+            String destinoSeleccionado = (ciudadDestinoComboBox.SelectedValue).ToString();
 
             if (origenSeleccionado.Equals(destinoSeleccionado))
                 errorViajeLabel.Text = "Ciudad de origen y ciudad de destino deben ser diferentes.";
@@ -132,7 +134,9 @@ namespace FrbaBus.Compra_de_Pasajes
 
         private void IngresoDatosViaje_Load(object sender, EventArgs e)
         {
-
+            viajeDateTimePicker.Value = new DateTime(Convert.ToInt32(ConfigurationManager.AppSettings["SystemYear"]),
+                                          Convert.ToInt32(ConfigurationManager.AppSettings["SystemMonth"]),
+                                          Convert.ToInt32(ConfigurationManager.AppSettings["SystemDay"]));
         }
 
         private void menuPrincipalButton_Click(object sender, EventArgs e)
