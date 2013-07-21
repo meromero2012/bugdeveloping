@@ -39,16 +39,14 @@ namespace FrbaBus.Abm_Recorrido
 
         public static void DarDeBajaARecorrido(string codigoRecorrido)
         {
-            DataTable Dt;
             string query = "UPDATE BUGDEVELOPING.RECORRIDO SET RECORRIDO_ACTIVO = 0 WHERE RECORRIDO_CODIGO ='"+codigoRecorrido+"'";
             ConnectorClass conexion = ConnectorClass.Instance;
-            Dt = conexion.executeQuery(query);
+            conexion.executeQuery(query);
         }
 
         public static DataTable ViajesDeRecorridoApartirDeFecha(string codigoRecorrido, DateTime fechaComienzo)
         {
             string comienzo = "'" + fechaComienzo.ToString("yyyyMMdd HH:mm:ss") + "'";
-            comienzo = "20101010 00:00:00";
            
             DataTable Dt;
             String select = "SELECT *";
@@ -95,7 +93,7 @@ namespace FrbaBus.Abm_Recorrido
         public static DataTable obtenerRecorridosModificables()
         {
             DataTable Dt;
-            String query = "SELECT * FROM BUGDEVELOPING.V_RECORRIDO_CODIGO_MODIFICABLE";
+            String query = "SELECT * FROM BUGDEVELOPING.V_RECORRIDO_ACTIVO";
             ConnectorClass conexion = ConnectorClass.Instance;
             Dt = conexion.executeQuery(query);
             return Dt;
@@ -107,7 +105,63 @@ namespace FrbaBus.Abm_Recorrido
             ConnectorClass conexion = ConnectorClass.Instance;
             return conexion.executeQuery(query);
         }
+        public static void CambiarRecorridosEnViajesDesdeFecha(string codigoRecorrido, string codigoRecorridoNuevo, DateTime fechaComienzo) 
+        {
+            string comienzo = "'" + fechaComienzo.ToString("yyyyMMdd HH:mm:ss") + "'";
+            string query = "UPDATE BUGDEVELOPING.VIAJE SET VIAJE_CODIGO_RECORRIDO = '" + codigoRecorridoNuevo + "' WHERE VIAJE_CODIGO_RECORRIDO ='" + codigoRecorrido + "' and VIAJE_FECHA_SALIDA >= '"+comienzo+"'";
+            ConnectorClass conexion = ConnectorClass.Instance;
+            conexion.executeQuery(query);
+       }
 
 
+        public static string generarCodigoRecorrido()
+        {
+            string nuevoCodigo = "";
+            bool codigoUnico = false;
+            while (!codigoUnico)
+            {
+                var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                var random = new Random();
+                var result = new string(
+                    Enumerable.Repeat(chars, 8)
+                              .Select(s => s[random.Next(s.Length)])
+                              .ToArray());
+
+                DataTable Dt;
+                String query = "SELECT * FROM BUGDEVELOPING.RECORRIDO WHERE RECORRIDO_CODIGO = '" + result + "'";
+                ConnectorClass conexion = ConnectorClass.Instance;
+                Dt = conexion.executeQuery(query);
+
+                if (Dt.Rows.Count == 0)
+                {
+                    codigoUnico = true;
+                    nuevoCodigo = String.Copy(result);
+                }
+            }
+
+            return nuevoCodigo;
+
+        }
+
+        public static void DarDeBajaARecorridoDesdeFecha(string codigoRecorrido, DateTime fecha)   
+        {
+            DataTable viajesDeRecorrido = FrbaBus.Abm_Recorrido.FuncionesRecorridos.ViajesDeRecorridoApartirDeFecha(codigoRecorrido, DateTime.Today);
+            //aca hago un for por cada uno y obtengo en nroDeViaje
+            foreach (DataRow row in viajesDeRecorrido.Rows)
+            {
+                string codigoCompra = row.ItemArray[0].ToString();
+
+                Boolean esPasaje = FrbaBus.CancelarViaje.FuncionesCancelarViaje.esPasaje(codigoCompra);
+
+                if (esPasaje)
+                    FrbaBus.CancelarViaje.FuncionesCancelarViaje.actualizarPasaje(codigoCompra);
+                else
+                    FrbaBus.CancelarViaje.FuncionesCancelarViaje.actualizarEncomienda(codigoCompra);
+
+                FrbaBus.CancelarViaje.FuncionesCancelarViaje.actualizarCancelacion(codigoCompra, "Recorrido Dado de baja");
+            }
+
+        }
+        
     }
 }

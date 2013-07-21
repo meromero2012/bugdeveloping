@@ -49,9 +49,9 @@
             this.comboBox_Asientos_Piso2 = new System.Windows.Forms.ComboBox();
             this.comboBox_Asientos_Piso1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox_NumeroDeMicro = new System.Windows.Forms.ComboBox();
             this.label_EsVentana_P1 = new System.Windows.Forms.Label();
             this.label_EsVentana_P2 = new System.Windows.Forms.Label();
+            this.textBox_NumeroMicro = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // checkedListBox_Piso2
@@ -233,14 +233,6 @@
             this.label4.TabIndex = 24;
             this.label4.Text = "Numero de Micro";
             // 
-            // comboBox_NumeroDeMicro
-            // 
-            this.comboBox_NumeroDeMicro.FormattingEnabled = true;
-            this.comboBox_NumeroDeMicro.Location = new System.Drawing.Point(131, 159);
-            this.comboBox_NumeroDeMicro.Name = "comboBox_NumeroDeMicro";
-            this.comboBox_NumeroDeMicro.Size = new System.Drawing.Size(99, 21);
-            this.comboBox_NumeroDeMicro.TabIndex = 23;
-            // 
             // label_EsVentana_P1
             // 
             this.label_EsVentana_P1.AutoSize = true;
@@ -259,15 +251,22 @@
             this.label_EsVentana_P2.TabIndex = 26;
             this.label_EsVentana_P2.Text = "Seleccionar si\r\nes ventana\r\n";
             // 
+            // textBox_NumeroMicro
+            // 
+            this.textBox_NumeroMicro.Location = new System.Drawing.Point(126, 159);
+            this.textBox_NumeroMicro.Name = "textBox_NumeroMicro";
+            this.textBox_NumeroMicro.Size = new System.Drawing.Size(104, 20);
+            this.textBox_NumeroMicro.TabIndex = 27;
+            // 
             // microAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 334);
+            this.Controls.Add(this.textBox_NumeroMicro);
             this.Controls.Add(this.label_EsVentana_P2);
             this.Controls.Add(this.label_EsVentana_P1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox_NumeroDeMicro);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox_Patente);
             this.Controls.Add(this.label7);
@@ -319,8 +318,8 @@
         private System.Windows.Forms.ComboBox comboBox_Asientos_Piso2;
         private System.Windows.Forms.ComboBox comboBox_Asientos_Piso1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox_NumeroDeMicro;
         private System.Windows.Forms.Label label_EsVentana_P1;
         private System.Windows.Forms.Label label_EsVentana_P2;
+        private System.Windows.Forms.TextBox textBox_NumeroMicro;
     }
 }

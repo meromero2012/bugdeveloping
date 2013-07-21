@@ -16,6 +16,9 @@ namespace FrbaBus.Abm_Micro
                base()
         {
             InitializeComponent();
+            /*Seteo los handlers para limitar el ingreso de caracteres en los textBoxes*/
+            textBox_KG.KeyPress += new KeyPressEventHandler(textBox_NumberKeyPress);
+            textBox_NumeroMicro.KeyPress += new KeyPressEventHandler(textBox_NumberKeyPress);  
         }
 
         private void textBox_Patente_Validating(object sender, EventArgs e)
@@ -37,8 +40,6 @@ namespace FrbaBus.Abm_Micro
 
         public void loadComboBox()
         {
-            comboBox_NumeroDeMicro.Items.AddRange(Enumerable.Range(0, 100).Cast<object>().ToArray());
-
             DataTable DtMarcas;
             DtMarcas = FrbaBus.Abm_Micro.FuncionesMicro.obtenerMarcas();
             comboBox_Marca.DataSource = DtMarcas;
@@ -97,8 +98,14 @@ namespace FrbaBus.Abm_Micro
         {
             /* Verifico si falta algun campo o si esta mal formateado*/
             /* Si no falta ningun campo guardo*/
-            if (!fieldsHaveMissingValues()& !fieldsFormatError()) saveChangesToDB();            
+            if (fieldsAreValid()) saveChangesToDB();
         }
+
+        private bool fieldsAreValid()
+        {
+            return (!fieldsHaveMissingValues()& !fieldsFormatError());
+        }
+
 
         private bool fieldsFormatError()
         {
@@ -139,7 +146,7 @@ namespace FrbaBus.Abm_Micro
             string modelo = textBox_Modelo.Text;
             string tipoServicio = comboBox_Servicio.SelectedValue.ToString();
 
-            string numeroMicro = comboBox_NumeroDeMicro.Text;
+            string numeroMicro = textBox_NumeroMicro.Text;
 
             string fechaAlta = dateTimePicker_Vida_Util.Value.ToUniversalTime().ToString();
             string fechaVidaUtil = dateTimePicker_Vida_Util.Value.ToUniversalTime().ToString();
@@ -190,7 +197,7 @@ namespace FrbaBus.Abm_Micro
             string codigoMarga = comboBox_Marca.SelectedValue.ToString();
             string modelo = textBox_Modelo.Text;
             string tipoServicio = comboBox_Servicio.SelectedValue.ToString();
-            string numeroMicro = comboBox_NumeroDeMicro.SelectedItem.ToString();
+            string numeroMicro = textBox_NumeroMicro.Text;
             string fechaAlta = dateTimePicker_Vida_Util.Value.ToUniversalTime().ToString();
             string KGEncomienda = textBox_KG.Text;
 
@@ -224,6 +231,11 @@ namespace FrbaBus.Abm_Micro
             {
             MessageBox.Show("La patente ya existe, porfavor, seleccione una nueva", "Alta de micro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
+            }
+            else if (Dt.Rows[0].ItemArray[0].ToString() == "NumeroExistente")
+            {
+                MessageBox.Show("El numero de micro ya existe, porfavor, seleccione otro", "Alta de micro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
             else if (Dt.Rows[0].ItemArray[0].ToString() == "GuardadoExistoso")
             {
@@ -294,6 +306,16 @@ namespace FrbaBus.Abm_Micro
         private void button_Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox_NumberKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+                && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

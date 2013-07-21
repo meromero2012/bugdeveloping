@@ -51,9 +51,6 @@ namespace FrbaBus.Abm_Recorrido
             string origen = "FROM BUGDEVELOPING.RECORRIDO JOIN BUGDEVELOPING.TIPO_SERVICIO ON (RECORRIDO_TIPO_SERVICIO = TIPO_SERVICIO_CODIGO) JOIN BUGDEVELOPING.CIUDAD CD ON (RECORRIDO_ID_CIUDAD_DESTINO = CD.CIUDAD_ID) JOIN BUGDEVELOPING.CIUDAD CO ON (RECORRIDO_ID_CIUDAD_ORIGEN = CO.CIUDAD_ID)";
             string condicion = " where RECORRIDO_ACTIVO = 1 ";
 
-            if (esModificacion) condicion += "and RECORRIDO_CODIGO IN (SELECT B.RECORRIDO_CODIGO from BUGDEVELOPING.V_RECORRIDO_CODIGO_MODIFICABLE as B)";
-
-
             if (textBoxCiudadOrigen.Text != "")
             { condicion += " and CO.CIUDAD_NOMBRE like " + "'%" + textBoxCiudadOrigen.Text + "%'"; }
 

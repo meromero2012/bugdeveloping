@@ -6,12 +6,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using FrbaBus.ConnectorSQL;
 
 namespace FrbaBus.Abm_Recorrido
 {
     public partial class modRecorrido : BaseForm
     {
         public string codigoRecorrido = "";
+
+        private string ciudadOrigenOriginal = "";
+        private string ciudadDestinoOriginal = "";
+        private string precioKGOriginal = "";
+        private string precioPasajeOriginal = "";
+        private string tipoServicioOriginal = "";
+
 
         public modRecorrido():
                base()
@@ -60,13 +68,17 @@ namespace FrbaBus.Abm_Recorrido
         {
 
             DataTable Dt = FrbaBus.Abm_Recorrido.FuncionesRecorridos.obtenerCamposDeRecorrido(label_CodigoRecorrido.Text);
-
-            comboBox_TipoServicio.Text = Dt.Rows[0].ItemArray[1].ToString();
-            textBox_PrecioKG.Text = Dt.Rows[0].ItemArray[4].ToString();
-            textBox_PrecioPasaje.Text = Dt.Rows[0].ItemArray[5].ToString();
-            comboBox_CiudadOrigen.Text= Dt.Rows[0].ItemArray[2].ToString();
-            comboBox_CiudadDestino.Text = Dt.Rows[0].ItemArray[3].ToString();
-
+            tipoServicioOriginal = Dt.Rows[0].ItemArray[1].ToString();
+            ciudadOrigenOriginal = Dt.Rows[0].ItemArray[2].ToString();
+            ciudadDestinoOriginal = Dt.Rows[0].ItemArray[3].ToString();
+            precioKGOriginal = Dt.Rows[0].ItemArray[4].ToString();
+            precioPasajeOriginal = Dt.Rows[0].ItemArray[5].ToString();
+        
+            comboBox_TipoServicio.Text = String.Copy(tipoServicioOriginal);
+            textBox_PrecioKG.Text = String.Copy(precioKGOriginal);
+            textBox_PrecioPasaje.Text = String.Copy(precioPasajeOriginal);
+            comboBox_CiudadOrigen.Text = String.Copy(ciudadDestinoOriginal);
+            comboBox_CiudadDestino.Text = String.Copy(ciudadDestinoOriginal);
         }
 
         private void button_Cancelar_Click(object sender, EventArgs e)
@@ -79,9 +91,104 @@ namespace FrbaBus.Abm_Recorrido
             /* Verifico si falta algun campo */
             /* Si no falta ningun campo guardo*/
 
-            if (!fieldsHaveMissingValues()) saveChangesToDB();
-            
+            if (fieldsAreValid())
+            {
+                if (cambiaronCiudadesOServicio()) darBajaYCrearNuevoRecorridoEnDB();
+                else if (cambiaronPrecio()) cammbiarPrecioRecorridoEnDB();
+            }
         }
+
+        private void darBajaYCrearNuevoRecorridoEnDB()
+        {
+            /*Obtengo los valores del form*/
+            string tipoServicio = comboBox_TipoServicio.SelectedValue.ToString();
+            string ciudadOrigen = comboBox_CiudadOrigen.SelectedValue.ToString();
+            string ciudadDestino = comboBox_CiudadDestino.SelectedValue.ToString();
+            string precioKG = textBox_PrecioKG.Text;
+            string precioPasaje = textBox_PrecioPasaje.Text;
+            
+            /*Doy de baja al recorrido y cancelo pasajes de los viajes futuros*/
+            FrbaBus.Abm_Recorrido.FuncionesRecorridos.DarDeBajaARecorridoDesdeFecha(codigoRecorrido, DateTime.Today);
+
+            /*Crear nuevo recorrido*/
+            DataTable resultadoInsertarNuevoRecorrido;
+            resultadoInsertarNuevoRecorrido = FrbaBus.Abm_Recorrido.FuncionesRecorridos.InsertarNuevoRecorrido(tipoServicio, ciudadOrigen, ciudadDestino, precioKG, precioPasaje);
+            string nuevoCodigoRecorrido = resultadoInsertarNuevoRecorrido.Rows[0].ItemArray[0].ToString();
+
+            /*Le asigno al nuevo recorrido los viajes que tenia el otro*/
+            FrbaBus.Abm_Recorrido.FuncionesRecorridos.CambiarRecorridosEnViajesDesdeFecha(codigoRecorrido, nuevoCodigoRecorrido, DateTime.Today);   
+
+
+        }
+
+        private void cammbiarPrecioRecorridoEnDB()
+        {
+            string precioKGNuevo = textBox_PrecioKG.Text;
+            string precioBaseNuevo = textBox_PrecioPasaje.Text;
+
+            DataTable Dt;
+            string query = "UPDATE BUGDEVELOPING.RECORRIDO SET RECORRIDO_PRECIO_BASE_KG = "+precioKGNuevo+ ", RECORRIDO_PRECIO_BASE_PASAJE = "+precioBaseNuevo+" WHERE RECORRIDO_CODIGO = '"+codigoRecorrido+"'";
+            ConnectorClass conexion = ConnectorClass.Instance;
+            Dt = conexion.executeQuery(query);
+        }
+        
+        private bool cambiaronCiudadesOServicio()
+        {
+            return (comboBox_CiudadDestino.Text != ciudadDestinoOriginal || 
+                    comboBox_CiudadOrigen.Text  != ciudadOrigenOriginal ||
+                    comboBox_TipoServicio.Text != tipoServicioOriginal);
+        }
+
+        private bool cambiaronPrecio()
+        {
+            return (textBox_PrecioKG.Text != precioKGOriginal ||
+                    textBox_PrecioPasaje.Text != precioPasajeOriginal);
+        }
+
+
+        private bool fieldsAreValid()
+        {
+            return (checkImportes() & checkCiudades() & !fieldsHaveMissingValues());        
+        }
+
+        private bool checkImportes()
+        {
+            bool preciosValidos = true;
+            int precioBase = 0;
+            int precioKG = 0;
+            bool couldParsePasaje = int.TryParse(textBox_PrecioPasaje.Text, out precioBase);
+            bool couldParseKG = int.TryParse(textBox_PrecioKG.Text, out precioKG);
+
+            if (!couldParseKG || !couldParsePasaje)
+            {
+                MessageBox.Show("Los precios no son validos, porfavor, ingrese un numero valido", "Alta de Recorridos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                preciosValidos = false;
+                return preciosValidos;
+            }
+
+            preciosValidos = (precioBase > 0 & precioKG > 0);
+
+            if (!preciosValidos)
+            {
+                MessageBox.Show("Los precios no son validos, porfavor, ingrese valores superiores a 0", "Alta de Recorridos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            return preciosValidos;
+        }
+
+        private bool checkCiudades()
+        {
+            bool ciudadesDistintas = false;
+
+            ciudadesDistintas = (comboBox_CiudadDestino.Text != comboBox_CiudadOrigen.Text);
+
+            if (!ciudadesDistintas)
+            {
+                MessageBox.Show("Las ciudades deben ser distintas", "Alta de Recorridos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            return ciudadesDistintas;
+        }
+
 
         private bool fieldsHaveMissingValues()
         {

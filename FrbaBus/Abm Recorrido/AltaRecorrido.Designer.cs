@@ -137,6 +137,7 @@
             this.textBox_PrecioKG.Name = "textBox_PrecioKG";
             this.textBox_PrecioKG.Size = new System.Drawing.Size(101, 20);
             this.textBox_PrecioKG.TabIndex = 12;
+            this.textBox_PrecioKG.TextChanged += new System.EventHandler(this.textBox_PrecioKG_TextChanged);
             // 
             // textBox_PrecioPasaje
             // 
@@ -144,6 +145,7 @@
             this.textBox_PrecioPasaje.Name = "textBox_PrecioPasaje";
             this.textBox_PrecioPasaje.Size = new System.Drawing.Size(101, 20);
             this.textBox_PrecioPasaje.TabIndex = 13;
+            this.textBox_PrecioPasaje.TextChanged += new System.EventHandler(this.textBox_PrecioPasaje_TextChanged);
             // 
             // AltaRecorrido
             // 

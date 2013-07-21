@@ -42,21 +42,8 @@ namespace FrbaBus.Abm_Recorrido
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable viajesDeRecorrido = FrbaBus.Abm_Recorrido.FuncionesRecorridos.ViajesDeRecorridoApartirDeFecha(codigoRecorrido, DateTime.Today);
-            //aca hago un for por cada uno y obtengo en nroDeViaje
-            foreach (DataRow row in viajesDeRecorrido.Rows)
-            {
-                string codigoCompra = row.ItemArray[0].ToString();
+            FrbaBus.Abm_Recorrido.FuncionesRecorridos.DarDeBajaARecorridoDesdeFecha(codigoRecorrido, DateTime.Today);   
 
-                Boolean esPasaje = FrbaBus.CancelarViaje.FuncionesCancelarViaje.esPasaje(codigoCompra);
-
-                if (esPasaje)
-                    FrbaBus.CancelarViaje.FuncionesCancelarViaje.actualizarPasaje(codigoCompra);
-                else
-                    FrbaBus.CancelarViaje.FuncionesCancelarViaje.actualizarEncomienda(codigoCompra);
-
-                FrbaBus.CancelarViaje.FuncionesCancelarViaje.actualizarCancelacion(codigoCompra, "Recorrido Dado de baja");
-            }
             MessageBox.Show("El recorrido fue dado de baja", "Baja de Recorridos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             FrbaBus.Abm_Recorrido.FuncionesRecorridos.DarDeBajaARecorrido(codigoRecorrido);
             Close();

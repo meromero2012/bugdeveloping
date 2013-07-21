@@ -16,6 +16,10 @@ namespace FrbaBus.Abm_Recorrido
                base()
         {
             InitializeComponent();
+            /*Seteo los handlers para limitar el ingreso de caracteres en los textBoxes*/
+            textBox_PrecioKG.KeyPress += new KeyPressEventHandler(textBox_Precios_KeyPress);
+            textBox_PrecioPasaje.KeyPress += new KeyPressEventHandler(textBox_Precios_KeyPress);
+
         }
 
         private void AltaRecorrido_Load(object sender, EventArgs e)
@@ -52,7 +56,51 @@ namespace FrbaBus.Abm_Recorrido
             /* Verifico si falta algun campo */
             /* Si no falta ningun campo guardo*/
 
-            if (!fieldsHaveMissingValues()) saveChangesToDB();
+            if (fieldsAreValid()) saveChangesToDB();
+        }
+
+        private bool fieldsAreValid()
+        {
+            return (checkImportes() & checkCiudades() & !fieldsHaveMissingValues());        
+        }
+
+
+        private bool checkImportes()
+        {
+            bool preciosValidos = true;
+            int precioBase = 0;
+            int precioKG = 0;
+            bool couldParsePasaje = int.TryParse(textBox_PrecioPasaje.Text, out precioBase);
+            bool couldParseKG = int.TryParse(textBox_PrecioKG.Text, out precioKG);
+
+            if(!couldParseKG || !couldParsePasaje)
+            {
+                MessageBox.Show("Los precios no son validos, porfavor, ingrese un numero valido", "Alta de Recorridos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                preciosValidos = false;
+                return preciosValidos;
+            }
+
+            preciosValidos = (precioBase > 0 & precioKG > 0);
+
+            if(!preciosValidos)
+            {
+                MessageBox.Show("Los precios no son validos, porfavor, ingrese valores superiores a 0", "Alta de Recorridos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            return preciosValidos;
+        }
+
+        private bool checkCiudades()
+        {
+            bool ciudadesDistintas = false;
+
+            ciudadesDistintas = (comboBox_CiudadDestino.Text != comboBox_CiudadOrigen.Text);
+
+            if (!ciudadesDistintas)
+            {
+                MessageBox.Show("Las ciudades deben ser distintas", "Alta de Recorridos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            return ciudadesDistintas;
         }
 
         private bool fieldsHaveMissingValues()
@@ -111,6 +159,8 @@ namespace FrbaBus.Abm_Recorrido
                 string precioKG = textBox_PrecioKG.Text;
                 string precioPasaje = textBox_PrecioPasaje.Text;
                 DataTable resultadoInsertarNuevoRecorrido;
+                string codigoRandom = FrbaBus.Abm_Recorrido.FuncionesRecorridos.generarCodigoRecorrido();
+
                 resultadoInsertarNuevoRecorrido = FrbaBus.Abm_Recorrido.FuncionesRecorridos.InsertarNuevoRecorrido(tipoServicio, ciudadOrigen, ciudadDestino, precioKG, precioPasaje);
 
                 string resultado = resultadoInsertarNuevoRecorrido.Rows[0].ItemArray[0].ToString();
@@ -126,5 +176,34 @@ namespace FrbaBus.Abm_Recorrido
         {
             this.Close();
         }
+
+        private void textBox_PrecioKG_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_Precios_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+        && !char.IsDigit(e.KeyChar)
+        && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_PrecioPasaje_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }      
 }

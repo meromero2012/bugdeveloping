@@ -89,6 +89,7 @@ namespace FrbaBus.Abm_Micro
             Dt = conexion.executeQuery(query);
         }
 
+
         public static void cancelarOMoverViajesDeMicroParaFecha(string microPatente, DateTime comienzo, DateTime fin)
         {
             //Obtengo todos los viajes del micro en esas fechas
