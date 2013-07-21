@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using FrbaBus.ConnectorSQL;
+using System.Configuration;
 
 namespace FrbaBus.Abm_Recorrido
 {
@@ -42,7 +43,8 @@ namespace FrbaBus.Abm_Recorrido
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrbaBus.Abm_Recorrido.FuncionesRecorridos.DarDeBajaARecorridoDesdeFecha(codigoRecorrido, DateTime.Today);   
+            DateTime fecha = new DateTime( Convert.ToInt32(ConfigurationManager.AppSettings["SystemYear"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemMonth"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemDay"]) );
+            FrbaBus.Abm_Recorrido.FuncionesRecorridos.DarDeBajaARecorridoDesdeFecha(codigoRecorrido, fecha);   
 
             MessageBox.Show("El recorrido fue dado de baja", "Baja de Recorridos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             FrbaBus.Abm_Recorrido.FuncionesRecorridos.DarDeBajaARecorrido(codigoRecorrido);

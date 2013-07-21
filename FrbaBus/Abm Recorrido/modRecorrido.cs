@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using FrbaBus.ConnectorSQL;
+using System.Configuration;
 
 namespace FrbaBus.Abm_Recorrido
 {
@@ -111,9 +112,10 @@ namespace FrbaBus.Abm_Recorrido
             string ciudadDestino = comboBox_CiudadDestino.SelectedValue.ToString();
             string precioKG = textBox_PrecioKG.Text;
             string precioPasaje = textBox_PrecioPasaje.Text;
-            
+
+            DateTime fecha = new DateTime(Convert.ToInt32(ConfigurationManager.AppSettings["SystemYear"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemMonth"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemDay"]));
             /*Doy de baja al recorrido y cancelo pasajes de los viajes futuros*/
-            FrbaBus.Abm_Recorrido.FuncionesRecorridos.DarDeBajaARecorridoDesdeFecha(codigoRecorrido, DateTime.Today);
+            FrbaBus.Abm_Recorrido.FuncionesRecorridos.DarDeBajaARecorridoDesdeFecha(codigoRecorrido, fecha);
 
             /*Crear nuevo recorrido*/
             string codigoRandom = FrbaBus.Abm_Recorrido.FuncionesRecorridos.generarCodigoRecorrido();
@@ -121,7 +123,7 @@ namespace FrbaBus.Abm_Recorrido
             resultadoInsertarNuevoRecorrido = FrbaBus.Abm_Recorrido.FuncionesRecorridos.InsertarNuevoRecorrido(codigoRandom,tipoServicio, ciudadOrigen, ciudadDestino, precioKG, precioPasaje);
             
             /*Le asigno al nuevo recorrido los viajes que tenia el otro*/
-            FrbaBus.Abm_Recorrido.FuncionesRecorridos.CambiarRecorridosEnViajesDesdeFecha(codigoRecorrido, codigoRandom, DateTime.Today.AddYears(-3));   
+            FrbaBus.Abm_Recorrido.FuncionesRecorridos.CambiarRecorridosEnViajesDesdeFecha(codigoRecorrido, codigoRandom, fecha);   
 
 
         }

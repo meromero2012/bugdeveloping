@@ -177,11 +177,6 @@ namespace FrbaBus.Abm_Recorrido
             this.Close();
         }
 
-        private void textBox_PrecioKG_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox_Precios_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar)
@@ -198,12 +193,6 @@ namespace FrbaBus.Abm_Recorrido
                 e.Handled = true;
             }
         }
-
-        private void textBox_PrecioPasaje_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
     }      
 }

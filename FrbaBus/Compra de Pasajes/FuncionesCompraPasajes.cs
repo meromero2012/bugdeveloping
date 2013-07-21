@@ -27,7 +27,7 @@ namespace FrbaBus.Compra_de_Pasajes
 
         public static String getTipoServicio(String Recorrido)
         {
-            String query = "select TIPO_SERVICIO_NOMBRE from BUGDEVELOPING.RECORRIDO join BUGDEVELOPING.TIPO_SERVICIO on (RECORRIDO_CODIGO = " + Recorrido + "and TIPO_SERVICIO_CODIGO = RECORRIDO_TIPO_SERVICIO)";
+            String query = "select TIPO_SERVICIO_NOMBRE from BUGDEVELOPING.RECORRIDO join BUGDEVELOPING.TIPO_SERVICIO on (RECORRIDO_CODIGO = '" + Recorrido + "' and TIPO_SERVICIO_CODIGO = RECORRIDO_TIPO_SERVICIO)";
             ConnectorClass conexion = ConnectorClass.Instance;
             DataTable dt = conexion.executeQuery(query);
             if (dt.Rows.Count != 0)
@@ -77,7 +77,7 @@ namespace FrbaBus.Compra_de_Pasajes
 
         public static String getPrecioPasajeStandar(String recorrido)
         {
-            String query = "select ROUND(RECORRIDO_PRECIO_BASE_PASAJE + RECORRIDO_PRECIO_BASE_PASAJE * TIPO_SERVICIO_PORCENTAJE_ADICIONAL, 2) from BUGDEVELOPING.RECORRIDO join BUGDEVELOPING.TIPO_SERVICIO on (RECORRIDO_TIPO_SERVICIO = TIPO_SERVICIO_CODIGO) where RECORRIDO_CODIGO = " + recorrido;
+            String query = "select ROUND(RECORRIDO_PRECIO_BASE_PASAJE + RECORRIDO_PRECIO_BASE_PASAJE * TIPO_SERVICIO_PORCENTAJE_ADICIONAL, 2) from BUGDEVELOPING.RECORRIDO join BUGDEVELOPING.TIPO_SERVICIO on (RECORRIDO_TIPO_SERVICIO = TIPO_SERVICIO_CODIGO) where RECORRIDO_CODIGO = '" + recorrido + "'";
             ConnectorClass conexion = ConnectorClass.Instance;
             DataTable dt = conexion.executeQuery(query);
             return dt.Rows[0].ItemArray[0].ToString();
@@ -100,7 +100,7 @@ namespace FrbaBus.Compra_de_Pasajes
 
         public static void insertCliente(String dni, String fecha, String nombre, String apellido, String sexo, String discapacidad, String direccion, String telefono, String mail)
         {
-            String query = "insert into BUGDEVELOPING.CLIENTE (CLIENTE_DNI, CLIENTE_FECHA_NACIMIENTO, CLIENTE_NOMBRE, CLIENTE_APELLIDO, CLIENTE_SEXO, CLIENTE_DISCAPACIDAD, CLIENTE_DIRECCION, CLIENTE_TELEFONO, CLIENTE_MAIL) values  ('" + dni + "', cast('" + fecha + "' as datetime), '" + nombre + "', '" + apellido + "', '" + sexo + "', '" + discapacidad + "', '" + direccion + "', '" + telefono + "', '" + mail + "'";
+            String query = "insert into BUGDEVELOPING.CLIENTE (CLIENTE_DNI, CLIENTE_FECHA_NACIMIENTO, CLIENTE_NOMBRE, CLIENTE_APELLIDO, CLIENTE_SEXO, CLIENTE_DISCAPACIDAD, CLIENTE_DIRECCION, CLIENTE_TELEFONO, CLIENTE_MAIL) values  ('" + dni + "', cast('" + fecha + "' as datetime), '" + nombre + "', '" + apellido + "', '" + sexo + "', '" + discapacidad + "', '" + direccion + "', '" + telefono + "', '" + mail + "')";
             ConnectorClass conexion = ConnectorClass.Instance;
             conexion.executeQuery(query);
         }
@@ -122,7 +122,7 @@ namespace FrbaBus.Compra_de_Pasajes
 
         public static string getPrecioBaseEncomienda(String recorrido)
         {
-            String query = "select RECORRIDO_PRECIO_BASE_KG from BUGDEVELOPING.RECORRIDO where RECORRIDO_CODIGO = " + recorrido;
+            String query = "select RECORRIDO_PRECIO_BASE_KG from BUGDEVELOPING.RECORRIDO where RECORRIDO_CODIGO = '" + recorrido+ "'";
             ConnectorClass conexion = ConnectorClass.Instance;
             DataTable dt = conexion.executeQuery(query);
             return dt.Rows[0].ItemArray[0].ToString();
@@ -151,7 +151,7 @@ namespace FrbaBus.Compra_de_Pasajes
 
         public static String getNroCompra()
         {
-            String query = "select MAX(COMPRA_NUMERO_VOUCHER) + 1 from BUGDEVELOPING.COMPRA";
+            String query = "select MAX(isnull(COMPRA_NUMERO_VOUCHER,0)) + 1 from BUGDEVELOPING.COMPRA";
             ConnectorClass conexion = ConnectorClass.Instance;
             DataTable dt = conexion.executeQuery(query);
             return dt.Rows[0].ItemArray[0].ToString();

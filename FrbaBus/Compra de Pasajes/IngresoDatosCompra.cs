@@ -99,6 +99,7 @@ namespace FrbaBus.Compra_de_Pasajes
         /*Habilita las opciones de pago despues de cargar los datos del cliente*/
         private void continuarButton_Click(object sender, EventArgs e)
         {
+            enableFormularioDatos(false);
             if (AccountManagment.ActualUser.Role== RoleEnum.Administrator)
             {
                 efectivoRadioButton.Enabled = true;
