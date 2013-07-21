@@ -11,12 +11,12 @@ namespace FrbaBus.Abm_Recorrido
     class FuncionesRecorridos
     {
 
-        public static DataTable InsertarNuevoRecorrido(string tipoServicio, string ciudadOrigen, string ciudadDestino, string precioKG, string precioPasaje)
+        public static DataTable InsertarNuevoRecorrido(string codigoRecorrido,string tipoServicio, string ciudadOrigen, string ciudadDestino, string precioKG, string precioPasaje)
         {
             DataTable DtRes;
             ConnectorClass conexion = ConnectorClass.Instance;
 
-            string query = "EXEC BUGDEVELOPING.Alta_Recorrido" + " " +
+            string query = "EXEC BUGDEVELOPING.Alta_Recorrido '" + codigoRecorrido +"', "+
                 tipoServicio + "," +
                 ciudadOrigen + "," +
                 ciudadDestino + "," +
@@ -54,7 +54,7 @@ namespace FrbaBus.Abm_Recorrido
             String join1 = "left join BUGDEVELOPING.PASAJE_ENCOMIENDA on (COMPRA.COMPRA_CODIGO_PASAJE_ENCOMIENDA = PASAJE_ENCOMIENDA.PASAJE_ENCOMIENDA_CODIGO) ";						  
             String join2 = "left join BUGDEVELOPING.VIAJE on (PASAJE_ENCOMIENDA.PASAJE_ENCOMIENDA_CODIGO_VIAJE = VIAJE.VIAJE_CODIGO) ";						   
             String join3 = "left join BUGDEVELOPING.RECORRIDO on (VIAJE_CODIGO_RECORRIDO = RECORRIDO_CODIGO) ";
-            String where = "WHERE RECORRIDO_CODIGO = '" + codigoRecorrido + "' and COMPRA_FECHA >='" + comienzo + "' and PASAJE_ENCOMIENDA_CODIGO not in (SELECT CANCELACION_CODIGO_PASAJE_ENCOMIENDA from BUGDEVELOPING.CANCELACION)";
+            String where = "WHERE RECORRIDO_CODIGO = '" + codigoRecorrido + "' and COMPRA_FECHA >=" + comienzo + " and PASAJE_ENCOMIENDA_CODIGO not in (SELECT CANCELACION_CODIGO_PASAJE_ENCOMIENDA from BUGDEVELOPING.CANCELACION)";
             String query = select + from + join1 + join2+ join3 + where;
 
             ConnectorClass conexion = ConnectorClass.Instance;
@@ -108,7 +108,7 @@ namespace FrbaBus.Abm_Recorrido
         public static void CambiarRecorridosEnViajesDesdeFecha(string codigoRecorrido, string codigoRecorridoNuevo, DateTime fechaComienzo) 
         {
             string comienzo = "'" + fechaComienzo.ToString("yyyyMMdd HH:mm:ss") + "'";
-            string query = "UPDATE BUGDEVELOPING.VIAJE SET VIAJE_CODIGO_RECORRIDO = '" + codigoRecorridoNuevo + "' WHERE VIAJE_CODIGO_RECORRIDO ='" + codigoRecorrido + "' and VIAJE_FECHA_SALIDA >= '"+comienzo+"'";
+            string query = "UPDATE BUGDEVELOPING.VIAJE SET VIAJE_CODIGO_RECORRIDO = '" + codigoRecorridoNuevo + "' WHERE VIAJE_CODIGO_RECORRIDO ='" + codigoRecorrido + "' and VIAJE_FECHA_SALIDA >= "+comienzo;
             ConnectorClass conexion = ConnectorClass.Instance;
             conexion.executeQuery(query);
        }
@@ -145,12 +145,13 @@ namespace FrbaBus.Abm_Recorrido
 
         public static void DarDeBajaARecorridoDesdeFecha(string codigoRecorrido, DateTime fecha)   
         {
-            DataTable viajesDeRecorrido = FrbaBus.Abm_Recorrido.FuncionesRecorridos.ViajesDeRecorridoApartirDeFecha(codigoRecorrido, DateTime.Today);
+            DataTable viajesDeRecorrido = FrbaBus.Abm_Recorrido.FuncionesRecorridos.ViajesDeRecorridoApartirDeFecha(codigoRecorrido, fecha);
             //aca hago un for por cada uno y obtengo en nroDeViaje
+            int i = 0;
             foreach (DataRow row in viajesDeRecorrido.Rows)
             {
                 string codigoCompra = row.ItemArray[0].ToString();
-
+                i++;
                 Boolean esPasaje = FrbaBus.CancelarViaje.FuncionesCancelarViaje.esPasaje(codigoCompra);
 
                 if (esPasaje)

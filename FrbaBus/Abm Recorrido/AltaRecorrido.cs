@@ -161,12 +161,12 @@ namespace FrbaBus.Abm_Recorrido
                 DataTable resultadoInsertarNuevoRecorrido;
                 string codigoRandom = FrbaBus.Abm_Recorrido.FuncionesRecorridos.generarCodigoRecorrido();
 
-                resultadoInsertarNuevoRecorrido = FrbaBus.Abm_Recorrido.FuncionesRecorridos.InsertarNuevoRecorrido(tipoServicio, ciudadOrigen, ciudadDestino, precioKG, precioPasaje);
+                resultadoInsertarNuevoRecorrido = FrbaBus.Abm_Recorrido.FuncionesRecorridos.InsertarNuevoRecorrido(codigoRandom,tipoServicio, ciudadOrigen, ciudadDestino, precioKG, precioPasaje);
 
                 string resultado = resultadoInsertarNuevoRecorrido.Rows[0].ItemArray[0].ToString();
                 string mensaje = "";
                 if (resultado == "recorridoSimilarExistente") mensaje = "El codigo de Recorrido ya Existe y es:" + resultadoInsertarNuevoRecorrido.Rows[0].ItemArray[1].ToString();
-                if (resultado == "recorridoDadoDeAltaExitoso") mensaje = "El recorrido se dio de alta exitosamente codigo: " + resultadoInsertarNuevoRecorrido.Rows[0].ItemArray[0].ToString();
+                if (resultado == "recorridoDadoDeAltaExitoso") mensaje = "El recorrido se dio de alta exitosamente codigo: " + codigoRandom;
 
                 MessageBox.Show(mensaje, "Alta de Recorrido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

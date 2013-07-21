@@ -42,6 +42,7 @@ namespace FrbaBus.Abm_Recorrido
             textBoxCiudadOrigen.Text = "";
             textBoxCiudadDestino.Text = "";
             comboBoxTipoServicio.Text = "";
+            bFiltrar_Click(sender, e);
         }
 
         private void bFiltrar_Click(object sender, EventArgs e)

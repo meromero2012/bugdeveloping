@@ -140,6 +140,7 @@
             this.comboBox_Marca.Name = "comboBox_Marca";
             this.comboBox_Marca.Size = new System.Drawing.Size(121, 21);
             this.comboBox_Marca.TabIndex = 54;
+            this.comboBox_Marca.SelectedIndexChanged += new System.EventHandler(this.comboBox_Marca_SelectedIndexChanged);
             // 
             // textBox_Patente
             // 

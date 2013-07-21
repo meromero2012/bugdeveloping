@@ -73,11 +73,14 @@ namespace FrbaBus.Abm_Recorrido
             ciudadDestinoOriginal = Dt.Rows[0].ItemArray[3].ToString();
             precioKGOriginal = Dt.Rows[0].ItemArray[4].ToString();
             precioPasajeOriginal = Dt.Rows[0].ItemArray[5].ToString();
-        
+
+            precioKGOriginal = precioKGOriginal.Replace(",",".");
+            precioPasajeOriginal = precioPasajeOriginal.Replace(",", ".");
+
             comboBox_TipoServicio.Text = String.Copy(tipoServicioOriginal);
             textBox_PrecioKG.Text = String.Copy(precioKGOriginal);
             textBox_PrecioPasaje.Text = String.Copy(precioPasajeOriginal);
-            comboBox_CiudadOrigen.Text = String.Copy(ciudadDestinoOriginal);
+            comboBox_CiudadOrigen.Text = String.Copy(ciudadOrigenOriginal);
             comboBox_CiudadDestino.Text = String.Copy(ciudadDestinoOriginal);
         }
 
@@ -95,6 +98,8 @@ namespace FrbaBus.Abm_Recorrido
             {
                 if (cambiaronCiudadesOServicio()) darBajaYCrearNuevoRecorridoEnDB();
                 else if (cambiaronPrecio()) cammbiarPrecioRecorridoEnDB();
+                MessageBox.Show("Se guardaron los cambios exitosamente", "Modificacion de Recorridos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
             }
         }
 
@@ -108,15 +113,15 @@ namespace FrbaBus.Abm_Recorrido
             string precioPasaje = textBox_PrecioPasaje.Text;
             
             /*Doy de baja al recorrido y cancelo pasajes de los viajes futuros*/
-            FrbaBus.Abm_Recorrido.FuncionesRecorridos.DarDeBajaARecorridoDesdeFecha(codigoRecorrido, DateTime.Today);
+            FrbaBus.Abm_Recorrido.FuncionesRecorridos.DarDeBajaARecorridoDesdeFecha(codigoRecorrido, DateTime.Today.AddYears(-3));
 
             /*Crear nuevo recorrido*/
+            string codigoRandom = FrbaBus.Abm_Recorrido.FuncionesRecorridos.generarCodigoRecorrido();
             DataTable resultadoInsertarNuevoRecorrido;
-            resultadoInsertarNuevoRecorrido = FrbaBus.Abm_Recorrido.FuncionesRecorridos.InsertarNuevoRecorrido(tipoServicio, ciudadOrigen, ciudadDestino, precioKG, precioPasaje);
-            string nuevoCodigoRecorrido = resultadoInsertarNuevoRecorrido.Rows[0].ItemArray[0].ToString();
-
+            resultadoInsertarNuevoRecorrido = FrbaBus.Abm_Recorrido.FuncionesRecorridos.InsertarNuevoRecorrido(codigoRandom,tipoServicio, ciudadOrigen, ciudadDestino, precioKG, precioPasaje);
+            
             /*Le asigno al nuevo recorrido los viajes que tenia el otro*/
-            FrbaBus.Abm_Recorrido.FuncionesRecorridos.CambiarRecorridosEnViajesDesdeFecha(codigoRecorrido, nuevoCodigoRecorrido, DateTime.Today);   
+            FrbaBus.Abm_Recorrido.FuncionesRecorridos.CambiarRecorridosEnViajesDesdeFecha(codigoRecorrido, codigoRandom, DateTime.Today.AddYears(-3));   
 
 
         }
@@ -154,10 +159,11 @@ namespace FrbaBus.Abm_Recorrido
         private bool checkImportes()
         {
             bool preciosValidos = true;
-            int precioBase = 0;
-            int precioKG = 0;
-            bool couldParsePasaje = int.TryParse(textBox_PrecioPasaje.Text, out precioBase);
-            bool couldParseKG = int.TryParse(textBox_PrecioKG.Text, out precioKG);
+            float precioBase = 0;
+            float precioKG = 0;
+
+            bool couldParsePasaje = float.TryParse(textBox_PrecioPasaje.Text, out precioBase);
+            bool couldParseKG = float.TryParse(textBox_PrecioKG.Text, out precioKG);
 
             if (!couldParseKG || !couldParsePasaje)
             {

@@ -76,9 +76,9 @@ namespace FrbaBus.Abm_Micro
         DataTable micro;
         string seleccion = "SELECT MICRO_PATENTE as 'Patente',MARCA_NOMBRE as 'MARCA',  MICRO_NUMERO as 'Numero', MICRO_MODELO as 'Modelo',TIPO_SERVICIO_NOMBRE as 'Servicio',  MICRO_CANTIDAD_KGS as 'Capacidad(KG)'";
         string origen = "FROM BUGDEVELOPING.MICRO left join BUGDEVELOPING.MARCA on (Micro.MICRO_CODIGO_MARCA = MARCA_CODIGO) left join BUGDEVELOPING.TIPO_SERVICIO TS on (MICRO.MICRO_TIPO_SERVICIO = TS.TIPO_SERVICIO_CODIGO)";
-
+        string condicion = " WHERE MICRO_PATENTE ='" + patente + "'";
         ConnectorClass conexion = ConnectorClass.Instance;
-        micro = conexion.executeQuery(seleccion+origen);
+        micro = conexion.executeQuery(seleccion+origen+condicion);
 
         return micro;
         }
@@ -128,6 +128,11 @@ namespace FrbaBus.Abm_Micro
             FuncionesMicro.modificarMicro(textBox_Patente.Text, comboBox_Marca.SelectedValue.ToString(), textBox_Modelo.Text);
             MessageBox.Show("El micro se modifico exitosamente", "Modificacion de Micro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
+        }
+
+        private void comboBox_Marca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

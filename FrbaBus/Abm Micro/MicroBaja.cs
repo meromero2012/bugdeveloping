@@ -59,7 +59,8 @@ namespace FrbaBus.Abm_Micro
                 FrbaBus.Abm_Micro.FuncionesMicro.cancelarOMoverViajesDeMicroParaFecha(microPatente, dateTimePicker_FechaBajaNuevaC.Value, dateTimePicker_FechaBajaNuevaF.Value);
                 /* Mandar a fuera de servicio al micro */
                 FrbaBus.Abm_Micro.FuncionesMicro.mandarMicroFueraServicio(microPatente, dateTimePicker_FechaBajaNuevaC.Value, dateTimePicker_FechaBajaNuevaF.Value);
-                
+                MessageBox.Show("El micro a sido mandado a servicio exitosamente");
+                Close();
             }
 
          

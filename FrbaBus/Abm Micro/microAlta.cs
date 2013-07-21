@@ -290,9 +290,9 @@ namespace FrbaBus.Abm_Micro
                     if (butacaTipo == 0) butacaTipoString = "Pasillo";
                     else butacaTipoString = "Ventanilla";
 
-                    String query = "EXEC [BUGDEVELOPING].[BUTACA_ALTA] " +
+                    String query = "EXEC [BUGDEVELOPING].[BUTACA_ALTA] '" +
                     microPatente+
-                    ", "+butacaPiso+
+                    "', "+butacaPiso+
                     ", "+butacaNumero+
                     ", "+butacaTipoString;
 
