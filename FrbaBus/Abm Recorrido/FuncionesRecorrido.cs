@@ -147,11 +147,10 @@ namespace FrbaBus.Abm_Recorrido
         {
             DataTable viajesDeRecorrido = FrbaBus.Abm_Recorrido.FuncionesRecorridos.ViajesDeRecorridoApartirDeFecha(codigoRecorrido, fecha);
             //aca hago un for por cada uno y obtengo en nroDeViaje
-            int i = 0;
             foreach (DataRow row in viajesDeRecorrido.Rows)
             {
                 string codigoCompra = row.ItemArray[0].ToString();
-                i++;
+
                 Boolean esPasaje = FrbaBus.CancelarViaje.FuncionesCancelarViaje.esPasaje(codigoCompra);
 
                 if (esPasaje)

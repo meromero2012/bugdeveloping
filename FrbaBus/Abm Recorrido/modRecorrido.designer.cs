@@ -52,7 +52,6 @@
             this.comboBox_TipoServicio.Name = "comboBox_TipoServicio";
             this.comboBox_TipoServicio.Size = new System.Drawing.Size(101, 21);
             this.comboBox_TipoServicio.TabIndex = 58;
-            this.comboBox_TipoServicio.SelectedIndexChanged += new System.EventHandler(this.comboBox_TipoServicio_SelectedIndexChanged);
             // 
             // comboBox_CiudadDestino
             // 

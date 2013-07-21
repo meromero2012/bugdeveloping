@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using FrbaBus.ConnectorSQL;
+using System.Configuration;
 
 namespace FrbaBus.Abm_Micro
 {
@@ -148,8 +149,7 @@ namespace FrbaBus.Abm_Micro
 
             string numeroMicro = textBox_NumeroMicro.Text;
 
-            string fechaAlta = dateTimePicker_Vida_Util.Value.ToUniversalTime().ToString();
-            string fechaVidaUtil = dateTimePicker_Vida_Util.Value.ToUniversalTime().ToString();
+            string fechaAlta = ConfigurationManager.AppSettings["SystemYear"] + ConfigurationManager.AppSettings["SystemMonth"] + ConfigurationManager.AppSettings["SystemDay"] + " 00:00:00";
 
             string KGEncomienda = textBox_KG.Text;
 
@@ -198,7 +198,7 @@ namespace FrbaBus.Abm_Micro
             string modelo = textBox_Modelo.Text;
             string tipoServicio = comboBox_Servicio.SelectedValue.ToString();
             string numeroMicro = textBox_NumeroMicro.Text;
-            string fechaAlta = dateTimePicker_Vida_Util.Value.ToUniversalTime().ToString();
+            string fechaAlta = ConfigurationManager.AppSettings["SystemYear"] + ConfigurationManager.AppSettings["SystemMonth"] + ConfigurationManager.AppSettings["SystemDay"] + " 00:00:00";
             string KGEncomienda = textBox_KG.Text;
 
             /*Guardo el micro*/

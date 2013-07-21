@@ -113,7 +113,7 @@ namespace FrbaBus.Abm_Recorrido
             string precioPasaje = textBox_PrecioPasaje.Text;
             
             /*Doy de baja al recorrido y cancelo pasajes de los viajes futuros*/
-            FrbaBus.Abm_Recorrido.FuncionesRecorridos.DarDeBajaARecorridoDesdeFecha(codigoRecorrido, DateTime.Today.AddYears(-3));
+            FrbaBus.Abm_Recorrido.FuncionesRecorridos.DarDeBajaARecorridoDesdeFecha(codigoRecorrido, DateTime.Today);
 
             /*Crear nuevo recorrido*/
             string codigoRandom = FrbaBus.Abm_Recorrido.FuncionesRecorridos.generarCodigoRecorrido();
@@ -253,11 +253,6 @@ namespace FrbaBus.Abm_Recorrido
                 mensaje = "El recorrido se modifico exitosamente";
             }
             MessageBox.Show(mensaje, "Modificacion de Recorrido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
-
-        private void comboBox_TipoServicio_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 

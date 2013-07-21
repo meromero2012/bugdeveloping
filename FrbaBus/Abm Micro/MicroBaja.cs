@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using FrbaBus.ConnectorSQL;
+using System.Configuration;
 
 namespace FrbaBus.Abm_Micro
 {
@@ -35,10 +36,8 @@ namespace FrbaBus.Abm_Micro
         private void loadDatePickers()
         {
             /*Cargo los date pickers y limito las fechas */
-            dateTimePicker_FechaBajaNuevaC.MinDate = DateTime.Today;
-            dateTimePicker_FechaBajaNuevaC.MaxDate = DateTime.Today.AddYears(50);
-            dateTimePicker_FechaBajaNuevaF.MinDate = DateTime.Today;
-            dateTimePicker_FechaBajaNuevaF.MaxDate = DateTime.Today.AddYears(50);
+            dateTimePicker_FechaBajaNuevaC.Value = new DateTime(Convert.ToInt32(ConfigurationManager.AppSettings["SystemYear"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemMonth"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemDay"]));
+            dateTimePicker_FechaBajaNuevaF.Value = new DateTime(Convert.ToInt32(ConfigurationManager.AppSettings["SystemYear"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemMonth"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemDay"]));
         }
 
         private void button_Confirmar_Click(object sender, EventArgs e)
@@ -98,8 +97,9 @@ namespace FrbaBus.Abm_Micro
 
          private void button_baja_Click(object sender, EventArgs e)
          {
+             DateTime fecha = new DateTime(Convert.ToInt32(ConfigurationManager.AppSettings["SystemYear"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemMonth"]), Convert.ToInt32(ConfigurationManager.AppSettings["SystemDay"]));
              /*Pasar los viajes a micros similares los que no los cancelo*/
-             FrbaBus.Abm_Micro.FuncionesMicro.cancelarOMoverViajesDeMicroParaFecha(microPatente, DateTime.Today, DateTime.Today.AddYears(100));
+             FrbaBus.Abm_Micro.FuncionesMicro.cancelarOMoverViajesDeMicroParaFecha(microPatente, fecha, DateTime.Today.AddYears(100));
 
              /*Guardo el micro en micros baja*/
              FrbaBus.Abm_Micro.FuncionesMicro.bajarMicroEnDB(microPatente, DateTime.Today);

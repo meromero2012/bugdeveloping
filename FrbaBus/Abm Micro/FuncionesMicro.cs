@@ -84,7 +84,7 @@ namespace FrbaBus.Abm_Micro
             string fin = "'" + fechaFin.ToString("yyyyMMdd HH:mm:ss") + "'";
 
             DataTable Dt;
-            String query = "INSERT INTO BUGDEVELOPING.MICRO_FUERA_SERVICIO VALUES('" + microPatente + "'," + comienzo + "," + fin + ")";
+            String query = "INSERT INTO BUGDEVELOPING.MICRO_FUERA_SERVICIO (MICRO_FUERA_SERVICIO_PATENTE, MICRO_FUERA_SERVICIO_FECHA_INICIO, MICRO_FUERA_SERVICIO_FECHA_REINCORPORACION) VALUES('" + microPatente + "'," + comienzo + "," + fin + ")";
             ConnectorClass conexion = ConnectorClass.Instance;
             Dt = conexion.executeQuery(query);
         }

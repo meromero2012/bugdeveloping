@@ -42,8 +42,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_KG = new System.Windows.Forms.TextBox();
-            this.dateTimePicker_Vida_Util = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox_Patente = new System.Windows.Forms.TextBox();
             this.comboBox_Asientos_Piso2 = new System.Windows.Forms.ComboBox();
@@ -174,22 +172,6 @@
             this.textBox_KG.Size = new System.Drawing.Size(51, 20);
             this.textBox_KG.TabIndex = 16;
             // 
-            // dateTimePicker_Vida_Util
-            // 
-            this.dateTimePicker_Vida_Util.Location = new System.Drawing.Point(126, 194);
-            this.dateTimePicker_Vida_Util.Name = "dateTimePicker_Vida_Util";
-            this.dateTimePicker_Vida_Util.Size = new System.Drawing.Size(104, 20);
-            this.dateTimePicker_Vida_Util.TabIndex = 18;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 198);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Fecha de Baja";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -269,8 +251,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox_Patente);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimePicker_Vida_Util);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox_KG);
             this.Controls.Add(this.label5);
@@ -311,8 +291,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_KG;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_Vida_Util;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox_Patente;
         private System.Windows.Forms.ComboBox comboBox_Asientos_Piso2;
