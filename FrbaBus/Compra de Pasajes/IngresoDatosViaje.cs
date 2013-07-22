@@ -115,6 +115,7 @@ namespace FrbaBus.Compra_de_Pasajes
                     {
                         IngresoDatosPasaje frmPasaje = new IngresoDatosPasaje(codigoViaje, codigoRecorrido, microPatente, tipoServicio, pasajesCompra, kgsCompra, compra);
                         frmPasaje.Show();
+                        this.Close();
                     }
                     else
                     {
@@ -122,6 +123,7 @@ namespace FrbaBus.Compra_de_Pasajes
                         {
                             IngresoDatosEncomienda frmEncomienda = new IngresoDatosEncomienda(codigoViaje, codigoRecorrido, microPatente, tipoServicio, pasajesCompra, kgsCompra, compra);
                             frmEncomienda.Show();
+                            this.Close();
                         }
                     }
                 }   

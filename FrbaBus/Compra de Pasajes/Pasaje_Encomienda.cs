@@ -9,7 +9,6 @@ namespace FrbaBus.Compra_de_Pasajes
     public class Pasaje_Encomienda
     {
         public String tipo { get; set; }
-        public String codigo_pasaje_encomienda { get; set; }
         public String dni_viajero { get; set; }
         public String precio { get; set; }
         public String codigo_viaje { get; set; }

@@ -119,17 +119,20 @@ namespace FrbaBus.Compra_de_Pasajes
             string nroCompra = FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.getNroCompra();
 
             foreach(Pasaje_Encomienda pe in compra.Compras){
-                if (tipo.Equals("Efectivo"))
-                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertCompraEfectivo(pe.codigo_pasaje_encomienda, fechaCompra, dniTextBox.Text, nroCompra);
-                else
-                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertCompraTarjeta(pe.codigo_pasaje_encomienda, fechaCompra, dniTextBox.Text, nroCompra,nroTarjetaTextBox.Text, cuotasTextBox.Text);
 
-                FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertPasajeEncomienda(pe.codigo_pasaje_encomienda, pe.dni_viajero, pe.precio, pe.codigo_viaje);
+                string nroPasaje_Encomienda = FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.getPasajeEncomiendaNumero();
+
+                if (tipo.Equals("Efectivo"))
+                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertCompraEfectivo(nroPasaje_Encomienda, fechaCompra, dniTextBox.Text, nroCompra);
+                else
+                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertCompraTarjeta(nroPasaje_Encomienda, fechaCompra, dniTextBox.Text, nroCompra, nroTarjetaTextBox.Text, cuotasTextBox.Text);
+
+                FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertPasajeEncomienda(nroPasaje_Encomienda, pe.dni_viajero, pe.precio, pe.codigo_viaje);
                 
                 if (pe.tipo.Equals("Pasaje"))
-                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertPasaje(pe.codigo_pasaje_encomienda, pe.micro_patente, pe.nro_butaca, pe.piso_butaca);
+                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertPasaje(nroPasaje_Encomienda, pe.micro_patente, pe.nro_butaca, pe.piso_butaca);
                 else
-                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertEncomienda(pe.codigo_pasaje_encomienda, pe.kgs_utilizados);
+                    FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertEncomienda(nroPasaje_Encomienda, pe.kgs_utilizados);
             }
         }
 
@@ -168,6 +171,7 @@ namespace FrbaBus.Compra_de_Pasajes
             {
                 insertCompra("Efectivo");
                 this.Close();
+                MessageBox.Show("Compra realizada");
                 Program.MenuPrincipal.Show();
             }
         }

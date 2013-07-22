@@ -140,14 +140,19 @@ namespace FrbaBus.Compra_de_Pasajes
             nroComboBox.ValueMember = "BUTACA_NUMERO";
             nroComboBox.DisplayMember = "BUTACA_DESCRIPCION";
             nroComboBox.DataSource = butacasDisponiblesDt;
-            
-            nroComboBox.Enabled = true;
 
-            getPrecioPasaje();
+            if (butacasDisponiblesDt.Rows.Count > 0)
+            {
+                nroComboBox.Enabled = true;
 
-            precioLabel.Enabled = true;
+                getPrecioPasaje();
 
-            siguienteButton.Enabled = true;
+                precioLabel.Enabled = true;
+
+                siguienteButton.Enabled = true;
+            }
+            else
+                MessageBox.Show("No hay butacas disponibles para el piso seleccionado");
         }
 
         /* Se calcula el precio del pasaje segun las restricciones del enunciado */
@@ -209,12 +214,11 @@ namespace FrbaBus.Compra_de_Pasajes
         }
 
         /*Agrega en un elemento de lista el codigo de pasaje comprado para despues poder registrar la compra*/
-        private void cargarCompra(String pasje_encomienda, String codigo, String dni, String monto, String viaje, String patente, String nroButaca, String pisoButaca, String kgs)
+        private void cargarCompra(String pasje_encomienda, String dni, String monto, String viaje, String patente, String nroButaca, String pisoButaca, String kgs)
         {
             compra.Compras.Add(new Pasaje_Encomienda()
             {
                 tipo = pasje_encomienda,
-                codigo_pasaje_encomienda = codigo,
                 dni_viajero = dni,
                 precio = monto,
                 codigo_viaje = viaje,
@@ -241,7 +245,6 @@ namespace FrbaBus.Compra_de_Pasajes
             string domicilio = domicilioTextBox.Text;
             string telefono = telefonoTextBox.Text;
             string mail = mailTextBox.Text;
-            string pasajeNro = FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.getPasajeEncomiendaNumero();
             string precio = precioLabel.Text;
             string butacaPiso = pisoComboBox.SelectedValue.ToString();
             string butacaNro = nroComboBox.SelectedIndex.ToString();
@@ -251,7 +254,7 @@ namespace FrbaBus.Compra_de_Pasajes
             else
                 FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertCliente(dni, fechaNacimiento, nombre, apellido, sexo, discapacidad, domicilio, telefono, mail);
 
-            cargarCompra("Pasaje", pasajeNro, dni, precio, codigoViaje, microPatente, butacaNro, butacaPiso, "-1");
+            cargarCompra("Pasaje", dni, precio, codigoViaje, microPatente, butacaNro, butacaPiso, "-1");
 
             if (pasajesCompra > 1)
             {

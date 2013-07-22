@@ -132,12 +132,11 @@ namespace FrbaBus.Compra_de_Pasajes
         }
 
         /*Agrega en un elemento de lista el codigo de pasaje comprado para despues poder registrar la compra*/
-        private void cargarCompra(String pasje_encomienda, String codigo, String dni, String monto, String viaje, String patente, String nroButaca, String pisoButaca, String kgs)
+        private void cargarCompra(String pasje_encomienda, String dni, String monto, String viaje, String patente, String nroButaca, String pisoButaca, String kgs)
         {
             compra.Compras.Add(new Pasaje_Encomienda()
                 {
                     tipo = pasje_encomienda,
-                    codigo_pasaje_encomienda = codigo,
                     dni_viajero = dni,
                     precio = monto,
                     codigo_viaje = viaje,
@@ -164,7 +163,6 @@ namespace FrbaBus.Compra_de_Pasajes
             string domicilio = domicilioTextBox.Text;
             string telefono = telefonoTextBox.Text;
             string mail = mailTextBox.Text;
-            string encomiendaNro = FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.getPasajeEncomiendaNumero();
             string precio = precioLabel.Text;
 
             if (dniEncontradoBBDD)
@@ -172,7 +170,7 @@ namespace FrbaBus.Compra_de_Pasajes
             else
                 FrbaBus.Compra_de_Pasajes.FuncionesCompraPasajes.insertCliente(dni, fechaNacimiento, nombre, apellido, sexo, discapacidad, domicilio, telefono, mail);
 
-            cargarCompra("Encomienda",encomiendaNro,dni, precio, codigoViaje, "-1", "-1", "-1", kgsCompra.ToString());
+            cargarCompra("Encomienda",dni, precio, codigoViaje, "-1", "-1", "-1", kgsCompra.ToString());
 
             if (pasajesCompra > 0)
             {
